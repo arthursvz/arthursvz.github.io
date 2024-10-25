@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Roboto Black";
-  src: url('./fonts/Roboto/Roboto-Black.ttf') format('truetype');
+  font-family: "Lato";
+  src: url('./Police/Lato-Black.ttf') format('truetype');
 }
 
 
@@ -10,11 +10,11 @@ body {
   margin: 0;
   padding: 0;
 
-  background-image: url("images/foret_pin_flou.jpg");
-  background-size: cover; /* Permet de couvrir toute la zone de la page */
-  background-repeat: no-repeat; /* Empêche la répétition de l'image */
-  background-position: center; /* Centre l'image sur la page */
-  background-attachment: fixed; /* Garde le fond fixe lors du défilement */
+  /*background-image: url("images/foret_pin_flou.jpg");
+  /*background-size: cover; /* Permet de couvrir toute la zone de la page */
+  /*background-repeat: no-repeat; /* Empêche la répétition de l'image */
+  /*background-position: center; /* Centre l'image sur la page */
+  /*background-attachment: fixed; /* Garde le fond fixe lors du défilement */
 
   display: flex; /* Utilisation de Flexbox pour centrer le contenu */
   justify-content: center;
@@ -86,7 +86,7 @@ header {
 #title h1 {
   margin: 0 0 0 30px;
 
-  font-family: "Roboto Black";
+  font-family: "Lato";
   color: #263526;
 }
 
@@ -143,7 +143,7 @@ header {
 
   text-align: center;
 
-  font-family: "Roboto Black";
+  font-family: "Lato";
   color: #263526;
 }
 
