@@ -20,20 +20,9 @@ body {
   justify-content: center;
 }
 
-#bg {
-  width: 0%; /* Prend 80% de la largeur de la fenêtre */
-  max-width: 1100px; /* Prend au maximum 1200 pixel de la largeur de la fenêtre */
-  height: 100%;
-  box-shadow: 0 0px 8px 0 #334433;
-  background-color: #f5f5f5;
-  position: fixed;
-
-  z-index: 5;
-}
-
 main {
   width: 100%; /* Prend 80% de la largeur de la fenêtre */
-  max-width: 1900px; /* Prend au maximum 1200 pixel de la largeur de la fenêtre */
+  max-width: 2000px; /* Prend au maximum 1200 pixel de la largeur de la fenêtre */
   background-color: white;
 
   font-family: Lato;
