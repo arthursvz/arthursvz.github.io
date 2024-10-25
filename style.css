@@ -132,14 +132,14 @@ header {
 
 #article-div article h2 {
   margin: 10px 20px 10px 10px;
-  text-align: center;
+  text-align: right;
   font-family: "Lato";
   color: #263526;
 }
 
 #article-div article Intro {
   margin: 10px 100px 16px 0;
-  text-align: justify;
+  text-align: right;
   color: #334433;
 }
 
