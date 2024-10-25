@@ -101,6 +101,16 @@ header {
   align-items: center;
 }
 
+sectiong {
+  margin: 30px 10px 30px 10px;
+  text-align: left;
+}
+
+sectiond {
+  margin: 30px 10px 30px 10px;
+  text-align: right;
+}
+
 /* Styles du lien pour le nom du site */
 .site-title {
   font-size: 2em;
