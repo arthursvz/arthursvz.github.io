@@ -1,40 +1,168 @@
+@font-face {
+  font-family: "Roboto Black";
+  src: url('./fonts/Roboto/Roboto-Black.ttf') format('truetype');
+}
+
+
+/* FORMAT GÉNÉRAL */
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+
+  background-image: url("images/foret_pin_flou.jpg");
+  background-size: cover; /* Permet de couvrir toute la zone de la page */
+  background-repeat: no-repeat; /* Empêche la répétition de l'image */
+  background-position: center; /* Centre l'image sur la page */
+  background-attachment: fixed; /* Garde le fond fixe lors du défilement */
+
+  display: flex; /* Utilisation de Flexbox pour centrer le contenu */
+  justify-content: center;
 }
 
-h1 {
-    color: #333;
-    text-align: center;
+#bg {
+  width: 80%; /* Prend 80% de la largeur de la fenêtre */
+  max-width: 1100px; /* Prend au maximum 1200 pixel de la largeur de la fenêtre */
+  height: 100%;
+  box-shadow: 0 0px 8px 0 #334433;
+  background-color: #f5f5f5;
+  position: fixed;
+
+  z-index: 5;
 }
 
-div1 {
-    margin: 20px 0;
-    text-align: center;
+main {
+  width: 80%; /* Prend 80% de la largeur de la fenêtre */
+  max-width: 1100px; /* Prend au maximum 1200 pixel de la largeur de la fenêtre */
+  background-color: transparent;
+
+  font-family: sans;
+  z-index: 10;
 }
 
-div1 a {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px;
-    text-decoration: none;
-    color: #333;
-    background-color: #ddd;
-    border-radius: 5px;
+a {
+  text-decoration: none; /* Supprime le soulignement par défaut du lien */
+  color: inherit; /* Hérite de la couleur de l'article pour éviter de colorer le texte */
 }
 
-div1 a:hover {
-    background-color: #ccc;
+.ligne-centre {
+  margin: 0;
+  padding: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-h2 {
-    color: #333;
+.bouton {
+  margin: 0 10px;
+
+  width: 200px;
+  line-height: 30px;
+  border: solid #6A874F 2px;
+  border-radius: 15px;
+  text-align: center;
+  color: #6A874F;
+
+  transition: 0.3s;
 }
 
-p {
-    line-height: 1.6;
-    color: #555;
+.bouton:hover {
+  background-color: #6A874F;
+  color: #fff;
+}
+
+/* HEADER */
+
+header {
+  padding: 30px 20px;
+  box-shadow: 0 8px 4px -2px #6B788820;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#title h1 {
+  margin: 0 0 0 30px;
+
+  font-family: "Roboto Black";
+  color: #263526;
+}
+
+#langue_switch {
+  border-radius: 30px;
+  border: 7px solid transparent;
+  box-shadow: 0 1px 4px 3px #6B788820;
+
+  transition: 0.3s;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#langue_switch:hover {
+  box-shadow: 0 1px 4px 3px #6B788820;
+  background-color: #6B788820;
+}
+
+#langue_switch img {
+  width: 40px;
+  height: 40px;
+}
+
+#langue_switch p {
+  margin: 5px;
+
+  color: #567263;
+  font-style: italic;
+}
+
+
+/* ARTICLE */
+
+#article-div {
+  margin-top: 10px;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 100px;
+}
+
+#article-div article {
+  padding: 10px 20px;
+
+  box-shadow: 0 4px 0px -2px #6B788820;
+}
+
+#article-div article h2 {
+  margin: 0px 10px 0px 10px;
+
+  text-align: center;
+
+  font-family: "Roboto Black";
+  color: #263526;
+}
+
+#article-div article p {
+  margin: 10px 0 16px 0;
+  text-align: justify;
+
+  color: #334433;
+}
+
+/* ARTICLE BIENVENUE */
+
+#bienvenue img {
+  margin: 0 30px 0 0;
+  width: 150px;
+  height: 200px;
+  border-radius: 30px;
+}
+
+#bienvenue p {
+  width: 300px;
 }
