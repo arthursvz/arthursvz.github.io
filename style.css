@@ -3,47 +3,29 @@
   src: url('./Police/Lato-Black.ttf') format('truetype');
 }
 
-
 /* FORMAT GÉNÉRAL */
-
 body {
   margin: 0;
   padding: 0;
-
-  /*background-image: url("images/foret_pin_flou.jpg");
-  /*background-size: cover; /* Permet de couvrir toute la zone de la page */
-  /*background-repeat: no-repeat; /* Empêche la répétition de l'image */
-  /*background-position: center; /* Centre l'image sur la page */
-  /*background-attachment: fixed; /* Garde le fond fixe lors du défilement */
-
-  /*display: flex; /* Utilisation de Flexbox pour centrer le contenu */
-  /*justify-content: center;
 }
 
 main {
-  width: 100%; /* Prend 80% de la largeur de la fenêtre */
-  max-width: 2000px; /* Prend au maximum 1200 pixel de la largeur de la fenêtre */
+  width: 100%; /* Prend 100% de la largeur de la fenêtre */
+  max-width: 2000px;
   background-color: white;
-
   font-family: Lato;
   z-index: 10;
 }
 
-Titre {
-  font-size: 20px;
-  color: inherit;
-}
-
 a {
-  margin: 10px 10px 10px 10px;
-  text-decoration: none; /* Supprime le soulignement par défaut du lien */
-  color: inherit; /* Hérite de la couleur de l'article pour éviter de colorer le texte */
+  margin: 10px;
+  text-decoration: none; /* Supprime le soulignement */
+  color: inherit; /* Conserve la couleur de l'élément */
 }
 
 .ligne-centre {
   margin: 0;
   padding: 10px;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,14 +33,12 @@ a {
 
 .bouton {
   margin: 0 10px;
-
   width: 200px;
   line-height: 30px;
   border: solid #6A874F 2px;
   border-radius: 15px;
   text-align: center;
   color: #6A874F;
-
   transition: 0.3s;
 }
 
@@ -68,59 +48,32 @@ a {
 }
 
 /* HEADER */
-
 header {
   padding: 30px 20px;
   box-shadow: 0 8px 4px -2px #6B788820;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#title h1 {
-  margin: 0 200px 0 30px;
-
+/* Styles du lien pour le nom du site */
+.site-title {
+  font-size: 2em;
   font-family: "Lato";
+  text-decoration: none;
   color: #263526;
+  font-weight: bold;
+  margin: 0 200px 0 30px;
 }
 
-#langue_switch {
-  border-radius: 30px;
-  border: 7px solid transparent;
-  box-shadow: 0 1px 4px 3px #6B788820;
-
-  transition: 0.3s;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+.site-title:hover {
+  color: #6A874F;
 }
-
-#langue_switch:hover {
-  box-shadow: 0 1px 4px 3px #6B788820;
-  background-color: #6B788820;
-}
-
-#langue_switch img {
-  width: 40px;
-  height: 40px;
-}
-
-#langue_switch p {
-  margin: 5px;
-
-  color: #567263;
-  font-style: italic;
-}
-
 
 /* ARTICLE */
-
 #article-div {
   margin-top: 10px;
   padding: 30px;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -129,15 +82,12 @@ header {
 
 #article-div article {
   padding: 10px 20px;
-
   box-shadow: 0 4px 0px -2px #6B788820;
 }
 
 #article-div article h2 {
-  margin: 10px 10px 10px 10px;
-
+  margin: 10px 20px 10px 10px;
   text-align: center;
-
   font-family: "Lato";
   color: #263526;
 }
@@ -145,12 +95,10 @@ header {
 #article-div article Intro {
   margin: 10px 0 16px 0;
   text-align: justify;
-
   color: #334433;
 }
 
 /* ARTICLE BIENVENUE */
-
 #bienvenue img {
   margin: 0 30px 0 0;
   width: 300px;
