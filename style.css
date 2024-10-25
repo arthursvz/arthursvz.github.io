@@ -47,6 +47,22 @@ a {
   color: #fff;
 }
 
+.icone {
+  margin: 0 10px;
+  width: 50px;
+  line-height: 50px;
+  border: solid #000000 2px;
+  border-radius: 15px;
+  text-align: center;
+  color: #000000;
+  transition: 0.3s;
+}
+
+.icone:hover {
+  background-color: #000000;
+  color: #fff;
+}
+
 .boutonbis {
   margin: 0 10px;
   width: 200px;
