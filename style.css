@@ -30,7 +30,7 @@ main {
 }
 
 Titre {
-  size: 20px;
+  font-size: 20px;
   color: inherit;
 }
 
