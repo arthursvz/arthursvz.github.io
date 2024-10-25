@@ -21,7 +21,7 @@ body {
 }
 
 #bg {
-  width: 100%; /* Prend 80% de la largeur de la fenêtre */
+  width: 0%; /* Prend 80% de la largeur de la fenêtre */
   max-width: 1100px; /* Prend au maximum 1200 pixel de la largeur de la fenêtre */
   height: 100%;
   box-shadow: 0 0px 8px 0 #334433;
