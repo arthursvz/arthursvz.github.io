@@ -142,7 +142,7 @@ header {
   color: #263526;
 }
 
-#article-div article p {
+#article-div article Intro {
   margin: 10px 0 16px 0;
   text-align: justify;
 
@@ -153,11 +153,11 @@ header {
 
 #bienvenue img {
   margin: 0 30px 0 0;
-  width: 150px;
-  height: 220px;
-  border-radius: 30px;
+  width: 300px;
+  height: 440px;
+  border-radius: 50px;
 }
 
-#bienvenue p {
+#bienvenue Intro {
   width: 300px;
 }
