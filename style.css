@@ -23,6 +23,35 @@ a {
   color: inherit; /* Conserve la couleur de l'élément */
 }
 
+#langue_switch {
+  border-radius: 30px;
+  border: 7px solid transparent;
+  box-shadow: 0 1px 4px 3px #6B788820;
+
+  transition: 0.3s;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#langue_switch:hover {
+  box-shadow: 0 1px 4px 3px #6B788820;
+  background-color: #6B788820;
+}
+
+#langue_switch img {
+  width: 40px;
+  height: 40px;
+}
+
+#langue_switch p {
+  margin: 5px;
+
+  color: #567263;
+  font-style: italic;
+}
+
 .ligne-centre {
   margin: 0;
   padding: 10px;
