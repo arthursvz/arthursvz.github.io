@@ -29,6 +29,11 @@ main {
   z-index: 10;
 }
 
+Titre {
+  size: 20px;
+  color: inherit;
+}
+
 a {
   margin: 10px 10px 10px 10px;
   text-decoration: none; /* Supprime le soulignement par défaut du lien */
