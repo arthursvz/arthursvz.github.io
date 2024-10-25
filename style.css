@@ -16,8 +16,8 @@ body {
   /*background-position: center; /* Centre l'image sur la page */
   /*background-attachment: fixed; /* Garde le fond fixe lors du défilement */
 
-  display: flex; /* Utilisation de Flexbox pour centrer le contenu */
-  justify-content: center;
+  /*display: flex; /* Utilisation de Flexbox pour centrer le contenu */
+  /*justify-content: center;
 }
 
 main {
