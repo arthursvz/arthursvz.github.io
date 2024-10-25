@@ -93,14 +93,14 @@ header {
 }
 
 #article-div article Intro {
-  margin: 10px 0 16px 0;
+  margin: 10px 100px 16px 0;
   text-align: justify;
   color: #334433;
 }
 
 /* ARTICLE BIENVENUE */
 #bienvenue img {
-  margin: 0 30px 0 0;
+  margin: 0 50px 0 0;
   width: 300px;
   height: 440px;
   border-radius: 50px;
