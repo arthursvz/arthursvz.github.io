@@ -30,6 +30,7 @@ main {
 }
 
 a {
+  margin: 10px 10px 10px 10px;
   text-decoration: none; /* Supprime le soulignement par défaut du lien */
   color: inherit; /* Hérite de la couleur de l'article pour éviter de colorer le texte */
 }
