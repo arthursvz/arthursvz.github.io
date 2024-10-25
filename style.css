@@ -1,6 +1,40 @@
-@font-face {
-  font-family: "Roboto Black";
-  src: url('./fonts/Roboto/Roboto-Black.ttf') format('truetype');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
 }
 
-body
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+div1 {
+    margin: 20px 0;
+    text-align: center;
+}
+
+div1 a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+div1 a:hover {
+    background-color: #ccc;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    line-height: 1.6;
+    color: #555;
+}
