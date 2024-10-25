@@ -60,27 +60,11 @@ a {
   align-items: center;
 }
 
-.bouton {
-  margin: 0 10px;
-  width: 200px;
-  line-height: 30px;
-  border: solid #6A874F 2px;
-  border-radius: 15px;
-  text-align: center;
-  color: #6A874F;
-  transition: 0.3s;
-}
-
-.bouton:hover {
-  background-color: #6A874F;
-  color: #fff;
-}
-
 .icone {
-  margin: 0 10px;
-  width: 80px;
-  line-height: 50px;
-  border: solid #000000 2px;
+  margin: 0 5px;
+  width: 150px;
+  line-height: 30px;
+  border: solid #000000 0px;
   border-radius: 15px;
   text-align: center;
   color: #000000;
