@@ -64,9 +64,12 @@ a {
 }
 
 footer {
-	background-color: #556F56;
 	text-align: center;
-	color:stonewhite;
+	position: fixed;
+   	bottom:0;
+    	float:none;
+    	margin: auto;
+    	background-color: #556F56; 
 }
 
 /* HEADER */
