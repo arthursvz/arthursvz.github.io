@@ -82,18 +82,19 @@ a {
 
 .boutonbis {
   margin: 0 5px;
+  padding: 7px;
   width: 150px;
   line-height: 30px;
   border: solid #000000 1px;
-  border-radius: 15px;
+  border-radius: 5px;
   text-align: center;
   color: #000000;
   transition: 0.3s;
 }
 
 .boutonbis:hover {
-  background-color: #000000;
-  color: #fff;
+  background-color: #556F56;
+  color: whitesmoke;
 }
 
 /* HEADER */
