@@ -3,11 +3,6 @@
   src: url('./Police/Lato-Regular.ttf') format('truetype');
 }
 
-@font-face {
-	font-family: "LatoBlack";
-	src: url('./Police/Lato_Black.ttf') format('truetype');
-}
-
 /* FORMAT GÉNÉRAL */
 body {
   margin: 0;
@@ -26,35 +21,6 @@ a {
   margin: 10px;
   text-decoration: none; /* Supprime le soulignement */
   color: inherit; /* Conserve la couleur de l'élément */
-}
-
-#langue_switch {
-  border-radius: 30px;
-  border: 7px solid transparent;
-  box-shadow: 0 1px 4px 3px #6B788820;
-
-  transition: 0.3s;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-#langue_switch:hover {
-  box-shadow: 0 1px 4px 3px #6B788820;
-  background-color: #6B788820;
-}
-
-#langue_switch img {
-  width: 40px;
-  height: 40px;
-}
-
-#langue_switch p {
-  margin: 5px;
-
-  color: #567263;
-  font-style: italic;
 }
 
 .ligne-centre {
@@ -119,7 +85,7 @@ header {
 
 #TitrePage {
 	text-align: center;
-	margin: 0px 400px 0px 400px;
+	margin: 0px 300px 0px 300px;
 	padding: 10px 10px 10px 10px;
 	font-size: 2em;
 	font-family:"Lato";
@@ -131,7 +97,7 @@ header {
 	background-color: whitesmoke;
 	text-align: center;
 	margin: 0px;
-	padding: 10px 100px 10px 100px;
+	padding: 10px 200px 10px 200px;
 }
 
 /* Styles du lien pour le nom du site */
