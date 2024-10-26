@@ -7,35 +7,33 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: "Lato", sans-serif;
 }
 
 main {
-  width: 100%; /* Prend 100% de la largeur de la fenêtre */
+  width: 100%;
   max-width: 2000px;
   background-color: white;
-  font-family: Lato;
   z-index: 10;
 }
 
 a {
   margin: 10px;
-  text-decoration: none; /* Supprime le soulignement */
-  color: inherit; /* Conserve la couleur de l'élément */
+  text-decoration: none;
+  color: inherit;
 }
 
 .ligne-centre {
-  margin: 0;
-  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 
 .icone {
   margin: 0 5px;
   width: 140px;
   line-height: 20px;
-  border: solid #000000 0px;
   border-radius: 15px;
   text-align: center;
   color: whitesmoke;
@@ -63,15 +61,6 @@ a {
   color: whitesmoke;
 }
 
-footer {
-	text-align: center;
-	position: fixed;
-   	bottom:0;
-    	float:none;
-    	margin: auto;
-    	background-color: #556F56; 
-}
-
 /* HEADER */
 header {
   padding: 30px 20px;
@@ -83,7 +72,7 @@ header {
 }
 
 #sectiong {
-  margin:30px 200px 30px 100px;
+  margin: 30px 200px 30px 100px;
   text-align: left;
 }
 
@@ -93,20 +82,21 @@ header {
 }
 
 #TitrePage {
-	text-align: center;
-	margin: 0px 300px 0px 300px;
-	padding: 10px 10px 10px 10px;
-	font-size: 2em;
-	font-family:"Lato";
-	font-weight: bold;
-	border: solid #000000 2px;
-	border-radius: 5px;
+  text-align: center;
+  margin: 0px 300px 0px 300px;
+  padding: 10px;
+  font-size: 2em;
+  font-family: "Lato";
+  font-weight: bold;
+  border: solid #000000 2px;
+  border-radius: 5px;
 }
+
 #IntroPage {
-	background-color: whitesmoke;
-	text-align: center;
-	margin: 0px;
-	padding: 10px 200px 10px 200px;
+  background-color: whitesmoke;
+  text-align: center;
+  margin: 0px;
+  padding: 10px 200px;
 }
 
 /* Styles du lien pour le nom du site */
@@ -164,15 +154,39 @@ header {
 }
 
 #ArticleD img {
-	margin: 10px 0 10px 100px;
-	width: 200px;
-	height:200px;
-	border-radius: 50px; 
+  margin: 10px 0 10px 100px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50px;
 }
 
 #ArticleG img {
-	margin: 10px 200px 10px 0;
-	width: 250px;
-	height: 250px;
-	border-radius: 50px;
+  margin: 10px 200px 10px 0;
+  width: 250px;
+  height: 250px;
+  border-radius: 50px;
+}
+
+/* FOOTER */
+footer {
+  padding: 20px 0;
+  background-color: #556F56;
+  color: whitesmoke;
+  text-align: center;
+  font-family: "Lato";
+  box-shadow: 0 -4px 4px -2px #6B788820;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  color: black;
 }
