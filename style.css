@@ -63,6 +63,12 @@ a {
   color: whitesmoke;
 }
 
+footer {
+	background-color: #556F56;
+	text-align: center;
+	color:stonewhite;
+}
+
 /* HEADER */
 header {
   padding: 30px 20px;
