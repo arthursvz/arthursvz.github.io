@@ -3,6 +3,11 @@
   src: url('./Police/Lato-Regular.ttf') format('truetype');
 }
 
+@font-face {
+	font-family: "LatoBlack";
+	src: url('./Police/Lato_Black.ttf') format('truetype');
+}
+
 /* FORMAT GÉNÉRAL */
 body {
   margin: 0;
@@ -101,14 +106,25 @@ header {
   align-items: center;
 }
 
-sectiong {
-  margin: 30px 10px 30px 10px;
+#sectiong {
+  margin:30px 500px 30px 100px;
   text-align: left;
 }
 
-sectiond {
-  margin: 30px 10px 30px 10px;
+#sectiond {
+  margin: 10px 100px 10px 500px;
   text-align: right;
+}
+
+#TitrePage {
+	text-align: center;
+	margin: 30px 400px 30px 400px;
+	padding: 10px 10px 10px 10px;
+	font-size: 2em;
+	font-family:"Lato";
+	font-weight: bold;
+	border: solid #000000 2px;
+	border-radius: 0px;
 }
 
 /* Styles du lien pour le nom du site */
@@ -163,4 +179,15 @@ sectiond {
 
 #bienvenue Intro {
   width: 300px;
+}
+
+#ArticleD img {
+	margin 0 50px 0 0;
+	width: 300px;
+	height:300px;
+	border-radius: 50px; 
+}
+
+#ArticleG Sectiond {
+	width: 300px;
 }
