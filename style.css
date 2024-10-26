@@ -91,7 +91,7 @@ header {
 	font-family:"Lato";
 	font-weight: bold;
 	border: solid #000000 2px;
-	border-radius: 0px;
+	border-radius: 5px;
 }
 #IntroPage {
 	background-color: whitesmoke;
