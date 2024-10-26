@@ -127,6 +127,11 @@ header {
 	border: solid #000000 2px;
 	border-radius: 0px;
 }
+#IntroPage {
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
 
 /* Styles du lien pour le nom du site */
 .site-title {
