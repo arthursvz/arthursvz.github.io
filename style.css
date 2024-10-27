@@ -168,25 +168,8 @@ header {
 }
 
 /* FOOTER */
-footer {
-  padding: 20px 0;
+#foot {
+  text-align: center;
   background-color: #556F56;
   color: whitesmoke;
-  text-align: center;
-  font-family: "Lato";
-  box-shadow: 0 -4px 4px -2px #6B788820;
-}
-
-footer p {
-  margin: 5px 0;
-}
-
-footer a {
-  color: whitesmoke;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-footer a:hover {
-  color: black;
 }
