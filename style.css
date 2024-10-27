@@ -173,6 +173,7 @@ footer {
 }
 
 #foot {
+  padding: 5px;
   text-align: center;
   background-color: #556F56;
   color: whitesmoke;
