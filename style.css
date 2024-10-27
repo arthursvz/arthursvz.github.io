@@ -168,6 +168,10 @@ header {
 }
 
 /* FOOTER */
+footer {
+  padding: 5px 0;
+}
+
 #foot {
   text-align: center;
   background-color: #556F56;
