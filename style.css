@@ -44,6 +44,16 @@ a {
   color: black;
 }
 
+.icone {
+  margin: 0 5px;
+  width: 140px;
+  line-height: 20px;
+  border-radius: 15px;
+  text-align: center;
+  color: black;
+  transition: 0.3s;
+}
+
 .boutonbis {
   margin: 0 5px;
   padding: 7px;
