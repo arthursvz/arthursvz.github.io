@@ -107,6 +107,7 @@ header {
   color: whitesmoke;
   font-weight: bold;
   margin: 0 400px 0 30px;
+  transition: 0.5s;
 }
 
 .site-title:hover {
