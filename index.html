@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>E-portfolio — Arthur SAUVEZIE</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">Arthur Sauvezie</h1>
+      <button class="nav-toggle" aria-label="menu" id="navToggle">☰</button>
+      <button class="theme-toggle" id="themeToggle" aria-pressed="false" title="Activer le thème clair/sombre">🌙</button>
+      <button class="lang-toggle" id="langToggle" aria-pressed="false" title="Français / English">FR</button>
+      <nav class="nav" id="siteNav">
+        <a href="index.html" data-i18n="nav_home">Accueil</a>
+        <a href="pages/cv.html" data-i18n="nav_cv">CV</a>
+        <a href="pages/projets.html" data-i18n="nav_projects">Projets</a>
+        <!-- Compétences page removed (info moved into CV) -->
+        <a href="pages/parcours.html" data-i18n="nav_parcours">Parcours</a>
+        <a href="pages/contact.html" data-i18n="nav_contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-photo" aria-hidden="true">
+        <img src="68c9e510c85a8crop.jpg" alt="Photo d'Arthur Sauvezie">
+      </div>
+
+      <div class="hero-inner">
+        <h2 data-i18n="hero_title">Étudiant Ingénieur N7 — Informatique & Télécommunications</h2>
+        <p class="lead" data-i18n="hero_lead">Actuellement en seconde année d’ingénierie numérique à l'ENSEEIHT. Passionné par l'aéronautique, le spatial et la cybersécurité. Je me spécialise en Réseaux et Télécommunications.</p>
+        <p>
+          <a class="btn" href="pages/cv.html" data-i18n="btn_cv">Voir le CV</a>
+          <a class="btn ghost" href="pages/contact.html" data-i18n="btn_contact">Me contacter</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="about" class="card">
+      <h3 data-i18n="about_title">À propos</h3>
+      <p data-i18n="about_text">Actuellement étudiant en seconde année d’ingénierie numérique à l'ENSEEIHT, je suis passionné par l'aéronautique, le spatial et la cybersécurité. Mon parcours académique combiné à mes engagements associatifs et secourisme montre ma capacité à travailler en équipe et à gérer des responsabilités dans des environnements exigeants. J'aspire à contribuer à des projets innovants en mettant à profit mes compétences en programmation et ma rigueur analytique.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h4 data-i18n="formation_title">Formation</h4>
+        <p data-i18n="formation_content"><strong>ENSEEIHT</strong> <br> Seconde année, Computer Networks <br> (2024 – Aujourd'hui)<br><strong>CPGE - PCSI/PSI</strong><br> Lycée Bellevue, Toulouse, 2022–2024<br><strong>BAC Général</strong> <br>Maths, Physiques, Maths Expertes <br>Lycée Léonard Limosin, 2019–2022</p>
+      </article>
+
+      <article class="card">
+        <h4 data-i18n="skills_title">Compétences</h4>
+        <ul>
+          <li data-i18n="skill_1">Python, Java, C, Matlab, <br> HTML, CSS, Ada, LaTeX</li>
+          <li data-i18n="skill_2">Linux, Git, VSCode <br> Autres outils de bureautique</li>
+          <li data-i18n="skill_3">Organisation, travail en équipe, <br> gestion de la pression</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h4 data-i18n="projects_title">Projets & expériences</h4>
+        <ul>
+          <li data-i18n="project_item_1">Stage IA / Cybersécurité — IRT Saint-Exupéry (2025)</li>
+          <li data-i18n="project_item_2">Administrateur Systèmes — Net7 (Asso Info N7), 09.2025 – aujourd'hui</li>
+        </ul>
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Arthur Sauvezie — Étudiant ENSEEIHT • <a href="pages/contact.html">Contact</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

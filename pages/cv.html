@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CV — Arthur Sauvezie</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">Arthur Sauvezie</h1>
+      <button class="nav-toggle" aria-label="menu" id="navToggle">☰</button>
+      <button class="theme-toggle" id="themeToggle" aria-pressed="false" title="Activer le thème clair/sombre">🌙</button>
+      <button class="lang-toggle" id="langToggle" aria-pressed="false" title="Français / English">FR</button>
+      <nav class="nav" id="siteNav">
+        <a href="../index.html">Accueil</a>
+        <a href="cv.html">CV</a>
+        <a href="projets.html">Projets</a>
+        <a href="parcours.html">Parcours</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2 data-i18n="cv_title">Curriculum Vitae — Arthur Sauvezie</h2>
+      <p><strong data-i18n="cv_role">Étudiant Ingénieur N7</strong> — <span data-i18n="cv_domain">Informatique & Télécommunications</span></p>
+
+      <div class="card" style="padding:0.5rem;">
+        <p data-i18n="cv_note" style="margin:0 0 0.5rem 0">CV original fourni (PDF). Vous pouvez le visualiser ci-dessous ou le télécharger :</p>
+        <div style="margin:0 0 0.75rem 0">
+          <a class="btn" href="../CVweb.pdf" download data-i18n="btn_download_cv">Télécharger le CV (PDF)</a>
+          <a class="btn ghost" href="../CVweb.pdf" target="_blank" data-i18n="btn_open_cv">Ouvrir dans un nouvel onglet</a>
+        </div>
+        <div style="border-top:1px solid #eee;padding-top:0.5rem">
+          <iframe src="../CVweb.pdf" style="width:100%;height:600px;border:0">Votre navigateur ne supporte pas l'aperçu PDF. Téléchargez le fichier pour le consulter.</iframe>
+        </div>
+      </div>
+
+
+      <h3 data-i18n="cv_contact_title">Contact</h3>
+      <p data-i18n="cv_contact_line">Email: arthur.sauvezie [insert at] etu.inp-n7.fr • Toulouse, France</p>
+
+      <h3 data-i18n="cv_formation_title">Formation</h3>
+      <ul>
+        <li data-i18n="edu_1">Seconde Année, Computer Networks — ENSEEIHT (2024 – Aujourd'hui)</li>
+        <li data-i18n="edu_2">CPGE — PCSI / PSI — Lycée Bellevue, Toulouse (2022–2024)</li>
+        <li data-i18n="edu_3">BAC Général, Maths Expertes — Lycée Léonard Limosin, Limoges (2019–2022)</li>
+      </ul>
+
+      <h3 data-i18n="cv_experiences_title">Expériences & stages</h3>
+      <ul>
+        <li data-i18n="exp_1">Stage IA / Cybersécurité — IRT Saint-Exupéry (Projets CSS / DEEL), 2025 — LLMs spécialisés cyber, IDS/IPS par réseaux de neurones</li>
+        <li data-i18n="exp_2">Administrateur Systèmes — Net7 (Asso Info N7), 09.2025 – aujourd'hui</li>
+      </ul>
+
+      <h3 data-i18n="cv_competences_title">Compétences</h3>
+
+      <div class="competences-block">
+        <h4 data-i18n="comp_languages_title">Langages & frameworks</h4>
+        <p data-i18n="comp_languages">Python (bonne maîtrise), Java (assez bonne maîtrise), C (assez bonne maîtrise), Matlab, Ada, HTML/CSS, LaTeX</p>
+
+        <h4 data-i18n="comp_tools_title">Outils & environnements</h4>
+        <p data-i18n="comp_tools">Linux, Git, VSCode, Docker, ROS, réseaux, cybersécurité, bases de données</p>
+
+        <h4 data-i18n="comp_soft_title">Compétences humaines</h4>
+        <p data-i18n="comp_soft">Organisation, travail en équipe, gestion de la pression, encadrement (club d'escalade)</p>
+      </div>
+
+      <h3 data-i18n="cv_engagements_title">Engagements</h3>
+      <ul>
+        <li data-i18n="eng_1">Membre du Bureau Women7 — INP-ENSEEIHT (depuis 09.2025)</li>
+        <li data-i18n="eng_2">Président du Club d'Escalade — AS Toulouse INP (2024 – aujourd'hui)</li>
+        <li data-i18n="eng_3">Délégué au Conseil d'Etude et de Vie Etudiante — INP-ENSEEIHT (2024–2025)</li>
+        <li data-i18n="eng_4">Représentant Etudiant pour la constitution du dossier d'accréditation à la CTI</li>
+        <li data-i18n="eng_5">Représentant Etudiant au comité de réflexion autour de la fraude de Toulouse INP</li>
+        <li data-i18n="eng_6">Secouriste — Protection Civile de Haute Garonne (09.2024 – Aujourd'hui)</li>
+      </ul>
+
+    </section>
+  </main>
+
+   <footer class="site-footer">
+    <div class="container">
+      <p data-i18n="footer_text">Arthur Sauvezie — Étudiant ENSEEIHT • </p>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
