@@ -137,6 +137,63 @@ document.addEventListener('DOMContentLoaded',function(){
   translations.fr.footer_text = 'Arthur Sauvezie — Étudiant ENSEEIHT • ';
   translations.en.footer_text = 'Arthur Sauvezie — ENSEEIHT Student • ';
 
+  // Page title for projects
+  translations.fr.projects_page_title = 'Projets — Arthur Sauvezie';
+  translations.en.projects_page_title = 'Projects — Arthur Sauvezie';
+
+  // Parcours page translations
+  translations.fr.parcours_page_title = 'Parcours — Arthur Sauvezie';
+  translations.en.parcours_page_title = 'Background — Arthur Sauvezie';
+
+  translations.fr.parcours_item_1 = '2025 — Stage IA / Cybersécurité, IRT Saint-Exupéry (projets CSS / DEEL)';
+  translations.en.parcours_item_1 = '2025 — AI / Cybersecurity Internship, IRT Saint-Exupéry (CSS / DEEL projects)';
+  translations.fr.parcours_item_2 = '2025 — Administrateur Systèmes, Net7 – Asso Info N7';
+  translations.en.parcours_item_2 = '2025 — Systems Administrator, Net7 – Asso Info N7';
+  translations.fr.parcours_item_3 = "2024 – Aujourd'hui — Seconde Année, Computer Networks, ENSEEIHT";
+  translations.en.parcours_item_3 = '2024 – Present — Second Year, Computer Networks, ENSEEIHT';
+  translations.fr.parcours_item_4 = '2022 – 2024 — CPGE (PCSI → PSI), Lycée Bellevue, Toulouse';
+  translations.en.parcours_item_4 = '2022 – 2024 — Preparatory Classes (PCSI → PSI), Lycée Bellevue, Toulouse';
+  translations.fr.parcours_item_5 = '2019 – 2022 — BAC Général (Maths expertes), Lycée Léonard Limosin, Limoges';
+  translations.en.parcours_item_5 = '2019 – 2022 — General Baccalaureate (Advanced Mathematics), Lycée Léonard Limosin, Limoges';
+
+  translations.fr.engagements_title = 'Engagements citoyens & durabilité';
+  translations.en.engagements_title = 'Civic Engagement & Sustainability';
+  translations.fr.engagements_intro = 'Je m\'investis dans des actions de solidarité et d\'éducation, convaincu que l\'ingénieur a un rôle à jouer pour répondre aux défis sociaux et environnementaux.';
+  translations.en.engagements_intro = 'I am involved in solidarity and educational actions, convinced that engineers have a role to play in addressing social and environmental challenges.';
+
+  translations.fr.prot_title = 'Protection Civile — Secouriste';
+  translations.en.prot_title = 'Civil Protection — First Responder';
+  translations.fr.prot_desc = 'Volontaire à la Protection Civile de Haute-Garonne (depuis 09.2024) : postes de secours, gardes SAMU et maraudes. Cette expérience m\'a permis de développer des compétences en intervention d\'urgence et en gestion du stress, et renforce mon engagement pour la sécurité civile.';
+  translations.en.prot_desc = 'Volunteer at the Haute-Garonne Civil Protection (since 09.2024): first aid posts, SAMU shifts and outreach. This experience helped me develop emergency response and stress management skills, and strengthens my commitment to civil safety.';
+  translations.fr.prot_link = 'En savoir plus sur la Protection Civile';
+  translations.en.prot_link = 'Learn more about Civil Protection';
+
+  translations.fr.eedf_title = 'Eclaireuses & Eclaireurs de France (EEDF) — Encadrement jeunesse';
+  translations.en.eedf_title = 'Eclaireuses & Eclaireurs de France (EEDF) — Youth Leadership';
+  translations.fr.eedf_desc = 'Leader bénévole au sein des EEDF : accompagnement et encadrement d\'activités de plein air et de projets éducatifs pour les jeunes. Ce rôle m\'a permis d\'acquérir des compétences pédagogiques et d\'organisation, ainsi qu\'un sens renforcé de la responsabilité civique.';
+  translations.en.eedf_desc = 'Volunteer leader with EEDF: supporting and leading outdoor activities and educational projects for youth. This role allowed me to gain pedagogical and organizational skills, and a strong sense of civic responsibility.';
+  translations.fr.eedf_link = 'En savoir plus sur les EEDF';
+  translations.en.eedf_link = 'Learn more about EEDF';
+
+  translations.fr.activities_title = 'Sports & autres activités';
+  translations.en.activities_title = 'Sports & Other Activities';
+  translations.fr.activities_intro = 'En parallèle de mes études, je suis très impliqué dans des activités sportives et culturelles qui complètent ma formation :';
+  translations.en.activities_intro = 'Alongside my studies, I am actively involved in sports and cultural activities that complement my training:';
+
+  translations.fr.climbing_title = 'Escalade — Club et formation';
+  translations.en.climbing_title = 'Climbing — Club & Training';
+  translations.fr.climbing_desc = 'Je pratique régulièrement l\'escalade et je suis investi dans le club d\'escalade de l\'école (GrINP / AS Toulouse INP). Je prépare actuellement le Brevet Fédéral Initiateur SAE (Structure Artificielles d\'Escalade) afin de pouvoir encadrer en toute sécurité et partager cette passion.';
+  translations.en.climbing_desc = 'I regularly practice climbing and am involved in the school climbing club (GrINP / AS Toulouse INP). I am currently preparing the Federal Instructor Certificate for artificial structures (SAE) to safely supervise and share this passion.';
+  translations.fr.climbing_link = 'En savoir plus sur la FFME';
+  translations.en.climbing_link = 'Learn more about FFME';
+
+  translations.fr.music_title = 'Musique — Conservatoire';
+  translations.en.music_title = 'Music — Conservatory';
+  translations.fr.music_desc = 'J\'ai étudié la trompette et le solfège pendant 12 ans au Conservatoire National de Limoges. Cette pratique musicale a développé ma discipline, ma créativité et l\'esprit de groupe.';
+  translations.en.music_desc = 'I studied trumpet and music theory for 12 years at the Conservatory of Limoges. This musical practice developed my discipline, creativity and team spirit.';
+  translations.fr.music_link = 'En savoir plus sur le Conservatoire de Limoges';
+  translations.en.music_link = 'Learn more about the Conservatory of Limoges';
+
   function applyLanguage(lang){
     const map = translations[lang] || translations.fr;
     document.querySelectorAll('[data-i18n]').forEach(el => {
