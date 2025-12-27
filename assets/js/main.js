@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded',function(){
   // --- Internationalization ---
   const translations = {
     fr: {
-      nav_home: 'Accueil', nav_cv: 'CV', nav_projects: 'Projets', nav_parcours: 'Parcours', nav_contact: 'Contact',
+      nav_home: 'Accueil', nav_cv: 'CV', nav_projects: 'Projets', nav_parcours: 'Parcours', nav_ppp: 'PPP', nav_contact: 'Contact',
       hero_title: 'Étudiant Ingénieur N7 — Informatique & Télécommunications',
       hero_lead: "Actuellement en seconde année d’ingénierie numérique à l'ENSEEIHT. Passionné par l'aéronautique, le spatial et la cybersécurité. Je me spécialise en Réseaux et Télécommunications.",
       btn_cv: 'Voir le CV', btn_contact: 'Me contacter',
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded',function(){
       footer_contact: 'Contact'
     },
     en: {
-      nav_home: 'Home', nav_cv: 'CV', nav_projects: 'Projects', nav_parcours: 'Path', nav_contact: 'Contact',
+      nav_home: 'Home', nav_cv: 'CV', nav_projects: 'Projects', nav_parcours: 'Path', nav_ppp: 'PPP', nav_contact: 'Contact',
       hero_title: 'Engineering Student N7 — Computer Networks & Telecommunications',
       hero_lead: "Currently in the second year of digital engineering at ENSEEIHT. Passionate about aeronautics, space and cybersecurity. I specialize in Networks and Telecommunications.",
       btn_cv: 'View CV', btn_contact: 'Contact me',
