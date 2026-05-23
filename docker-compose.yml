@@ -1,0 +1,12 @@
+services:
+  mon-site-statique:
+    build: .
+    container_name: site-perso-statique
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    # Optionnel : limitation des ressources pour rester "lightweight"
+    #deploy:
+    #  resources:
+    #    limits:
+    #      memory: 64M
