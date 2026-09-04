@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
   translations.fr.prot_title = 'Protection Civile — Équipier Secouriste';
   translations.en.prot_title = 'Civil Protection — First Responder Team Member';
-  translations.fr.prot_desc = 'Volontaire à la Protection Civile de Haute-Garonne (depuis 09.2024), aujourd\'hui Équipier Secouriste : postes de secours, gardes SAMU et chefferie (chef d\'équipe, chef de poste). Cette expérience m\'a permis de développer des compétences en intervention d\'urgence, en encadrement d\'équipe et en gestion du stress, et renforce mon engagement pour la sécurité civile.';
+  translations.fr.prot_desc = 'Volontaire à la Protection Civile de Haute-Garonne (depuis 09.2024), aujourd\'hui Équipier Secouriste : postes de secours, gardes SAMU, et encadrement en tant que chef d\'équipe et chef de poste. Cette expérience m\'a permis de développer des compétences en intervention d\'urgence, en encadrement d\'équipe et en gestion du stress, et renforce mon engagement pour la sécurité civile.';
   translations.en.prot_desc = 'Volunteer at the Haute-Garonne Civil Protection (since 09.2024), now a First Responder Team Member: first aid posts, SAMU shifts and team/post leadership. This experience helped me develop emergency response, team leadership and stress management skills, and strengthens my commitment to civil safety.';
   translations.fr.prot_link = 'En savoir plus sur la Protection Civile';
   translations.en.prot_link = 'Learn more about Civil Protection';
