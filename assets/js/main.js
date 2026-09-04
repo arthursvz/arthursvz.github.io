@@ -44,9 +44,9 @@ document.addEventListener('DOMContentLoaded',function(){
     fr: {
       nav_home: 'Accueil', nav_cv: 'CV', nav_projects: 'Projets', nav_parcours: 'Parcours', nav_contact: 'Contact',
       hero_title: 'Étudiant Ingénieur N7 (3A) — Réseaux et Télécommunications',
-      hero_lead: "Actuellement en 3e année à l'ENSEEIHT (spécialisation SEMBIIOT), en semestre d'échange à l'Université Laval (Québec) : gestion de projet, gouvernance de la sécurité, réseaux mobiles, applications cloud & DevOps. Passionné par l'aéronautique, le spatial et la cybersécurité.",
+      hero_lead: "Actuellement en 3e année à l'ENSEEIHT, en semestre d'échange à l'Université Laval (Québec) : gestion de projet, gouvernance de la sécurité, réseaux mobiles, applications cloud & DevOps. Passionné par l'aéronautique, le spatial et la cybersécurité.",
       btn_cv: 'Voir le CV', btn_contact: 'Me contacter',
-      about_title: 'À propos', about_text: "Actuellement étudiant en 3e année d'ingénierie numérique à l'ENSEEIHT (spécialisation SEMBIIOT), en échange académique à l'Université Laval, je suis passionné par l'aéronautique, le spatial et la cybersécurité. Mon parcours académique combiné à mes engagements associatifs et secourisme montre ma capacité à travailler en équipe et à gérer des responsabilités dans des environnements exigeants. J'aspire à contribuer à des projets innovants en mettant à profit mes compétences en programmation et ma rigueur analytique.",
+      about_title: 'À propos', about_text: "Actuellement étudiant en 3e année d'ingénierie numérique à l'ENSEEIHT, en échange académique à l'Université Laval, je suis passionné par l'aéronautique, le spatial et la cybersécurité. Mon parcours académique combiné à mes engagements associatifs et secourisme montre ma capacité à travailler en équipe et à gérer des responsabilités dans des environnements exigeants. J'aspire à contribuer à des projets innovants en mettant à profit mes compétences en programmation et ma rigueur analytique.",
       formation_title: 'Formation', skills_title: 'Compétences', projects_title: 'Projets & stages',
       cv_title: 'Curriculum Vitae — Arthur Sauvezie', cv_role: 'Étudiant Ingénieur N7', cv_domain: 'Informatique & Télécommunications',
       btn_download_cv: 'Télécharger le CV (PDF)', btn_open_cv: 'Ouvrir dans un nouvel onglet',
@@ -62,9 +62,9 @@ document.addEventListener('DOMContentLoaded',function(){
     en: {
       nav_home: 'Home', nav_cv: 'CV', nav_projects: 'Projects', nav_parcours: 'Path', nav_contact: 'Contact',
       hero_title: 'Engineering Student N7 (Final Year) — Networks & Telecommunications',
-      hero_lead: "Currently in my final year at ENSEEIHT (SEMBIIOT track), on academic exchange at Université Laval (Québec): project management, security governance, mobile networks, cloud applications & DevOps. Passionate about aeronautics, space and cybersecurity.",
+      hero_lead: "Currently in my final year at ENSEEIHT, on academic exchange at Université Laval (Québec): project management, security governance, mobile networks, cloud applications & DevOps. Passionate about aeronautics, space and cybersecurity.",
       btn_cv: 'View CV', btn_contact: 'Contact me',
-      about_title: 'About', about_text: "Currently in my final year of digital engineering at ENSEEIHT (SEMBIIOT track), on academic exchange at Université Laval, I am passionate about aeronautics, space and cybersecurity. My academic background combined with my associative and first-aid commitments demonstrates my ability to work in teams and handle responsibilities in demanding environments. I aspire to contribute to innovative projects by applying my programming skills and analytical rigor.",
+      about_title: 'About', about_text: "Currently in my final year of digital engineering at ENSEEIHT, on academic exchange at Université Laval, I am passionate about aeronautics, space and cybersecurity. My academic background combined with my associative and first-aid commitments demonstrates my ability to work in teams and handle responsibilities in demanding environments. I aspire to contribute to innovative projects by applying my programming skills and analytical rigor.",
       formation_title: 'Education', skills_title: 'Skills', projects_title: 'Projects & internships',
       cv_title: 'Curriculum Vitae — Arthur Sauvezie', cv_role: 'Engineering Student N7', cv_domain: 'Computer Networks & Telecommunications',
       btn_download_cv: 'Download CV (PDF)', btn_open_cv: 'Open in new tab',
@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded',function(){
   };
 
   // Extra translation keys for index content
-  translations.fr.formation_content = "<p><strong>ENSEEIHT — 3A, SEMBIIOT</strong><br>Échange académique — Université Laval (Québec)<br>(2026 – Aujourd'hui)</p><p><strong>ENSEEIHT — 2A, Computer Networks</strong><br>2025–2026</p><p><strong>CPGE - PCSI/PSI</strong><br>Lycée Bellevue, Toulouse, 2022–2024</p><p><strong>BAC Général</strong><br>Maths, Physiques, Maths Expertes<br>Lycée Léonard Limosin, 2019–2022</p>";
-  translations.en.formation_content = "<p><strong>ENSEEIHT — Final Year, SEMBIIOT</strong><br>Academic exchange — Université Laval (Québec)<br>(2026 – Present)</p><p><strong>ENSEEIHT — 2nd Year, Computer Networks</strong><br>2025–2026</p><p><strong>CPGE - PCSI/PSI</strong><br>Lycée Bellevue, Toulouse, 2022–2024</p><p><strong>BAC Général</strong><br>Advanced Mathematics, Physics<br>Lycée Léonard Limosin, 2019–2022</p>";
+  translations.fr.formation_content = "<p><strong>ENSEEIHT — 3A</strong><br>Semestre d'échange — Université Laval (Québec)<br>(2026 – Aujourd'hui)</p><p><strong>ENSEEIHT — 2A, Computer Networks</strong><br>2025–2026</p><p><strong>CPGE - PCSI/PSI</strong><br>Lycée Bellevue, Toulouse, 2022–2024</p><p><strong>BAC Général</strong><br>Maths, Physiques, Maths Expertes<br>Lycée Léonard Limosin, 2019–2022</p>";
+  translations.en.formation_content = "<p><strong>ENSEEIHT — Final Year</strong><br>Exchange semester — Université Laval (Québec)<br>(2026 – Present)</p><p><strong>ENSEEIHT — 2nd Year, Computer Networks</strong><br>2025–2026</p><p><strong>CPGE - PCSI/PSI</strong><br>Lycée Bellevue, Toulouse, 2022–2024</p><p><strong>BAC Général</strong><br>Advanced Mathematics, Physics<br>Lycée Léonard Limosin, 2019–2022</p>";
 
   translations.fr.skill_1 = 'Python, Java, C, Matlab, <br> HTML, CSS, Ada, LaTeX';
   translations.en.skill_1 = 'Python, Java, C, Matlab, <br> HTML, CSS, Ada, LaTeX';
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded',function(){
   translations.fr.skill_3b = 'Gestion de la pression'; translations.en.skill_3b = 'Stress management';
 
   translations.fr.hero_eyebrow = 'Toulouse, France'; translations.en.hero_eyebrow = 'Toulouse, France';
-  translations.fr.fact_1 = 'ENSEEIHT — 3A SEMBIIOT'; translations.en.fact_1 = 'ENSEEIHT — Final Year, SEMBIIOT';
+  translations.fr.fact_1 = 'ENSEEIHT — 3e année'; translations.en.fact_1 = 'ENSEEIHT — Final Year';
   translations.fr.fact_2 = 'Échange — Université Laval'; translations.en.fact_2 = 'Exchange — Université Laval';
   translations.fr.fact_3 = 'Réseaux & Cybersécurité'; translations.en.fact_3 = 'Networks & Cybersecurity';
 
@@ -123,8 +123,8 @@ document.addEventListener('DOMContentLoaded',function(){
   translations.fr.cv_contact_line = 'Email: arthur.sauvezie [insert at] etu.inp-n7.fr • Toulouse, France';
   translations.en.cv_contact_line = 'Email: arthur.sauvezie [insert at] etu.inp-n7.fr • Toulouse, France';
 
-  translations.fr.edu_0 = '3e Année, spécialisation SEMBIIOT — ENSEEIHT (2026 – Aujourd\'hui)';
-  translations.en.edu_0 = 'Final Year, SEMBIIOT track — ENSEEIHT (2026 – Present)';
+  translations.fr.edu_0 = '3e Année — ENSEEIHT (2026 – Aujourd\'hui)';
+  translations.en.edu_0 = 'Final Year — ENSEEIHT (2026 – Present)';
   translations.fr.edu_0b = 'Semestre d\'échange académique — Université Laval, Québec (Automne 2026) : gestion de projet, gouvernance de la sécurité, réseaux mobiles, applications cloud & DevOps, IHM';
   translations.en.edu_0b = 'Academic exchange semester — Université Laval, Québec (Fall 2026): project management, security governance, mobile networks, cloud applications & DevOps, HCI';
   translations.fr.edu_1 = 'Seconde Année, Computer Networks — ENSEEIHT (2025 – 2026)';
@@ -194,8 +194,8 @@ document.addEventListener('DOMContentLoaded',function(){
 
   translations.fr.parcours_item_0_date = "2026 – Aujourd'hui";
   translations.en.parcours_item_0_date = "2026 – Present";
-  translations.fr.parcours_item_0_text = "3e Année, spécialisation SEMBIIOT, ENSEEIHT (échange académique à l'Université Laval, Québec)";
-  translations.en.parcours_item_0_text = "Final Year, SEMBIIOT track, ENSEEIHT (academic exchange at Université Laval, Québec)";
+  translations.fr.parcours_item_0_text = "3e Année, ENSEEIHT (échange académique à l'Université Laval, Québec)";
+  translations.en.parcours_item_0_text = "Final Year, ENSEEIHT (academic exchange at Université Laval, Québec)";
 
   translations.fr.parcours_item_prefecture_date = '2026';
   translations.en.parcours_item_prefecture_date = '2026';
