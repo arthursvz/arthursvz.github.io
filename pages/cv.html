@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>CV — Arthur Sauvezie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -35,7 +38,7 @@
           <a class="btn" href="../CVweb.pdf" download data-i18n="btn_download_cv">Télécharger le CV (PDF)</a>
           <a class="btn ghost" href="../CVweb.pdf" target="_blank" data-i18n="btn_open_cv">Ouvrir dans un nouvel onglet</a>
         </div>
-        <div style="border-top:1px solid #eee;padding-top:0.5rem">
+        <div style="border-top:1px solid var(--border);padding-top:0.5rem">
           <iframe src="../CVweb.pdf" style="width:100%;height:600px;border:0">Votre navigateur ne supporte pas l'aperçu PDF. Téléchargez le fichier pour le consulter.</iframe>
         </div>
       </div>
@@ -64,13 +67,23 @@
 
       <div class="competences-block">
         <h4 data-i18n="comp_languages_title">Langages & frameworks</h4>
-        <p data-i18n="comp_languages">Python (bonne maîtrise), Java (assez bonne maîtrise), C (assez bonne maîtrise), Matlab, Ada, HTML/CSS, LaTeX</p>
+        <ul class="badges">
+          <li>Python</li><li>Java</li><li>C</li><li>Matlab</li><li>Ada</li><li>HTML/CSS</li><li>LaTeX</li>
+        </ul>
 
         <h4 data-i18n="comp_tools_title">Outils & environnements</h4>
-        <p data-i18n="comp_tools">Linux, Git, VSCode, Docker, ROS, réseaux, cybersécurité, bases de données</p>
+        <ul class="badges">
+          <li>Linux</li><li>Git</li><li>VSCode</li><li>Docker</li><li>ROS</li>
+          <li data-i18n="tag_networks">Réseaux</li><li data-i18n="tag_cybersecurity">Cybersécurité</li><li data-i18n="tag_databases">Bases de données</li>
+        </ul>
 
         <h4 data-i18n="comp_soft_title">Compétences humaines</h4>
-        <p data-i18n="comp_soft">Organisation, travail en équipe, gestion de la pression, encadrement (club d'escalade)</p>
+        <ul class="badges">
+          <li data-i18n="tag_organisation">Organisation</li>
+          <li data-i18n="tag_teamwork">Travail en équipe</li>
+          <li data-i18n="tag_pressure">Gestion de la pression</li>
+          <li data-i18n="tag_leadership">Encadrement (club d'escalade)</li>
+        </ul>
       </div>
 
       <h3 data-i18n="cv_engagements_title">Engagements</h3>

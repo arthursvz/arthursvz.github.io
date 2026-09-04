@@ -4,8 +4,17 @@ document.addEventListener('DOMContentLoaded',function(){
   const btn=document.getElementById('navToggle');
   if(btn && nav){
     btn.addEventListener('click',()=>{
-      if(nav.style.display==='flex'){nav.style.display='none'}
-      else{nav.style.display='flex';nav.style.flexDirection='column';nav.style.gap='0.5rem'}
+      nav.classList.toggle('open');
+    });
+  }
+
+  // Highlight the current page in the nav
+  if(nav){
+    const here = window.location.pathname.replace(/\/index\.html$/,'/').replace(/\/$/,'/');
+    nav.querySelectorAll('a[href$=".html"]').forEach(a=>{
+      const target = new URL(a.getAttribute('href'), window.location.href).pathname
+        .replace(/\/index\.html$/,'/').replace(/\/$/,'/');
+      if(target === here){ a.classList.add('active'); }
     });
   }
 
@@ -77,6 +86,8 @@ document.addEventListener('DOMContentLoaded',function(){
   translations.en.skill_2 = 'Linux, Git, VSCode <br> Other office tools';
   translations.fr.skill_3 = 'Organisation, travail en équipe, <br> gestion de la pression';
   translations.en.skill_3 = 'Organization, teamwork, <br> stress management';
+  translations.fr.skill_3a = 'Travail en équipe'; translations.en.skill_3a = 'Teamwork';
+  translations.fr.skill_3b = 'Gestion de la pression'; translations.en.skill_3b = 'Stress management';
 
   translations.fr.project_item_0 = 'Stage Services Informatiques — Préfecture de Haute-Garonne (2026)';
   translations.en.project_item_0 = 'IT Department Internship — Préfecture de Haute-Garonne (2026)';
@@ -129,6 +140,14 @@ document.addEventListener('DOMContentLoaded',function(){
   translations.fr.comp_soft = 'Organisation, travail en équipe, gestion de la pression, encadrement (club d\'escalade)';
   translations.en.comp_soft = 'Organization, teamwork, stress management, leadership (climbing club)';
 
+  translations.fr.tag_networks = 'Réseaux'; translations.en.tag_networks = 'Networks';
+  translations.fr.tag_cybersecurity = 'Cybersécurité'; translations.en.tag_cybersecurity = 'Cybersecurity';
+  translations.fr.tag_databases = 'Bases de données'; translations.en.tag_databases = 'Databases';
+  translations.fr.tag_organisation = 'Organisation'; translations.en.tag_organisation = 'Organization';
+  translations.fr.tag_teamwork = 'Travail en équipe'; translations.en.tag_teamwork = 'Teamwork';
+  translations.fr.tag_pressure = 'Gestion de la pression'; translations.en.tag_pressure = 'Stress management';
+  translations.fr.tag_leadership = "Encadrement (club d'escalade)"; translations.en.tag_leadership = 'Leadership (climbing club)';
+
   translations.fr.cv_engagements_title = 'Engagements';
   translations.en.cv_engagements_title = 'Engagements';
   translations.fr.eng_1 = 'Ancien membre du Bureau Women7 — INP-ENSEEIHT (09.2025 – 2026, mandat terminé)';
@@ -155,20 +174,40 @@ document.addEventListener('DOMContentLoaded',function(){
   translations.fr.parcours_page_title = 'Parcours — Arthur Sauvezie';
   translations.en.parcours_page_title = 'Background — Arthur Sauvezie';
 
-  translations.fr.parcours_item_0 = "2026 – Aujourd'hui — 3e Année, spécialisation SEMBIIOT, ENSEEIHT (échange académique à l'Université Laval, Québec)";
-  translations.en.parcours_item_0 = "2026 – Present — Final Year, SEMBIIOT track, ENSEEIHT (academic exchange at Université Laval, Québec)";
-  translations.fr.parcours_item_prefecture = '2026 — Stage Services Informatiques, Préfecture de Haute-Garonne (juin – mi-août)';
-  translations.en.parcours_item_prefecture = '2026 — IT Department Internship, Préfecture de Haute-Garonne (June – mid-August)';
-  translations.fr.parcours_item_1 = '2025 — Stage IA / Cybersécurité, IRT Saint-Exupéry (projets CSS / DEEL), terminé début août';
-  translations.en.parcours_item_1 = '2025 — AI / Cybersecurity Internship, IRT Saint-Exupéry (CSS / DEEL projects), ended early August';
-  translations.fr.parcours_item_2 = "2025 – Aujourd'hui — Administrateur Systèmes, Net7 – Asso Info N7";
-  translations.en.parcours_item_2 = '2025 – Present — Systems Administrator, Net7 – Asso Info N7';
-  translations.fr.parcours_item_3 = "2025 – 2026 — Seconde Année, Computer Networks, ENSEEIHT";
-  translations.en.parcours_item_3 = '2025 – 2026 — Second Year, Computer Networks, ENSEEIHT';
-  translations.fr.parcours_item_4 = '2022 – 2024 — CPGE (PCSI → PSI), Lycée Bellevue, Toulouse';
-  translations.en.parcours_item_4 = '2022 – 2024 — Preparatory Classes (PCSI → PSI), Lycée Bellevue, Toulouse';
-  translations.fr.parcours_item_5 = '2019 – 2022 — BAC Général (Maths expertes), Lycée Léonard Limosin, Limoges';
-  translations.en.parcours_item_5 = '2019 – 2022 — General Baccalaureate (Advanced Mathematics), Lycée Léonard Limosin, Limoges';
+  translations.fr.parcours_item_0_date = "2026 – Aujourd'hui";
+  translations.en.parcours_item_0_date = "2026 – Present";
+  translations.fr.parcours_item_0_text = "3e Année, spécialisation SEMBIIOT, ENSEEIHT (échange académique à l'Université Laval, Québec)";
+  translations.en.parcours_item_0_text = "Final Year, SEMBIIOT track, ENSEEIHT (academic exchange at Université Laval, Québec)";
+
+  translations.fr.parcours_item_prefecture_date = '2026';
+  translations.en.parcours_item_prefecture_date = '2026';
+  translations.fr.parcours_item_prefecture_text = 'Stage Services Informatiques, Préfecture de Haute-Garonne (juin – mi-août)';
+  translations.en.parcours_item_prefecture_text = 'IT Department Internship, Préfecture de Haute-Garonne (June – mid-August)';
+
+  translations.fr.parcours_item_1_date = '2025';
+  translations.en.parcours_item_1_date = '2025';
+  translations.fr.parcours_item_1_text = 'Stage IA / Cybersécurité, IRT Saint-Exupéry (projets CSS / DEEL), terminé début août';
+  translations.en.parcours_item_1_text = 'AI / Cybersecurity Internship, IRT Saint-Exupéry (CSS / DEEL projects), ended early August';
+
+  translations.fr.parcours_item_2_date = "2025 – Aujourd'hui";
+  translations.en.parcours_item_2_date = '2025 – Present';
+  translations.fr.parcours_item_2_text = 'Administrateur Systèmes, Net7 – Asso Info N7';
+  translations.en.parcours_item_2_text = 'Systems Administrator, Net7 – Asso Info N7';
+
+  translations.fr.parcours_item_3_date = '2025 – 2026';
+  translations.en.parcours_item_3_date = '2025 – 2026';
+  translations.fr.parcours_item_3_text = 'Seconde Année, Computer Networks, ENSEEIHT';
+  translations.en.parcours_item_3_text = 'Second Year, Computer Networks, ENSEEIHT';
+
+  translations.fr.parcours_item_4_date = '2022 – 2024';
+  translations.en.parcours_item_4_date = '2022 – 2024';
+  translations.fr.parcours_item_4_text = 'CPGE (PCSI → PSI), Lycée Bellevue, Toulouse';
+  translations.en.parcours_item_4_text = 'Preparatory Classes (PCSI → PSI), Lycée Bellevue, Toulouse';
+
+  translations.fr.parcours_item_5_date = '2019 – 2022';
+  translations.en.parcours_item_5_date = '2019 – 2022';
+  translations.fr.parcours_item_5_text = 'BAC Général (Maths expertes), Lycée Léonard Limosin, Limoges';
+  translations.en.parcours_item_5_text = 'General Baccalaureate (Advanced Mathematics), Lycée Léonard Limosin, Limoges';
 
   translations.fr.engagements_title = 'Engagements citoyens & durabilité';
   translations.en.engagements_title = 'Civic Engagement & Sustainability';

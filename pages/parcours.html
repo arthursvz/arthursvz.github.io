@@ -3,7 +3,10 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title data-i18n="parcours_page_title">Parcours — Prénom NOM</title>
+  <title data-i18n="parcours_page_title">Parcours — Arthur Sauvezie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -27,14 +30,35 @@
     <section class="card">
       <h2 data-i18n="parcours_title">Parcours</h2>
       <p data-i18n="parcours_intro">Résumé chronologique des études et expériences.</p>
-      <ul>
-        <li data-i18n="parcours_item_0">2026 – Aujourd'hui — 3e Année, spécialisation SEMBIIOT, ENSEEIHT (échange académique à l'Université Laval, Québec)</li>
-        <li data-i18n="parcours_item_prefecture">2026 — Stage Services Informatiques, Préfecture de Haute-Garonne (juin – mi-août)</li>
-        <li data-i18n="parcours_item_3">2025 – 2026 — Seconde Année, Computer Networks, ENSEEIHT</li>
-        <li data-i18n="parcours_item_2">2025 – Aujourd'hui — Administrateur Systèmes, Net7 – Asso Info N7</li>
-        <li data-i18n="parcours_item_1">2025 — Stage IA / Cybersécurité, IRT Saint-Exupéry (projets CSS / DEEL), terminé début août</li>
-        <li data-i18n="parcours_item_4">2022 – 2024 — CPGE (PCSI → PSI), Lycée Bellevue, Toulouse</li>
-        <li data-i18n="parcours_item_5">2019 – 2022 — BAC Général (Maths expertes), Lycée Léonard Limosin, Limoges</li>
+      <ul class="timeline">
+        <li>
+          <span class="tl-date" data-i18n="parcours_item_0_date">2026 – Aujourd'hui</span>
+          <p class="tl-text" data-i18n="parcours_item_0_text">3e Année, spécialisation SEMBIIOT, ENSEEIHT (échange académique à l'Université Laval, Québec)</p>
+        </li>
+        <li>
+          <span class="tl-date" data-i18n="parcours_item_prefecture_date">2026</span>
+          <p class="tl-text" data-i18n="parcours_item_prefecture_text">Stage Services Informatiques, Préfecture de Haute-Garonne (juin – mi-août)</p>
+        </li>
+        <li>
+          <span class="tl-date" data-i18n="parcours_item_3_date">2025 – 2026</span>
+          <p class="tl-text" data-i18n="parcours_item_3_text">Seconde Année, Computer Networks, ENSEEIHT</p>
+        </li>
+        <li>
+          <span class="tl-date" data-i18n="parcours_item_2_date">2025 – Aujourd'hui</span>
+          <p class="tl-text" data-i18n="parcours_item_2_text">Administrateur Systèmes, Net7 – Asso Info N7</p>
+        </li>
+        <li>
+          <span class="tl-date" data-i18n="parcours_item_1_date">2025</span>
+          <p class="tl-text" data-i18n="parcours_item_1_text">Stage IA / Cybersécurité, IRT Saint-Exupéry (projets CSS / DEEL), terminé début août</p>
+        </li>
+        <li>
+          <span class="tl-date" data-i18n="parcours_item_4_date">2022 – 2024</span>
+          <p class="tl-text" data-i18n="parcours_item_4_text">CPGE (PCSI → PSI), Lycée Bellevue, Toulouse</p>
+        </li>
+        <li>
+          <span class="tl-date" data-i18n="parcours_item_5_date">2019 – 2022</span>
+          <p class="tl-text" data-i18n="parcours_item_5_text">BAC Général (Maths expertes), Lycée Léonard Limosin, Limoges</p>
+        </li>
       </ul>
     </section>
     
@@ -43,13 +67,19 @@
       <p data-i18n="engagements_intro">Je m'investis dans des actions de solidarité et d'éducation, convaincu que l'ingénieur a un rôle à jouer pour répondre aux défis sociaux et environnementaux.</p>
 
       <article>
-        <h3 data-i18n="prot_title">Protection Civile — Équipier Secouriste</h3>
+        <div class="icon-heading">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.1C1 8.6 2.6 5 6.2 5c2 0 3.4 1.1 4 2.2C10.8 6.1 12.2 5 14.2 5c3.6 0 5.2 3.6 3.7 6.9C19.9 16.4 12 21 12 21z"/></svg>
+          <h3 data-i18n="prot_title">Protection Civile — Équipier Secouriste</h3>
+        </div>
         <p data-i18n="prot_desc">Volontaire à la Protection Civile de Haute-Garonne (depuis 09.2024), aujourd'hui Équipier Secouriste : postes de secours, gardes SAMU et chefferie (chef d'équipe, chef de poste). Cette expérience m'a permis de développer des compétences en intervention d'urgence, en encadrement d'équipe et en gestion du stress, et renforce mon engagement pour la sécurité civile.</p>
         <p><a class="btn ghost" href="https://www.protection-civile.org/" target="_blank" rel="noopener" data-i18n="prot_link">En savoir plus sur la Protection Civile</a></p>
       </article>
 
       <article>
-        <h3 data-i18n="eedf_title">Eclaireuses & Eclaireurs de France (EEDF) — Encadrement jeunesse (activité terminée)</h3>
+        <div class="icon-heading">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <h3 data-i18n="eedf_title">Eclaireuses & Eclaireurs de France (EEDF) — Encadrement jeunesse (activité terminée)</h3>
+        </div>
         <p data-i18n="eedf_desc">Ancien leader bénévole au sein des EEDF : accompagnement et encadrement d'activités de plein air et de projets éducatifs pour les jeunes. Ce rôle m'a permis d'acquérir des compétences pédagogiques et d'organisation, ainsi qu'un sens renforcé de la responsabilité civique.</p>
         <p><a class="btn ghost" href="https://www.eedf.fr/" target="_blank" rel="noopener" data-i18n="eedf_link">En savoir plus sur les EEDF</a></p>
       </article>
@@ -60,13 +90,19 @@
       <p data-i18n="activities_intro">En parallèle de mes études, je suis très impliqué dans des activités sportives et culturelles qui complètent ma formation :</p>
 
       <article>
-        <h3 data-i18n="climbing_title">Escalade — Président du club</h3>
+        <div class="icon-heading">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20l6-10 4 6 2-3 6 7H3z"/></svg>
+          <h3 data-i18n="climbing_title">Escalade — Président du club</h3>
+        </div>
         <p data-i18n="climbing_desc">Je pratique régulièrement l'escalade et je préside le club d'escalade de l'école (GrINP / AS Toulouse INP), mandat renouvelé. Titulaire du Brevet Fédéral Initiateur SAE (Structures Artificielles d'Escalade) de la FFME, ce qui me permet d'encadrer en toute sécurité et de partager cette passion.</p>
         <p><a class="btn ghost" href="https://www.ffme.fr/" target="_blank" rel="noopener" data-i18n="climbing_link">En savoir plus sur la FFME</a></p>
       </article>
 
       <article>
-        <h3 data-i18n="music_title">Musique — Conservatoire</h3>
+        <div class="icon-heading">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          <h3 data-i18n="music_title">Musique — Conservatoire</h3>
+        </div>
         <p data-i18n="music_desc">J'ai étudié la trompette et le solfège pendant 12 ans au Conservatoire National de Limoges. Cette pratique musicale a développé ma discipline, ma créativité et l'esprit de groupe.</p>
         <p><a class="btn ghost" href="https://conservatoire.limoges.fr/" target="_blank" rel="noopener" data-i18n="music_link">En savoir plus sur le Conservatoire de Limoges</a></p>
       </article>
