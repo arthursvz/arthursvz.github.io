@@ -181,6 +181,39 @@ document.addEventListener('DOMContentLoaded',function(){
   translations.fr.eng_6 = 'Équipier Secouriste, chef d\'équipe / chef de poste, gardes SAMU — Protection Civile de Haute Garonne (09.2024 – Aujourd\'hui)';
   translations.en.eng_6 = 'First responder team member, team/post leader, SAMU shifts — Protection Civile de Haute Garonne (09.2024 – Present)';
 
+  translations.fr.cv_edu_0_date = "2026 – Aujourd'hui";
+  translations.en.cv_edu_0_date = '2026 – Present';
+  translations.fr.cv_edu_0_text = "ENSEEIHT — 3A, semestre d'échange à l'Université Laval (Québec) : gestion de projet, gouvernance de la sécurité, réseaux mobiles, applications cloud & DevOps, IHM";
+  translations.en.cv_edu_0_text = 'ENSEEIHT — Final Year, exchange semester at Université Laval (Québec): project management, security governance, mobile networks, cloud applications & DevOps, HCI';
+
+  translations.fr.cv_edu_1_date = '2025 – 2026'; translations.en.cv_edu_1_date = '2025 – 2026';
+  translations.fr.cv_edu_1_text = 'ENSEEIHT — 2A, Computer Networks'; translations.en.cv_edu_1_text = 'ENSEEIHT — 2nd Year, Computer Networks';
+
+  translations.fr.cv_edu_2_date = '2022 – 2024'; translations.en.cv_edu_2_date = '2022 – 2024';
+  translations.fr.cv_edu_2_text = 'CPGE — PCSI / PSI, Lycée Bellevue, Toulouse'; translations.en.cv_edu_2_text = 'Preparatory Classes — PCSI / PSI, Lycée Bellevue, Toulouse';
+
+  translations.fr.cv_edu_3_date = '2019 – 2022'; translations.en.cv_edu_3_date = '2019 – 2022';
+  translations.fr.cv_edu_3_text = 'BAC Général, Maths Expertes — Lycée Léonard Limosin, Limoges';
+  translations.en.cv_edu_3_text = 'General Baccalaureate, Advanced Mathematics — Lycée Léonard Limosin, Limoges';
+
+  translations.fr.cv_exp_0_date = '2026'; translations.en.cv_exp_0_date = '2026';
+  translations.fr.cv_exp_0_title = 'Stage Services Informatiques — Préfecture de Haute-Garonne';
+  translations.en.cv_exp_0_title = 'IT Department Internship — Préfecture de Haute-Garonne';
+  translations.fr.cv_exp_0_desc = '11 semaines (juin – mi-août 2026)';
+  translations.en.cv_exp_0_desc = '11 weeks (June – mid-August 2026)';
+
+  translations.fr.cv_exp_2_date = "09.2025 – Aujourd'hui"; translations.en.cv_exp_2_date = '09.2025 – Present';
+  translations.fr.cv_exp_2_title = 'Administrateur Systèmes — Net7 (Asso Info N7)';
+  translations.en.cv_exp_2_title = 'Systems Administrator — Net7 (Asso Info N7)';
+  translations.fr.cv_exp_2_desc = 'Accès root, maintenance des serveurs associatifs de Toulouse INP';
+  translations.en.cv_exp_2_desc = 'Root access, maintaining Toulouse INP associative servers';
+
+  translations.fr.cv_exp_1_date = '2025'; translations.en.cv_exp_1_date = '2025';
+  translations.fr.cv_exp_1_title = 'Stage IA / Cybersécurité — IRT Saint-Exupéry';
+  translations.en.cv_exp_1_title = 'AI / Cybersecurity Internship — IRT Saint-Exupéry';
+  translations.fr.cv_exp_1_desc = 'Projets CSS / DEEL — LLMs spécialisés cyber, IDS/IPS par réseaux de neurones (terminé début août 2025)';
+  translations.en.cv_exp_1_desc = 'CSS / DEEL projects — LLMs specialized in cyber, IDS/IPS using neural networks (ended early August 2025)';
+
   translations.fr.footer_text = 'Arthur Sauvezie — Étudiant ENSEEIHT • ';
   translations.en.footer_text = 'Arthur Sauvezie — ENSEEIHT Student • ';
 
