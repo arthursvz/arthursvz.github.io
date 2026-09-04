@@ -77,8 +77,8 @@ document.addEventListener('DOMContentLoaded',function(){
   };
 
   // Extra translation keys for index content
-  translations.fr.formation_content = "<strong>ENSEEIHT — 3A, SEMBIIOT</strong> <br> Échange académique — Université Laval (Québec) <br> (2026 – Aujourd'hui)<br><strong>ENSEEIHT — 2A, Computer Networks</strong><br> 2025–2026<br><strong>CPGE - PCSI/PSI</strong><br> Lycée Bellevue, Toulouse, 2022–2024<br><strong>BAC Général</strong> <br>Maths, Physiques, Maths Expertes <br>Lycée Léonard Limosin, 2019–2022";
-  translations.en.formation_content = "<strong>ENSEEIHT — Final Year, SEMBIIOT</strong> <br> Academic exchange — Université Laval (Québec) <br> (2026 – Present)<br><strong>ENSEEIHT — 2nd Year, Computer Networks</strong><br> 2025–2026<br><strong>CPGE - PCSI/PSI</strong><br> Lycée Bellevue, Toulouse, 2022–2024<br><strong>BAC Général</strong> <br>Advanced Mathematics, Physics <br>Lycée Léonard Limosin, 2019–2022";
+  translations.fr.formation_content = "<p><strong>ENSEEIHT — 3A, SEMBIIOT</strong><br>Échange académique — Université Laval (Québec)<br>(2026 – Aujourd'hui)</p><p><strong>ENSEEIHT — 2A, Computer Networks</strong><br>2025–2026</p><p><strong>CPGE - PCSI/PSI</strong><br>Lycée Bellevue, Toulouse, 2022–2024</p><p><strong>BAC Général</strong><br>Maths, Physiques, Maths Expertes<br>Lycée Léonard Limosin, 2019–2022</p>";
+  translations.en.formation_content = "<p><strong>ENSEEIHT — Final Year, SEMBIIOT</strong><br>Academic exchange — Université Laval (Québec)<br>(2026 – Present)</p><p><strong>ENSEEIHT — 2nd Year, Computer Networks</strong><br>2025–2026</p><p><strong>CPGE - PCSI/PSI</strong><br>Lycée Bellevue, Toulouse, 2022–2024</p><p><strong>BAC Général</strong><br>Advanced Mathematics, Physics<br>Lycée Léonard Limosin, 2019–2022</p>";
 
   translations.fr.skill_1 = 'Python, Java, C, Matlab, <br> HTML, CSS, Ada, LaTeX';
   translations.en.skill_1 = 'Python, Java, C, Matlab, <br> HTML, CSS, Ada, LaTeX';
