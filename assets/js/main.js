@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded',function(){
   // --- Internationalization ---
   const translations = {
     fr: {
-      nav_home: 'Accueil', nav_cv: 'CV', nav_projects: 'Projets', nav_parcours: 'Parcours', nav_ppp: 'PPP', nav_contact: 'Contact',
+      nav_home: 'Accueil', nav_cv: 'CV', nav_projects: 'Projets', nav_parcours: 'Parcours', nav_r2e: 'R2E', nav_contact: 'Contact',
       hero_title: 'Étudiant Ingénieur N7 (3A) — Réseaux et Télécommunications',
       hero_lead: "Actuellement en 3e année à l'ENSEEIHT (spécialisation SEMBIIOT), en semestre d'échange à l'Université Laval (Québec) : gestion de projet, gouvernance de la sécurité, réseaux mobiles, applications cloud & DevOps. Passionné par l'aéronautique, le spatial et la cybersécurité.",
       btn_cv: 'Voir le CV', btn_contact: 'Me contacter',
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded',function(){
       footer_contact: 'Contact'
     },
     en: {
-      nav_home: 'Home', nav_cv: 'CV', nav_projects: 'Projects', nav_parcours: 'Path', nav_ppp: 'PPP', nav_contact: 'Contact',
+      nav_home: 'Home', nav_cv: 'CV', nav_projects: 'Projects', nav_parcours: 'Path', nav_r2e: 'R2E', nav_contact: 'Contact',
       hero_title: 'Engineering Student N7 (Final Year) — Networks & Telecommunications',
       hero_lead: "Currently in my final year at ENSEEIHT (SEMBIIOT track), on academic exchange at Université Laval (Québec): project management, security governance, mobile networks, cloud applications & DevOps. Passionate about aeronautics, space and cybersecurity.",
       btn_cv: 'View CV', btn_contact: 'Contact me',
@@ -88,6 +88,21 @@ document.addEventListener('DOMContentLoaded',function(){
   translations.en.skill_3 = 'Organization, teamwork, <br> stress management';
   translations.fr.skill_3a = 'Travail en équipe'; translations.en.skill_3a = 'Teamwork';
   translations.fr.skill_3b = 'Gestion de la pression'; translations.en.skill_3b = 'Stress management';
+
+  translations.fr.hero_eyebrow = 'Toulouse, France'; translations.en.hero_eyebrow = 'Toulouse, France';
+  translations.fr.fact_1 = 'ENSEEIHT — 3A SEMBIIOT'; translations.en.fact_1 = 'ENSEEIHT — Final Year, SEMBIIOT';
+  translations.fr.fact_2 = 'Échange — Université Laval'; translations.en.fact_2 = 'Exchange — Université Laval';
+  translations.fr.fact_3 = 'Réseaux & Cybersécurité'; translations.en.fact_3 = 'Networks & Cybersecurity';
+
+  translations.fr.about_eyebrow = 'Qui suis-je'; translations.en.about_eyebrow = 'About me';
+  translations.fr.overview_eyebrow = 'En bref'; translations.en.overview_eyebrow = 'At a glance';
+  translations.fr.overview_title = 'Formation, compétences & expériences';
+  translations.en.overview_title = 'Education, skills & experience';
+
+  translations.fr.projects_eyebrow = 'Réalisations'; translations.en.projects_eyebrow = 'Work';
+  translations.fr.cv_eyebrow = 'Profil'; translations.en.cv_eyebrow = 'Profile';
+  translations.fr.parcours_eyebrow = 'Chronologie'; translations.en.parcours_eyebrow = 'Timeline';
+  translations.fr.contact_eyebrow = 'Me contacter'; translations.en.contact_eyebrow = 'Get in touch';
 
   translations.fr.project_item_0 = 'Stage Services Informatiques — Préfecture de Haute-Garonne (2026)';
   translations.en.project_item_0 = 'IT Department Internship — Préfecture de Haute-Garonne (2026)';

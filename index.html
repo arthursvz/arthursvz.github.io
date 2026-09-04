@@ -22,64 +22,75 @@
         <a href="pages/projets.html" data-i18n="nav_projects">Projets</a>
         <!-- Compétences page removed (info moved into CV) -->
         <a href="pages/parcours.html" data-i18n="nav_parcours">Parcours</a>
-        <a href="Projet%20Professionnel%20Personnel.pdf" target="_blank" rel="noopener" data-i18n="nav_ppp">PPP</a>
-        <a href="https://docs.google.com/presentation/d/1xEZpufK-vSRJHUbFi7S319a5KwYkA0b-uHcqCgFO_Bk/edit?usp=sharing" target="_blank" rel="noopener" data-i18n="nav_ppp">R2E</a>
+        <a href="https://docs.google.com/presentation/d/1xEZpufK-vSRJHUbFi7S319a5KwYkA0b-uHcqCgFO_Bk/edit?usp=sharing" target="_blank" rel="noopener" data-i18n="nav_r2e">R2E</a>
         <a href="pages/contact.html" data-i18n="nav_contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
+  <div class="hero-band">
+    <div class="container hero">
       <div class="hero-photo" aria-hidden="true">
         <img src="photo_optimized.jpg" alt="Photo d'Arthur Sauvezie">
       </div>
 
       <div class="hero-inner">
+        <span class="hero-eyebrow" data-i18n="hero_eyebrow">Toulouse, France</span>
         <h2 data-i18n="hero_title">Étudiant Ingénieur N7 (3A) — Réseaux et Télécommunications</h2>
         <p class="lead" data-i18n="hero_lead">Actuellement en 3e année à l'ENSEEIHT (spécialisation SEMBIIOT), en semestre d'échange à l'Université Laval (Québec) : gestion de projet, gouvernance de la sécurité, réseaux mobiles, applications cloud & DevOps. Passionné par l'aéronautique, le spatial et la cybersécurité.</p>
+        <ul class="hero-facts">
+          <li data-i18n="fact_1">ENSEEIHT — 3A SEMBIIOT</li>
+          <li data-i18n="fact_2">Échange — Université Laval</li>
+          <li data-i18n="fact_3">Réseaux & Cybersécurité</li>
+        </ul>
         <p>
           <a class="btn" href="pages/cv.html" data-i18n="btn_cv">Voir le CV</a>
           <a class="btn ghost" href="pages/contact.html" data-i18n="btn_contact">Me contacter</a>
-          <a class="btn ghost" href="https://www.figma.com/deck/FC7ibtw6lyyjaRDeuILVxa/Prez-Limo?node-id=1-42&t=e19EhTIKvIKoD4Wq-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1" data-i18n="btn_pres">Présentation Limosin</a>
         </p>
       </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section id="about" class="section">
+      <span class="eyebrow" data-i18n="about_eyebrow">Qui suis-je</span>
+      <p class="about-text" data-i18n="about_text">Actuellement étudiant en 3e année d'ingénierie numérique à l'ENSEEIHT (spécialisation SEMBIIOT), en échange académique à l'Université Laval, je suis passionné par l'aéronautique, le spatial et la cybersécurité. Mon parcours académique combiné à mes engagements associatifs et secourisme montre ma capacité à travailler en équipe et à gérer des responsabilités dans des environnements exigeants. J'aspire à contribuer à des projets innovants en mettant à profit mes compétences en programmation et ma rigueur analytique.</p>
     </section>
 
-    <section id="about" class="card">
-      <h3 data-i18n="about_title">À propos</h3>
-      <p data-i18n="about_text">Actuellement étudiant en 3e année d'ingénierie numérique à l'ENSEEIHT (spécialisation SEMBIIOT), en échange académique à l'Université Laval, je suis passionné par l'aéronautique, le spatial et la cybersécurité. Mon parcours académique combiné à mes engagements associatifs et secourisme montre ma capacité à travailler en équipe et à gérer des responsabilités dans des environnements exigeants. J'aspire à contribuer à des projets innovants en mettant à profit mes compétences en programmation et ma rigueur analytique.</p>
+    <section class="section">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="overview_eyebrow">En bref</span>
+        <h3 data-i18n="overview_title">Formation, compétences & expériences</h3>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <p class="card-title" data-i18n="formation_title">Formation</p>
+          <p data-i18n="formation_content"><strong>ENSEEIHT — 3A, SEMBIIOT</strong> <br> Échange académique — Université Laval (Québec) <br> (2026 – Aujourd'hui)<br><strong>ENSEEIHT — 2A, Computer Networks</strong><br> 2025–2026<br><strong>CPGE - PCSI/PSI</strong><br> Lycée Bellevue, Toulouse, 2022–2024<br><strong>BAC Général</strong> <br>Maths, Physiques, Maths Expertes <br>Lycée Léonard Limosin, 2019–2022</p>
+        </article>
+
+        <article class="card">
+          <p class="card-title" data-i18n="skills_title">Compétences</p>
+          <ul class="badges">
+            <li>Python</li><li>Java</li><li>C</li><li>Matlab</li>
+            <li>HTML/CSS</li><li>Ada</li><li>LaTeX</li>
+            <li>Linux</li><li>Git</li><li>Docker</li>
+          </ul>
+          <ul class="badges" style="margin-top:0.6rem">
+            <li data-i18n="skill_3a">Travail en équipe</li>
+            <li data-i18n="skill_3b">Gestion de la pression</li>
+          </ul>
+        </article>
+
+        <article class="card featured">
+          <p class="card-title" data-i18n="projects_title">Projets & expériences</p>
+          <ul>
+            <li data-i18n="project_item_0">Stage Services Informatiques — Préfecture de Haute-Garonne (2026)</li>
+            <li data-i18n="project_item_2">Administrateur Systèmes — Net7 (Asso Info N7), 09.2025 – aujourd'hui</li>
+            <li data-i18n="project_item_1">Stage IA / Cybersécurité — IRT Saint-Exupéry (2025)</li>
+          </ul>
+        </article>
+      </div>
     </section>
-
-    <section class="grid">
-      <article class="card">
-        <h4 data-i18n="formation_title">Formation</h4>
-        <p data-i18n="formation_content"><strong>ENSEEIHT — 3A, SEMBIIOT</strong> <br> Échange académique — Université Laval (Québec) <br> (2026 – Aujourd'hui)<br><strong>ENSEEIHT — 2A, Computer Networks</strong><br> 2025–2026<br><strong>CPGE - PCSI/PSI</strong><br> Lycée Bellevue, Toulouse, 2022–2024<br><strong>BAC Général</strong> <br>Maths, Physiques, Maths Expertes <br>Lycée Léonard Limosin, 2019–2022</p>
-      </article>
-
-      <article class="card">
-        <h4 data-i18n="skills_title">Compétences</h4>
-        <ul class="badges">
-          <li>Python</li><li>Java</li><li>C</li><li>Matlab</li>
-          <li>HTML/CSS</li><li>Ada</li><li>LaTeX</li>
-          <li>Linux</li><li>Git</li><li>Docker</li>
-        </ul>
-        <ul class="badges" style="margin-top:0.6rem">
-          <li data-i18n="skill_3a">Travail en équipe</li>
-          <li data-i18n="skill_3b">Gestion de la pression</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h4 data-i18n="projects_title">Projets & expériences</h4>
-        <ul>
-          <li data-i18n="project_item_0">Stage Services Informatiques — Préfecture de Haute-Garonne (2026)</li>
-          <li data-i18n="project_item_2">Administrateur Systèmes — Net7 (Asso Info N7), 09.2025 – aujourd'hui</li>
-          <li data-i18n="project_item_1">Stage IA / Cybersécurité — IRT Saint-Exupéry (2025)</li>
-        </ul>
-      </article>
-    </section>
-
   </main>
 
   <footer class="site-footer">
