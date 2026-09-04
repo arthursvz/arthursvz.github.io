@@ -74,20 +74,14 @@ body{
 
 /* ---------- Hero ---------- */
 .hero-band{
-  background:
-    radial-gradient(600px 300px at 85% -10%, rgba(59,111,224,0.14), transparent 60%),
-    var(--bg);
+  background:var(--bg);
   border-bottom:1px solid var(--border);
 }
 .hero{
   display:flex;align-items:center;gap:2.75rem;
-  padding:4.5rem 0 4rem;
+  padding:4rem 0 3.5rem;
 }
 .hero-inner{flex:1;max-width:62ch}
-.hero-eyebrow{
-  display:inline-block;font-size:0.78rem;font-weight:700;letter-spacing:0.08em;
-  text-transform:uppercase;color:var(--accent);margin:0 0 0.85rem;
-}
 .hero-inner h2{font-size:clamp(1.9rem,3.4vw,2.6rem);line-height:1.15;margin:0 0 1rem;letter-spacing:-0.02em;font-weight:700}
 .hero-photo{
   width:260px;height:320px;flex:0 0 260px;
@@ -100,9 +94,6 @@ body{
 .lead{color:var(--muted);font-size:1.08rem;margin:0 0 1.5rem}
 .lead a{color:var(--accent);font-weight:600;text-decoration:none}
 .lead a:hover{text-decoration:underline}
-.hero-facts{list-style:none;display:flex;flex-wrap:wrap;gap:0.5rem 1.4rem;padding:0;margin:0 0 1.6rem;color:var(--muted);font-size:0.9rem}
-.hero-facts li{display:flex;align-items:center;gap:0.4rem}
-.hero-facts li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent)}
 
 /* ---------- Buttons ---------- */
 .btn{
@@ -119,10 +110,6 @@ body{
 /* ---------- Section rhythm ---------- */
 .section{padding:2.75rem 0}
 .section + .section{border-top:1px solid var(--border)}
-.eyebrow{
-  display:block;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;
-  text-transform:uppercase;color:var(--accent);margin:0 0 0.6rem;
-}
 .section-head{max-width:65ch;margin:0 0 1.75rem}
 .section-head h3{font-size:1.6rem;margin:0 0 0.5rem;letter-spacing:-0.01em}
 
@@ -148,24 +135,14 @@ body{
 .grid .card{margin:0}
 .grid-stack{display:flex;flex-direction:column;gap:1.25rem}
 .card-title{
-  font-size:0.78rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
-  color:var(--muted);margin:0 0 0.9rem;
+  font-size:1rem;font-weight:700;color:var(--text);margin:0 0 0.9rem;
 }
 .edu-list p{margin:0 0 1rem}
 .edu-list p:last-child{margin-bottom:0}
 
 /* ---------- Badges (skills) ---------- */
-.badges{display:flex;flex-wrap:wrap;gap:0.4rem;list-style:none;padding:0;margin:0.5rem 0 0}
-.badges li{
-  background:var(--card-hover);border:1px solid var(--border);
-  color:var(--text);font-size:0.82rem;font-weight:500;
-  padding:0.3rem 0.65rem;border-radius:999px;
-}
-
-/* ---------- Section icon headers ---------- */
-.icon-heading{display:flex;align-items:center;gap:0.55rem}
-.icon-heading svg{flex:0 0 auto;color:var(--accent)}
-.icon-heading h3{margin:0}
+.badges{display:flex;flex-wrap:wrap;list-style:none;padding:0;margin:0.5rem 0 0;color:var(--text);font-size:0.92rem}
+.badges li:not(:last-child)::after{content:'\00b7';margin:0 0.55rem;color:var(--muted)}
 
 /* ---------- Timeline (Parcours) ---------- */
 .timeline{list-style:none;margin:1.25rem 0 0;padding:0 0 0 0.15rem;position:relative}
@@ -224,8 +201,8 @@ body{
 .exp-item:first-child{padding-top:0}
 .exp-item:last-child{border-bottom:none;padding-bottom:0}
 .exp-item .exp-date{
-  display:inline-block;font-size:0.75rem;font-weight:700;color:var(--accent);
-  text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.35rem;
+  display:inline-block;font-size:0.85rem;font-weight:600;color:var(--accent);
+  margin-bottom:0.35rem;
 }
 .exp-item h4{margin:0 0 0.35rem;font-size:1.05rem;letter-spacing:-0.005em}
 .exp-item p{margin:0;color:var(--muted)}
@@ -240,7 +217,7 @@ body{
 
 /* ---------- CV competencies ---------- */
 .card .competences-block{padding-left:0}
-.competences-block h4{margin:1rem 0 0.35rem;font-size:0.95rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em}
+.competences-block h4{margin:1rem 0 0.35rem;font-size:0.95rem;color:var(--muted)}
 .competences-block p{margin:0 0 0.5rem 0}
 
 @media (max-width:900px){
