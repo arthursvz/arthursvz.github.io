@@ -144,7 +144,6 @@ body{
 .card > article + article{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
 .grid{display:grid;grid-template-columns:1.1fr 1fr 1.3fr;gap:1.25rem;margin-top:0;align-items:start}
 .grid .card{margin:0}
-.grid .card.featured{border-color:var(--accent);background:color-mix(in srgb, var(--accent) 6%, var(--card))}
 .card-title{
   font-size:0.78rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
   color:var(--muted);margin:0 0 0.9rem;
