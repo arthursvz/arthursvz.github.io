@@ -31,16 +31,17 @@ document.addEventListener('DOMContentLoaded',function(){
   const translations = {
     fr: {
       nav_home: 'Accueil', nav_cv: 'CV', nav_projects: 'Projets', nav_parcours: 'Parcours', nav_ppp: 'PPP', nav_contact: 'Contact',
-      hero_title: 'Étudiant Ingénieur N7 — Informatique & Télécommunications',
-      hero_lead: "Actuellement en seconde année d’ingénierie numérique à l'ENSEEIHT. Passionné par l'aéronautique, le spatial et la cybersécurité. Je me spécialise en Réseaux et Télécommunications.",
+      hero_title: 'Étudiant Ingénieur N7 (3A) — Réseaux et Télécommunications',
+      hero_lead: "Actuellement en 3e année à l'ENSEEIHT (spécialisation SEMBIIOT), en semestre d'échange à l'Université Laval (Québec) : gestion de projet, gouvernance de la sécurité, réseaux mobiles, applications cloud & DevOps. Passionné par l'aéronautique, le spatial et la cybersécurité.",
       btn_cv: 'Voir le CV', btn_contact: 'Me contacter',
-      about_title: 'À propos', about_text: "Actuellement étudiant en seconde année d’ingénierie numérique à l'ENSEEIHT, je suis passionné par l'aéronautique, le spatial et la cybersécurité. Mon parcours académique combiné à mes engagements associatifs et secourisme montre ma capacité à travailler en équipe et à gérer des responsabilités dans des environnements exigeants. J'aspire à contribuer à des projets innovants en mettant à profit mes compétences en programmation et ma rigueur analytique.",
+      about_title: 'À propos', about_text: "Actuellement étudiant en 3e année d'ingénierie numérique à l'ENSEEIHT (spécialisation SEMBIIOT), en échange académique à l'Université Laval, je suis passionné par l'aéronautique, le spatial et la cybersécurité. Mon parcours académique combiné à mes engagements associatifs et secourisme montre ma capacité à travailler en équipe et à gérer des responsabilités dans des environnements exigeants. J'aspire à contribuer à des projets innovants en mettant à profit mes compétences en programmation et ma rigueur analytique.",
       formation_title: 'Formation', skills_title: 'Compétences', projects_title: 'Projets & stages',
       cv_title: 'Curriculum Vitae — Arthur Sauvezie', cv_role: 'Étudiant Ingénieur N7', cv_domain: 'Informatique & Télécommunications',
       btn_download_cv: 'Télécharger le CV (PDF)', btn_open_cv: 'Ouvrir dans un nouvel onglet',
       projects_intro: 'Code et démonstrations disponibles sur ',
-      projet_irt_title: 'Stage IA / Cybersécurité — IRT Saint-Exupéry (2025)', projet_irt_desc: 'Stage de 6 semaines : travaux de recherche sur les LLM spécialisés en cybersécurité et sur des IDS/IPS basés sur réseaux de neurones. Contribution au projet de détection de pistes d\'atterrissage par IA.', projet_irt_tech_label: 'Technologies :', projet_irt_tech: 'Python, apprentissage automatique, réseaux',
-      projet_net7_title: 'Administrateur Systèmes — Net7 (Asso Info N7)', projet_net7_desc: 'Aide à la maintenance des serveurs associatifs de Toulouse INP.',
+      projet_irt_title: 'Stage IA / Cybersécurité — IRT Saint-Exupéry (2025)', projet_irt_desc: 'Stage de 6 semaines (terminé début août 2025) : travaux de recherche sur les LLM spécialisés en cybersécurité et sur des IDS/IPS basés sur réseaux de neurones. Contribution au projet de détection de pistes d\'atterrissage par IA.', projet_irt_tech_label: 'Technologies :', projet_irt_tech: 'Python, apprentissage automatique, réseaux',
+      projet_net7_title: 'Administrateur Systèmes — Net7 (Asso Info N7)', projet_net7_desc: 'Administrateur systèmes (accès root) : maintenance des serveurs associatifs de Toulouse INP.',
+      projet_prefecture_title: 'Stage Services Informatiques — Préfecture de Haute-Garonne (2026)', projet_prefecture_desc: 'Stage de 11 semaines (juin – mi-août 2026) au sein des services informatiques de la Préfecture de Haute-Garonne.',
       parcours_title: 'Parcours', parcours_intro: 'Résumé chronologique des études et expériences.',
       contact_title: 'Contact', contact_intro: 'Pour toute question ou collaboration, contactez‑moi — je réponds généralement sous 48h.',
       label_name: 'Nom :', label_phone: 'Téléphone :', label_phone_value: 'disponible sur le CV', label_email: 'Email :', label_email_value: 'arthur.sauvezie [insert at] etu.inp-n7.fr', label_location: 'Localisation :', label_location_value: 'Toulouse, France - De préférence en région Toulousaine, mais disponible sur tout le territoire',
@@ -48,16 +49,17 @@ document.addEventListener('DOMContentLoaded',function(){
     },
     en: {
       nav_home: 'Home', nav_cv: 'CV', nav_projects: 'Projects', nav_parcours: 'Path', nav_ppp: 'PPP', nav_contact: 'Contact',
-      hero_title: 'Engineering Student N7 — Computer Networks & Telecommunications',
-      hero_lead: "Currently in the second year of digital engineering at ENSEEIHT. Passionate about aeronautics, space and cybersecurity. I specialize in Networks and Telecommunications.",
+      hero_title: 'Engineering Student N7 (Final Year) — Networks & Telecommunications',
+      hero_lead: "Currently in my final year at ENSEEIHT (SEMBIIOT track), on academic exchange at Université Laval (Québec): project management, security governance, mobile networks, cloud applications & DevOps. Passionate about aeronautics, space and cybersecurity.",
       btn_cv: 'View CV', btn_contact: 'Contact me',
-      about_title: 'About', about_text: "Currently in the second year of digital engineering at ENSEEIHT, I am passionate about aeronautics, space and cybersecurity. My academic background combined with my associative and first-aid commitments demonstrates my ability to work in teams and handle responsibilities in demanding environments. I aspire to contribute to innovative projects by applying my programming skills and analytical rigor.",
+      about_title: 'About', about_text: "Currently in my final year of digital engineering at ENSEEIHT (SEMBIIOT track), on academic exchange at Université Laval, I am passionate about aeronautics, space and cybersecurity. My academic background combined with my associative and first-aid commitments demonstrates my ability to work in teams and handle responsibilities in demanding environments. I aspire to contribute to innovative projects by applying my programming skills and analytical rigor.",
       formation_title: 'Education', skills_title: 'Skills', projects_title: 'Projects & internships',
       cv_title: 'Curriculum Vitae — Arthur Sauvezie', cv_role: 'Engineering Student N7', cv_domain: 'Computer Networks & Telecommunications',
       btn_download_cv: 'Download CV (PDF)', btn_open_cv: 'Open in new tab',
       projects_intro: 'Code and demos available on ',
-      projet_irt_title: 'AI / Cybersecurity Internship — IRT Saint-Exupéry (2025)', projet_irt_desc: '6-week internship: research work on LLMs specialized in cybersecurity and on IDS/IPS based on neural networks. Contribution to runway detection by AI.', projet_irt_tech_label: 'Technologies:', projet_irt_tech: 'Python, machine learning, networks',
-      projet_net7_title: 'Systems Administrator — Net7 (Asso Info N7)', projet_net7_desc: 'Support for maintaining Toulouse INP associative servers.',
+      projet_irt_title: 'AI / Cybersecurity Internship — IRT Saint-Exupéry (2025)', projet_irt_desc: '6-week internship (ended early August 2025): research work on LLMs specialized in cybersecurity and on IDS/IPS based on neural networks. Contribution to runway detection by AI.', projet_irt_tech_label: 'Technologies:', projet_irt_tech: 'Python, machine learning, networks',
+      projet_net7_title: 'Systems Administrator — Net7 (Asso Info N7)', projet_net7_desc: 'Systems administrator (root access): maintaining Toulouse INP associative servers.',
+      projet_prefecture_title: 'IT Department Internship — Préfecture de Haute-Garonne (2026)', projet_prefecture_desc: '11-week internship (June – mid-August 2026) in the IT department of the Préfecture de Haute-Garonne.',
       parcours_title: 'Background', parcours_intro: 'Chronological summary of studies and experiences.',
       contact_title: 'Contact', contact_intro: 'For questions or collaboration, please contact me — I usually reply within 48h.',
       label_name: 'Name:', label_phone: 'Phone:', label_phone_value: 'available on the CV', label_email: 'Email:', label_email_value: 'arthur.sauvezie [insert at] etu.inp-n7.fr', label_location: 'Location:', label_location_value: 'Toulouse, France - Preferably in the Toulouse area, but available nationwide',
@@ -66,8 +68,8 @@ document.addEventListener('DOMContentLoaded',function(){
   };
 
   // Extra translation keys for index content
-  translations.fr.formation_content = "<strong>ENSEEIHT</strong> <br> Seconde année, Computer Networks <br> (2024 – Aujourd'hui)<br><strong>CPGE - PCSI/PSI</strong><br> Lycée Bellevue, Toulouse, 2022–2024<br><strong>BAC Général</strong> <br>Maths, Physiques, Maths Expertes <br>Lycée Léonard Limosin, 2019–2022";
-  translations.en.formation_content = "<strong>ENSEEIHT</strong> <br> Second year, Computer Networks <br> (2024 – Present)<br><strong>CPGE - PCSI/PSI</strong><br> Lycée Bellevue, Toulouse, 2022–2024<br><strong>BAC Général</strong> <br>Advanced Mathematics, Physics <br>Lycée Léonard Limosin, 2019–2022";
+  translations.fr.formation_content = "<strong>ENSEEIHT — 3A, SEMBIIOT</strong> <br> Échange académique — Université Laval (Québec) <br> (2026 – Aujourd'hui)<br><strong>ENSEEIHT — 2A, Computer Networks</strong><br> 2025–2026<br><strong>CPGE - PCSI/PSI</strong><br> Lycée Bellevue, Toulouse, 2022–2024<br><strong>BAC Général</strong> <br>Maths, Physiques, Maths Expertes <br>Lycée Léonard Limosin, 2019–2022";
+  translations.en.formation_content = "<strong>ENSEEIHT — Final Year, SEMBIIOT</strong> <br> Academic exchange — Université Laval (Québec) <br> (2026 – Present)<br><strong>ENSEEIHT — 2nd Year, Computer Networks</strong><br> 2025–2026<br><strong>CPGE - PCSI/PSI</strong><br> Lycée Bellevue, Toulouse, 2022–2024<br><strong>BAC Général</strong> <br>Advanced Mathematics, Physics <br>Lycée Léonard Limosin, 2019–2022";
 
   translations.fr.skill_1 = 'Python, Java, C, Matlab, <br> HTML, CSS, Ada, LaTeX';
   translations.en.skill_1 = 'Python, Java, C, Matlab, <br> HTML, CSS, Ada, LaTeX';
@@ -76,6 +78,8 @@ document.addEventListener('DOMContentLoaded',function(){
   translations.fr.skill_3 = 'Organisation, travail en équipe, <br> gestion de la pression';
   translations.en.skill_3 = 'Organization, teamwork, <br> stress management';
 
+  translations.fr.project_item_0 = 'Stage Services Informatiques — Préfecture de Haute-Garonne (2026)';
+  translations.en.project_item_0 = 'IT Department Internship — Préfecture de Haute-Garonne (2026)';
   translations.fr.project_item_1 = 'Stage IA / Cybersécurité — IRT Saint-Exupéry (2025)';
   translations.en.project_item_1 = 'AI / Cybersecurity Internship — IRT Saint-Exupéry (2025)';
   translations.fr.project_item_2 = 'Administrateur Systèmes — Net7 (Asso Info N7), 09.2025 – aujourd\'hui';
@@ -90,8 +94,12 @@ document.addEventListener('DOMContentLoaded',function(){
   translations.fr.cv_contact_line = 'Email: arthur.sauvezie [insert at] etu.inp-n7.fr • Toulouse, France';
   translations.en.cv_contact_line = 'Email: arthur.sauvezie [insert at] etu.inp-n7.fr • Toulouse, France';
 
-  translations.fr.edu_1 = 'Seconde Année, Computer Networks — ENSEEIHT (2024 – Aujourd\'hui)';
-  translations.en.edu_1 = 'Second year, Computer Networks — ENSEEIHT (2024 – Present)';
+  translations.fr.edu_0 = '3e Année, spécialisation SEMBIIOT — ENSEEIHT (2026 – Aujourd\'hui)';
+  translations.en.edu_0 = 'Final Year, SEMBIIOT track — ENSEEIHT (2026 – Present)';
+  translations.fr.edu_0b = 'Semestre d\'échange académique — Université Laval, Québec (Automne 2026) : gestion de projet, gouvernance de la sécurité, réseaux mobiles, applications cloud & DevOps, IHM';
+  translations.en.edu_0b = 'Academic exchange semester — Université Laval, Québec (Fall 2026): project management, security governance, mobile networks, cloud applications & DevOps, HCI';
+  translations.fr.edu_1 = 'Seconde Année, Computer Networks — ENSEEIHT (2025 – 2026)';
+  translations.en.edu_1 = 'Second year, Computer Networks — ENSEEIHT (2025 – 2026)';
   translations.fr.edu_2 = 'CPGE — PCSI / PSI — Lycée Bellevue, Toulouse (2022–2024)';
   translations.en.edu_2 = 'Preparatory Classes — PCSI / PSI — Lycée Bellevue, Toulouse (2022–2024)';
   translations.fr.edu_3 = 'BAC Général, Maths Expertes — Lycée Léonard Limosin, Limoges (2019–2022)';
@@ -99,8 +107,10 @@ document.addEventListener('DOMContentLoaded',function(){
 
   translations.fr.cv_experiences_title = 'Expériences & stages';
   translations.en.cv_experiences_title = 'Experiences & Internships';
-  translations.fr.exp_1 = 'Stage IA / Cybersécurité — IRT Saint-Exupéry (Projets CSS / DEEL), 2025 — LLMs spécialisés cyber, IDS/IPS par réseaux de neurones';
-  translations.en.exp_1 = 'AI / Cybersecurity Internship — IRT Saint-Exupéry (Projects CSS / DEEL), 2025 — LLMs specialized in cyber, IDS/IPS using neural networks';
+  translations.fr.exp_0 = 'Stage Services Informatiques — Préfecture de Haute-Garonne, juin – mi-août 2026 (11 semaines)';
+  translations.en.exp_0 = 'IT Department Internship — Préfecture de Haute-Garonne, June – mid-August 2026 (11 weeks)';
+  translations.fr.exp_1 = 'Stage IA / Cybersécurité — IRT Saint-Exupéry (Projets CSS / DEEL), terminé début août 2025 — LLMs spécialisés cyber, IDS/IPS par réseaux de neurones';
+  translations.en.exp_1 = 'AI / Cybersecurity Internship — IRT Saint-Exupéry (Projects CSS / DEEL), ended early August 2025 — LLMs specialized in cyber, IDS/IPS using neural networks';
   translations.fr.exp_2 = 'Administrateur Systèmes — Net7 (Asso Info N7), 09.2025 – aujourd\'hui';
   translations.en.exp_2 = 'Systems Administrator — Net7 (Asso Info N7), 09.2025 – present';
 
@@ -121,18 +131,18 @@ document.addEventListener('DOMContentLoaded',function(){
 
   translations.fr.cv_engagements_title = 'Engagements';
   translations.en.cv_engagements_title = 'Engagements';
-  translations.fr.eng_1 = 'Membre du Bureau Women7 — INP-ENSEEIHT (depuis 09.2025)';
-  translations.en.eng_1 = 'Member of the Women7 board — INP-ENSEEIHT (since 09.2025)';
-  translations.fr.eng_2 = 'Président du Club d\'Escalade — AS Toulouse INP (2024 – aujourd\'hui)';
-  translations.en.eng_2 = 'President of the Climbing Club — AS Toulouse INP (2024 – present)';
-  translations.fr.eng_3 = 'Délégué au Conseil d\'Etude et de Vie Etudiante — INP-ENSEEIHT (2024–2025)';
-  translations.en.eng_3 = 'Delegate to the Study and Student Life Council — INP-ENSEEIHT (2024–2025)';
+  translations.fr.eng_1 = 'Ancien membre du Bureau Women7 — INP-ENSEEIHT (09.2025 – 2026, mandat terminé)';
+  translations.en.eng_1 = 'Former member of the Women7 board — INP-ENSEEIHT (09.2025 – 2026, term ended)';
+  translations.fr.eng_2 = 'Président du Club d\'Escalade — AS Toulouse INP (2024 – aujourd\'hui, mandat renouvelé) — Initiateur SAE FFME';
+  translations.en.eng_2 = 'President of the Climbing Club — AS Toulouse INP (2024 – present, term renewed) — FFME SAE Instructor';
+  translations.fr.eng_3 = 'Délégué au Conseil d\'Etude et de Vie Etudiante — INP-ENSEEIHT (2024–2025, renouvellement en attente)';
+  translations.en.eng_3 = 'Delegate to the Study and Student Life Council — INP-ENSEEIHT (2024–2025, renewal pending)';
   translations.fr.eng_4 = 'Représentant Etudiant pour la constitution du dossier d\'accréditation à la CTI';
   translations.en.eng_4 = 'Student representative for the CTI accreditation file';
   translations.fr.eng_5 = 'Représentant Etudiant au comité de réflexion autour de la fraude de Toulouse INP';
   translations.en.eng_5 = 'Student representative on Toulouse INP\'s academic integrity committee';
-  translations.fr.eng_6 = 'Secouriste — Protection Civile de Haute Garonne (09.2024 – Aujourd\'hui)';
-  translations.en.eng_6 = 'First responder — Protection Civile de Haute Garonne (09.2024 – Present)';
+  translations.fr.eng_6 = 'Équipier Secouriste, chef d\'équipe / chef de poste, gardes SAMU — Protection Civile de Haute Garonne (09.2024 – Aujourd\'hui)';
+  translations.en.eng_6 = 'First responder team member, team/post leader, SAMU shifts — Protection Civile de Haute Garonne (09.2024 – Present)';
 
   translations.fr.footer_text = 'Arthur Sauvezie — Étudiant ENSEEIHT • ';
   translations.en.footer_text = 'Arthur Sauvezie — ENSEEIHT Student • ';
@@ -145,12 +155,16 @@ document.addEventListener('DOMContentLoaded',function(){
   translations.fr.parcours_page_title = 'Parcours — Arthur Sauvezie';
   translations.en.parcours_page_title = 'Background — Arthur Sauvezie';
 
-  translations.fr.parcours_item_1 = '2025 — Stage IA / Cybersécurité, IRT Saint-Exupéry (projets CSS / DEEL)';
-  translations.en.parcours_item_1 = '2025 — AI / Cybersecurity Internship, IRT Saint-Exupéry (CSS / DEEL projects)';
-  translations.fr.parcours_item_2 = '2025 — Administrateur Systèmes, Net7 – Asso Info N7';
-  translations.en.parcours_item_2 = '2025 — Systems Administrator, Net7 – Asso Info N7';
-  translations.fr.parcours_item_3 = "2024 – Aujourd'hui — Seconde Année, Computer Networks, ENSEEIHT";
-  translations.en.parcours_item_3 = '2024 – Present — Second Year, Computer Networks, ENSEEIHT';
+  translations.fr.parcours_item_0 = "2026 – Aujourd'hui — 3e Année, spécialisation SEMBIIOT, ENSEEIHT (échange académique à l'Université Laval, Québec)";
+  translations.en.parcours_item_0 = "2026 – Present — Final Year, SEMBIIOT track, ENSEEIHT (academic exchange at Université Laval, Québec)";
+  translations.fr.parcours_item_prefecture = '2026 — Stage Services Informatiques, Préfecture de Haute-Garonne (juin – mi-août)';
+  translations.en.parcours_item_prefecture = '2026 — IT Department Internship, Préfecture de Haute-Garonne (June – mid-August)';
+  translations.fr.parcours_item_1 = '2025 — Stage IA / Cybersécurité, IRT Saint-Exupéry (projets CSS / DEEL), terminé début août';
+  translations.en.parcours_item_1 = '2025 — AI / Cybersecurity Internship, IRT Saint-Exupéry (CSS / DEEL projects), ended early August';
+  translations.fr.parcours_item_2 = "2025 – Aujourd'hui — Administrateur Systèmes, Net7 – Asso Info N7";
+  translations.en.parcours_item_2 = '2025 – Present — Systems Administrator, Net7 – Asso Info N7';
+  translations.fr.parcours_item_3 = "2025 – 2026 — Seconde Année, Computer Networks, ENSEEIHT";
+  translations.en.parcours_item_3 = '2025 – 2026 — Second Year, Computer Networks, ENSEEIHT';
   translations.fr.parcours_item_4 = '2022 – 2024 — CPGE (PCSI → PSI), Lycée Bellevue, Toulouse';
   translations.en.parcours_item_4 = '2022 – 2024 — Preparatory Classes (PCSI → PSI), Lycée Bellevue, Toulouse';
   translations.fr.parcours_item_5 = '2019 – 2022 — BAC Général (Maths expertes), Lycée Léonard Limosin, Limoges';
@@ -161,17 +175,17 @@ document.addEventListener('DOMContentLoaded',function(){
   translations.fr.engagements_intro = 'Je m\'investis dans des actions de solidarité et d\'éducation, convaincu que l\'ingénieur a un rôle à jouer pour répondre aux défis sociaux et environnementaux.';
   translations.en.engagements_intro = 'I am involved in solidarity and educational actions, convinced that engineers have a role to play in addressing social and environmental challenges.';
 
-  translations.fr.prot_title = 'Protection Civile — Secouriste';
-  translations.en.prot_title = 'Civil Protection — First Responder';
-  translations.fr.prot_desc = 'Volontaire à la Protection Civile de Haute-Garonne (depuis 09.2024) : postes de secours, gardes SAMU et maraudes. Cette expérience m\'a permis de développer des compétences en intervention d\'urgence et en gestion du stress, et renforce mon engagement pour la sécurité civile.';
-  translations.en.prot_desc = 'Volunteer at the Haute-Garonne Civil Protection (since 09.2024): first aid posts, SAMU shifts and outreach. This experience helped me develop emergency response and stress management skills, and strengthens my commitment to civil safety.';
+  translations.fr.prot_title = 'Protection Civile — Équipier Secouriste';
+  translations.en.prot_title = 'Civil Protection — First Responder Team Member';
+  translations.fr.prot_desc = 'Volontaire à la Protection Civile de Haute-Garonne (depuis 09.2024), aujourd\'hui Équipier Secouriste : postes de secours, gardes SAMU et chefferie (chef d\'équipe, chef de poste). Cette expérience m\'a permis de développer des compétences en intervention d\'urgence, en encadrement d\'équipe et en gestion du stress, et renforce mon engagement pour la sécurité civile.';
+  translations.en.prot_desc = 'Volunteer at the Haute-Garonne Civil Protection (since 09.2024), now a First Responder Team Member: first aid posts, SAMU shifts and team/post leadership. This experience helped me develop emergency response, team leadership and stress management skills, and strengthens my commitment to civil safety.';
   translations.fr.prot_link = 'En savoir plus sur la Protection Civile';
   translations.en.prot_link = 'Learn more about Civil Protection';
 
-  translations.fr.eedf_title = 'Eclaireuses & Eclaireurs de France (EEDF) — Encadrement jeunesse';
-  translations.en.eedf_title = 'Eclaireuses & Eclaireurs de France (EEDF) — Youth Leadership';
-  translations.fr.eedf_desc = 'Leader bénévole au sein des EEDF : accompagnement et encadrement d\'activités de plein air et de projets éducatifs pour les jeunes. Ce rôle m\'a permis d\'acquérir des compétences pédagogiques et d\'organisation, ainsi qu\'un sens renforcé de la responsabilité civique.';
-  translations.en.eedf_desc = 'Volunteer leader with EEDF: supporting and leading outdoor activities and educational projects for youth. This role allowed me to gain pedagogical and organizational skills, and a strong sense of civic responsibility.';
+  translations.fr.eedf_title = 'Eclaireuses & Eclaireurs de France (EEDF) — Encadrement jeunesse (activité terminée)';
+  translations.en.eedf_title = 'Eclaireuses & Eclaireurs de France (EEDF) — Youth Leadership (past activity)';
+  translations.fr.eedf_desc = 'Ancien leader bénévole au sein des EEDF : accompagnement et encadrement d\'activités de plein air et de projets éducatifs pour les jeunes. Ce rôle m\'a permis d\'acquérir des compétences pédagogiques et d\'organisation, ainsi qu\'un sens renforcé de la responsabilité civique.';
+  translations.en.eedf_desc = 'Former volunteer leader with EEDF: supporting and leading outdoor activities and educational projects for youth. This role allowed me to gain pedagogical and organizational skills, and a strong sense of civic responsibility.';
   translations.fr.eedf_link = 'En savoir plus sur les EEDF';
   translations.en.eedf_link = 'Learn more about EEDF';
 
@@ -180,10 +194,10 @@ document.addEventListener('DOMContentLoaded',function(){
   translations.fr.activities_intro = 'En parallèle de mes études, je suis très impliqué dans des activités sportives et culturelles qui complètent ma formation :';
   translations.en.activities_intro = 'Alongside my studies, I am actively involved in sports and cultural activities that complement my training:';
 
-  translations.fr.climbing_title = 'Escalade — Club et formation';
-  translations.en.climbing_title = 'Climbing — Club & Training';
-  translations.fr.climbing_desc = 'Je pratique régulièrement l\'escalade et je suis investi dans le club d\'escalade de l\'école (GrINP / AS Toulouse INP). Je prépare actuellement le Brevet Fédéral Initiateur SAE (Structure Artificielles d\'Escalade) afin de pouvoir encadrer en toute sécurité et partager cette passion.';
-  translations.en.climbing_desc = 'I regularly practice climbing and am involved in the school climbing club (GrINP / AS Toulouse INP). I am currently preparing the Federal Instructor Certificate for artificial structures (SAE) to safely supervise and share this passion.';
+  translations.fr.climbing_title = 'Escalade — Président du club';
+  translations.en.climbing_title = 'Climbing — Club President';
+  translations.fr.climbing_desc = 'Je pratique régulièrement l\'escalade et je préside le club d\'escalade de l\'école (GrINP / AS Toulouse INP), mandat renouvelé. Titulaire du Brevet Fédéral Initiateur SAE (Structures Artificielles d\'Escalade) de la FFME, ce qui me permet d\'encadrer en toute sécurité et de partager cette passion.';
+  translations.en.climbing_desc = 'I regularly practice climbing and preside over the school climbing club (GrINP / AS Toulouse INP), with a renewed term. I hold the FFME Federal Instructor Certificate for artificial structures (SAE), which allows me to safely supervise and share this passion.';
   translations.fr.climbing_link = 'En savoir plus sur la FFME';
   translations.en.climbing_link = 'Learn more about FFME';
 
