@@ -51,10 +51,12 @@ document.addEventListener('DOMContentLoaded',function(){
       cv_title: 'Curriculum Vitae — Arthur Sauvezie', cv_role: 'Étudiant Ingénieur N7', cv_domain: 'Informatique & Télécommunications',
       btn_download_cv: 'Télécharger le CV (PDF)', btn_open_cv: 'Ouvrir dans un nouvel onglet',
       projects_intro: 'Code et démonstrations disponibles sur ',
-      projet_irt_title: 'Stage IA / Cybersécurité — IRT Saint-Exupéry', projet_irt_desc: 'Stage de 6 semaines (terminé début août 2025) : travaux de recherche sur les LLM spécialisés en cybersécurité et sur des IDS/IPS basés sur réseaux de neurones. Contribution au projet de détection de pistes d\'atterrissage par IA.', projet_irt_date: '2025',
+      projet_irt_title: 'Stage IA / Cybersécurité — IRT Saint-Exupéry', projet_irt_desc: 'Stage de fin juin à début août 2025 : travaux de recherche sur les LLM spécialisés en cybersécurité et sur des IDS/IPS basés sur réseaux de neurones. Contribution au projet de détection de pistes d\'atterrissage par IA.', projet_irt_date: 'Juin – Août 2025',
       projet_net7_title: 'Administrateur Systèmes — Net7 (Asso Info N7)', projet_net7_desc: 'Administrateur systèmes (accès root) : maintenance des serveurs associatifs de Toulouse INP.', projet_net7_date: "09.2025 – Aujourd'hui",
-      projet_prefecture_title: 'Stage Services Informatiques — Préfecture de Haute-Garonne', projet_prefecture_desc: 'Stage de 11 semaines (juin – mi-août 2026) au sein des services informatiques de la Préfecture de Haute-Garonne.', projet_prefecture_date: '2026',
+      projet_prefecture_title: 'Stage Services Informatiques — Préfecture de Haute-Garonne', projet_prefecture_desc: "Stage de 11 semaines (juin – mi-août 2026) : développement d'un site de centralisation des annuaires des agents de la Préfecture, combinant plusieurs sources de données en un annuaire unique, complet et à jour.", projet_prefecture_date: '2026',
+      projet_escalade_title: "Plateforme web du Club d'Escalade — AS Toulouse INP", projet_escalade_desc: "Conception et développement complet d'une plateforme de gestion pour le club : comptes utilisateurs et authentification, réservation de créneaux, journalisation (logs), notifications via API, envoi de mails automatisés et tâches planifiées.", projet_escalade_date: "2024 – Aujourd'hui",
       tag_ml: 'Apprentissage automatique',
+      tag_auth: 'Authentification', tag_booking: 'Réservation de créneaux', tag_notifications: 'Notifications API', tag_mail: 'Mails automatisés', tag_automation: 'Automatisation', tag_logs: 'Logs',
       parcours_title: 'Parcours', parcours_intro: 'Résumé chronologique des études et expériences.',
       contact_title: 'Contact', contact_intro: 'Pour toute question ou collaboration, contactez‑moi — je réponds généralement sous 48h.',
       label_name: 'Nom :', label_phone: 'Téléphone :', label_phone_value: 'disponible sur le CV', label_email: 'Email :', label_email_value: 'arthur.sauvezie [insert at] etu.inp-n7.fr', label_location: 'Localisation :', label_location_value: 'Toulouse, France - De préférence en région Toulousaine, mais disponible sur tout le territoire',
@@ -70,10 +72,12 @@ document.addEventListener('DOMContentLoaded',function(){
       cv_title: 'Curriculum Vitae — Arthur Sauvezie', cv_role: 'Engineering Student N7', cv_domain: 'Computer Networks & Telecommunications',
       btn_download_cv: 'Download CV (PDF)', btn_open_cv: 'Open in new tab',
       projects_intro: 'Code and demos available on ',
-      projet_irt_title: 'AI / Cybersecurity Internship — IRT Saint-Exupéry', projet_irt_desc: '6-week internship (ended early August 2025): research work on LLMs specialized in cybersecurity and on IDS/IPS based on neural networks. Contribution to runway detection by AI.', projet_irt_date: '2025',
+      projet_irt_title: 'AI / Cybersecurity Internship — IRT Saint-Exupéry', projet_irt_desc: 'Internship from late June to early August 2025: research work on LLMs specialized in cybersecurity and on IDS/IPS based on neural networks. Contribution to runway detection by AI.', projet_irt_date: 'June – August 2025',
       projet_net7_title: 'Systems Administrator — Net7 (Asso Info N7)', projet_net7_desc: 'Systems administrator (root access): maintaining Toulouse INP associative servers.', projet_net7_date: '09.2025 – Present',
-      projet_prefecture_title: 'IT Department Internship — Préfecture de Haute-Garonne', projet_prefecture_desc: '11-week internship (June – mid-August 2026) in the IT department of the Préfecture de Haute-Garonne.', projet_prefecture_date: '2026',
+      projet_prefecture_title: 'IT Department Internship — Préfecture de Haute-Garonne', projet_prefecture_desc: "11-week internship (June – mid-August 2026): built a directory centralization site for Préfecture staff, combining several data sources into a single, complete, up-to-date directory.", projet_prefecture_date: '2026',
+      projet_escalade_title: 'Climbing Club Web Platform — AS Toulouse INP', projet_escalade_desc: 'Full design and development of a club management platform: user accounts and authentication, slot booking, logging, API-based notifications, automated emails and scheduled tasks.', projet_escalade_date: '2024 – Present',
       tag_ml: 'Machine learning',
+      tag_auth: 'Authentication', tag_booking: 'Slot booking', tag_notifications: 'API notifications', tag_mail: 'Automated emails', tag_automation: 'Automation', tag_logs: 'Logs',
       parcours_title: 'Background', parcours_intro: 'Chronological summary of studies and experiences.',
       contact_title: 'Contact', contact_intro: 'For questions or collaboration, please contact me — I usually reply within 48h.',
       label_name: 'Name:', label_phone: 'Phone:', label_phone_value: 'available on the CV', label_email: 'Email:', label_email_value: 'arthur.sauvezie [insert at] etu.inp-n7.fr', label_location: 'Location:', label_location_value: 'Toulouse, France - Preferably in the Toulouse area, but available nationwide',
@@ -109,6 +113,8 @@ document.addEventListener('DOMContentLoaded',function(){
   translations.fr.parcours_eyebrow = 'Chronologie'; translations.en.parcours_eyebrow = 'Timeline';
   translations.fr.contact_eyebrow = 'Me contacter'; translations.en.contact_eyebrow = 'Get in touch';
 
+  translations.fr.project_item_escalade = "Plateforme web du Club d'Escalade — AS Toulouse INP";
+  translations.en.project_item_escalade = 'Climbing Club Web Platform — AS Toulouse INP';
   translations.fr.project_item_0 = 'Stage Services Informatiques — Préfecture de Haute-Garonne (2026)';
   translations.en.project_item_0 = 'IT Department Internship — Préfecture de Haute-Garonne (2026)';
   translations.fr.project_item_1 = 'Stage IA / Cybersécurité — IRT Saint-Exupéry (2025)';
@@ -201,8 +207,8 @@ document.addEventListener('DOMContentLoaded',function(){
   translations.fr.cv_exp_0_date = '2026'; translations.en.cv_exp_0_date = '2026';
   translations.fr.cv_exp_0_title = 'Stage Services Informatiques — Préfecture de Haute-Garonne';
   translations.en.cv_exp_0_title = 'IT Department Internship — Préfecture de Haute-Garonne';
-  translations.fr.cv_exp_0_desc = '11 semaines (juin – mi-août 2026)';
-  translations.en.cv_exp_0_desc = '11 weeks (June – mid-August 2026)';
+  translations.fr.cv_exp_0_desc = "11 semaines (juin – mi-août 2026) — développement d'un site de centralisation des annuaires des agents, combinant plusieurs sources de données en un annuaire unique et à jour";
+  translations.en.cv_exp_0_desc = '11 weeks (June – mid-August 2026) — built a directory centralization site for staff, combining several data sources into a single, up-to-date directory';
 
   translations.fr.cv_exp_2_date = "09.2025 – Aujourd'hui"; translations.en.cv_exp_2_date = '09.2025 – Present';
   translations.fr.cv_exp_2_title = 'Administrateur Systèmes — Net7 (Asso Info N7)';
@@ -210,11 +216,18 @@ document.addEventListener('DOMContentLoaded',function(){
   translations.fr.cv_exp_2_desc = 'Accès root, maintenance des serveurs associatifs de Toulouse INP';
   translations.en.cv_exp_2_desc = 'Root access, maintaining Toulouse INP associative servers';
 
-  translations.fr.cv_exp_1_date = '2025'; translations.en.cv_exp_1_date = '2025';
+  translations.fr.cv_exp_1_date = 'Juin – Août 2025'; translations.en.cv_exp_1_date = 'June – August 2025';
   translations.fr.cv_exp_1_title = 'Stage IA / Cybersécurité — IRT Saint-Exupéry';
   translations.en.cv_exp_1_title = 'AI / Cybersecurity Internship — IRT Saint-Exupéry';
-  translations.fr.cv_exp_1_desc = 'Projets CSS / DEEL — LLMs spécialisés cyber, IDS/IPS par réseaux de neurones (terminé début août 2025)';
-  translations.en.cv_exp_1_desc = 'CSS / DEEL projects — LLMs specialized in cyber, IDS/IPS using neural networks (ended early August 2025)';
+  translations.fr.cv_exp_1_desc = 'Projets CSS / DEEL — LLMs spécialisés cyber, IDS/IPS par réseaux de neurones (fin juin – début août 2025)';
+  translations.en.cv_exp_1_desc = 'CSS / DEEL projects — LLMs specialized in cyber, IDS/IPS using neural networks (late June – early August 2025)';
+
+  translations.fr.cv_projects_title = 'Projets personnels'; translations.en.cv_projects_title = 'Personal projects';
+  translations.fr.cv_proj_0_date = "2024 – Aujourd'hui"; translations.en.cv_proj_0_date = '2024 – Present';
+  translations.fr.cv_proj_0_title = "Plateforme web du Club d'Escalade — AS Toulouse INP";
+  translations.en.cv_proj_0_title = 'Climbing Club Web Platform — AS Toulouse INP';
+  translations.fr.cv_proj_0_desc = 'Conception et développement complet : comptes utilisateurs et authentification, réservation de créneaux, logs, notifications via API, mails automatisés, tâches planifiées';
+  translations.en.cv_proj_0_desc = 'Full design and development: user accounts and authentication, slot booking, logging, API notifications, automated emails, scheduled tasks';
 
   translations.fr.footer_text = 'Arthur Sauvezie — Étudiant ENSEEIHT • ';
   translations.en.footer_text = 'Arthur Sauvezie — ENSEEIHT Student • ';
@@ -237,10 +250,10 @@ document.addEventListener('DOMContentLoaded',function(){
   translations.fr.parcours_item_prefecture_text = 'Stage Services Informatiques, Préfecture de Haute-Garonne (juin – mi-août)';
   translations.en.parcours_item_prefecture_text = 'IT Department Internship, Préfecture de Haute-Garonne (June – mid-August)';
 
-  translations.fr.parcours_item_1_date = '2025';
-  translations.en.parcours_item_1_date = '2025';
-  translations.fr.parcours_item_1_text = 'Stage IA / Cybersécurité, IRT Saint-Exupéry (projets CSS / DEEL), terminé début août';
-  translations.en.parcours_item_1_text = 'AI / Cybersecurity Internship, IRT Saint-Exupéry (CSS / DEEL projects), ended early August';
+  translations.fr.parcours_item_1_date = 'Juin – Août 2025';
+  translations.en.parcours_item_1_date = 'June – August 2025';
+  translations.fr.parcours_item_1_text = 'Stage IA / Cybersécurité, IRT Saint-Exupéry (projets CSS / DEEL), fin juin – début août';
+  translations.en.parcours_item_1_text = 'AI / Cybersecurity Internship, IRT Saint-Exupéry (CSS / DEEL projects), late June – early August';
 
   translations.fr.parcours_item_2_date = "2025 – Aujourd'hui";
   translations.en.parcours_item_2_date = '2025 – Present';
@@ -288,8 +301,8 @@ document.addEventListener('DOMContentLoaded',function(){
 
   translations.fr.climbing_title = 'Escalade — Président du club';
   translations.en.climbing_title = 'Climbing — Club President';
-  translations.fr.climbing_desc = 'Je pratique régulièrement l\'escalade et je préside le club d\'escalade de l\'école (GrINP / AS Toulouse INP), mandat renouvelé. Titulaire du Brevet Fédéral Initiateur SAE (Structures Artificielles d\'Escalade) de la FFME, ce qui me permet d\'encadrer en toute sécurité et de partager cette passion.';
-  translations.en.climbing_desc = 'I regularly practice climbing and preside over the school climbing club (GrINP / AS Toulouse INP), with a renewed term. I hold the FFME Federal Instructor Certificate for artificial structures (SAE), which allows me to safely supervise and share this passion.';
+  translations.fr.climbing_desc = 'Je pratique régulièrement l\'escalade et je préside le club d\'escalade de l\'école (GrINP / AS Toulouse INP), mandat renouvelé. Titulaire du Brevet Fédéral Initiateur SAE (Structures Artificielles d\'Escalade) de la FFME, ce qui me permet d\'encadrer en toute sécurité et de partager cette passion. J\'ai également conçu et développé la plateforme web du club (comptes, réservation de créneaux, notifications, automatisation) — voir la <a href="projets.html">page Projets</a>.';
+  translations.en.climbing_desc = 'I regularly practice climbing and preside over the school climbing club (GrINP / AS Toulouse INP), with a renewed term. I hold the FFME Federal Instructor Certificate for artificial structures (SAE), which allows me to safely supervise and share this passion. I also designed and built the club\'s web platform (accounts, slot booking, notifications, automation) — see the <a href="projets.html">Projects page</a>.';
   translations.fr.climbing_link = 'En savoir plus sur la FFME';
   translations.en.climbing_link = 'Learn more about FFME';
 
