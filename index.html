@@ -1,101 +1,50 @@
-<!doctype html>
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>E-portfolio — Arthur SAUVEZIE</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arthur Sauvezie, e-portfolio</title>
+<meta name="description" content="E-portfolio of Arthur Sauvezie, engineering student at ENSEEIHT specialising in networks and telecommunications.">
+<link rel="alternate" hreflang="fr" href="https://arthursvz.github.io/index.html">
+<link rel="alternate" hreflang="en" href="https://arthursvz.github.io/en/index.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/theme.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <h1 class="brand">Arthur Sauvezie</h1>
-      <button class="nav-toggle" aria-label="menu" id="navToggle">☰</button>
-      <button class="theme-toggle" id="themeToggle" aria-pressed="false" title="Activer le thème clair/sombre"></button>
-      <button class="lang-toggle" id="langToggle" aria-pressed="false" title="Français / English">FR</button>
-      <nav class="nav" id="siteNav">
-        <a href="index.html" data-i18n="nav_home">Accueil</a>
-        <a href="pages/cv.html" data-i18n="nav_cv">CV</a>
-        <a href="pages/projets.html" data-i18n="nav_projects">Projets</a>
-        <!-- Compétences page removed (info moved into CV) -->
-        <a href="pages/parcours.html" data-i18n="nav_parcours">Parcours</a>
-        <a href="pages/contact.html" data-i18n="nav_contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <div class="hero-band">
-    <div class="container hero">
-      <div class="hero-photo" aria-hidden="true">
-        <img src="photo_optimized.jpg" alt="Photo d'Arthur Sauvezie">
-      </div>
-
-      <div class="hero-inner">
-        <h2 data-i18n="hero_title">Étudiant Ingénieur N7 (3A) — Réseaux et Télécommunications</h2>
-        <p class="lead" data-i18n="hero_lead">Actuellement en 3e année à l'ENSEEIHT, en semestre d'échange à l'Université Laval (Québec) : gestion de projet, gouvernance de la sécurité, réseaux mobiles, applications cloud & DevOps. Passionné par l'aéronautique, le spatial et la cybersécurité.</p>
-        <p>
-          <a class="btn" href="pages/cv.html" data-i18n="btn_cv">Voir le CV</a>
-          <a class="btn ghost" href="pages/contact.html" data-i18n="btn_contact">Me contacter</a>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <main class="container">
-    <section id="about" class="section">
-      <p class="about-text" data-i18n="about_text">Actuellement étudiant en 3e année d'ingénierie numérique à l'ENSEEIHT, en échange académique à l'Université Laval, je suis passionné par l'aéronautique, le spatial et la cybersécurité. Mon parcours académique combiné à mes engagements associatifs et secourisme montre ma capacité à travailler en équipe et à gérer des responsabilités dans des environnements exigeants. J'aspire à contribuer à des projets innovants en mettant à profit mes compétences en programmation et ma rigueur analytique.</p>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <h3 data-i18n="overview_title">Formation, compétences & expériences</h3>
-      </div>
-      <div class="grid">
-        <article class="card">
-          <p class="card-title" data-i18n="formation_title">Formation</p>
-          <div class="edu-list" data-i18n="formation_content"><p><strong>ENSEEIHT — 3A</strong><br>Semestre d'échange — Université Laval (Québec)<br>(2026 – Aujourd'hui)</p><p><strong>ENSEEIHT — 2A, Computer Networks</strong><br>2025–2026</p><p><strong>CPGE - PCSI/PSI</strong><br>Lycée Bellevue, Toulouse, 2022–2024</p><p><strong>BAC Général</strong><br>Maths, Physiques, Maths Expertes<br>Lycée Léonard Limosin, 2019–2022</p></div>
-        </article>
-
-        <div class="grid-stack">
-          <article class="card">
-            <p class="card-title" data-i18n="skills_title">Compétences</p>
-            <ul class="badges">
-              <li>Python</li><li>Java</li><li>C</li><li>Matlab</li>
-              <li>HTML/CSS</li><li>Ada</li><li>LaTeX</li>
-              <li>Linux</li><li>Git</li><li>Docker</li>
-            </ul>
-            <ul class="badges" style="margin-top:0.6rem">
-              <li data-i18n="skill_3a">Travail en équipe</li>
-              <li data-i18n="skill_3b">Gestion de la pression</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <p class="card-title" data-i18n="projects_title">Projets & expériences</p>
-            <ul>
-              <li data-i18n="project_item_escalade">Plateforme web du Club d'Escalade — AS Toulouse INP</li>
-              <li data-i18n="project_item_0">Stage Services Informatiques — Préfecture de Haute-Garonne (2026)</li>
-              <li data-i18n="project_item_2">Administrateur Systèmes — Net7 (Asso Info N7), 09.2025 – aujourd'hui</li>
-              <li data-i18n="project_item_1">Stage IA / Cybersécurité — IRT Saint-Exupéry (2025)</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>Arthur Sauvezie — Étudiant ENSEEIHT • <a href="pages/contact.html">Contact</a></p>
-    </div>
-  </footer>
-
-  <script src="assets/js/main.js" defer></script>
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="index.html">Arthur Sauvezie</a>
+<nav class="nav" aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a><a href="cv.html">CV</a><a href="projects.html">Projects</a><a href="background.html">Background</a><a href="contact.html">Contact</a><a class="lang" href="../index.html" lang="fr" aria-label="Version française">FR</a><button id="theme-toggle" type="button" aria-label="Switch theme">Mode sombre</button></nav>
+</div>
+</header>
+<main>
+<section class="wrap hero">
+<div class="hero-text">
+<div class="bar"></div>
+<h1>Arthur<br>Sauvezie</h1>
+<p class="lead">Third-year engineering student at ENSEEIHT, specialising in networks and telecommunications. Passionate about aerospace, space and cybersecurity.</p>
+<div class="actions"><a class="btn primary" href="cv.html">View CV</a><a class="btn" href="contact.html">Contact me</a></div>
+</div>
+<div class="photo"><span>Add your photo as assets/photo.jpg</span><img src="../assets/photo.jpg" alt="Portrait of Arthur Sauvezie" onerror="this.remove()"></div>
+</section>
+<div class="wrap"><section class="strip">
+<div><span class="k">Education</span><span>ENSEEIHT (N7), 3rd year</span></div>
+<div><span class="k">Exchange</span><span>Université Laval, Quebec</span></div>
+<div><span class="k">Looking for</span><span class="todo">[Internship type and period]</span></div>
+</section></div>
+<section class="wrap section">
+<h2>Experience and projects</h2>
+<div class="list"><a href="projects.html#irt"><span class="n">01</span><span class="t">AI and cybersecurity internship</span><span class="m">IRT Saint-Exupéry · 2025</span><span class="go" aria-hidden="true">→</span></a><a href="projects.html#prefecture"><span class="n">02</span><span class="t">IT services internship</span><span class="m">Haute-Garonne Prefecture · 2026</span><span class="go" aria-hidden="true">→</span></a><a href="projects.html#net7"><span class="n">03</span><span class="t">Systems administrator</span><span class="m">Net7, the N7 IT student association · since 09.2025</span><span class="go" aria-hidden="true">→</span></a><a href="projects.html#escalade"><span class="n">04</span><span class="t">Climbing club website</span><span class="m">AS Toulouse INP</span><span class="go" aria-hidden="true">→</span></a></div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<span>© 2026 Arthur Sauvezie · ENSEEIHT</span>
+<span><a href="contact.html">Contact</a></span>
+</div>
+</footer>
 </body>
-  
 </html>
-
-
