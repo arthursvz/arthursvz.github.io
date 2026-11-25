@@ -10,16 +10,40 @@
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
   document.addEventListener('DOMContentLoaded', function () {
+    var en = root.lang === 'en';
+
+    // Theme toggle (icon only)
     var btn = document.getElementById('theme-toggle');
-    if (!btn) return;
-    function label() { var en = root.lang === 'en';
-      btn.textContent = current() === 'dark' ? (en ? 'Light mode' : 'Mode clair') : (en ? 'Dark mode' : 'Mode sombre'); }
-    label();
-    btn.addEventListener('click', function () {
-      var next = current() === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      try { localStorage.setItem('theme', next); } catch (e) {}
+    if (btn) {
+      var label = function () {
+        var l = current() === 'dark' ? (en ? 'Switch to light mode' : 'Passer en mode clair')
+                                      : (en ? 'Switch to dark mode' : 'Passer en mode sombre');
+        btn.setAttribute('aria-label', l);
+        btn.title = l;
+      };
       label();
-    });
+      btn.addEventListener('click', function () {
+        var next = current() === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        label();
+      });
+    }
+
+    // Mobile menu
+    var menu = document.querySelector('.menu-toggle');
+    var nav = document.getElementById('site-nav');
+    if (menu && nav) {
+      var setOpen = function (open) {
+        nav.classList.toggle('open', open);
+        menu.setAttribute('aria-expanded', open ? 'true' : 'false');
+      };
+      menu.addEventListener('click', function () { setOpen(!nav.classList.contains('open')); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+      document.addEventListener('click', function (e) {
+        if (!nav.contains(e.target) && !menu.contains(e.target)) setOpen(false);
+      });
+      window.matchMedia('(min-width: 761px)').addEventListener('change', function () { setOpen(false); });
+    }
   });
 })();
