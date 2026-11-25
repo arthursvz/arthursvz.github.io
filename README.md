@@ -1,39 +1,39 @@
 # E-portfolio d'Arthur Sauvezie
 
-Site statique (HTML, CSS, un peu de JavaScript), prêt pour GitHub Pages.
+Site statique (HTML, CSS, un peu de JavaScript) publié sur GitHub Pages : https://arthursvz.github.io
 
-## Mettre en ligne
+## Modifier le contenu
 
-1. Dans votre dépôt `arthursvz.github.io`, supprimez l'ancien contenu (gardez le dossier `.git`).
-2. Copiez-y tous les fichiers de ce dossier.
-3. Ajoutez vos fichiers dans `assets/` : `photo.jpg` (portrait, idéalement 760 × 920 px), `cv.pdf` (français) et `cv-en.pdf` (anglais).
-4. Publiez :
-   ```
-   git add .
-   git commit -m "Nouvelle version de l'e-portfolio"
-   git push
-   ```
-5. Le site est en ligne quelques minutes plus tard sur https://arthursvz.github.io
+Les pages HTML sont **générées** par `_src/build.py`. Tout le contenu (expériences, engagements,
+formation, certifications, compétences, liens, logos) est dans ce fichier, en français et en anglais.
 
-## À compléter
+```
+python _src/build.py
+```
 
-Les textes en italique entre crochets sont des emplacements à remplacer :
+Ne modifiez pas les `.html` à la main : ils seraient écrasés à la prochaine génération.
+Le dossier `_src/` n'est pas publié par GitHub Pages.
 
-- Les deux langues : chaque texte à compléter existe en français (racine) et en anglais (dossier `en/`).
-- `index.html` : type et période de stage recherché.
-- `projets.html` : description, technologies et résultat de chacun des quatre projets.
-- `contact.html` : adresse e-mail et lien LinkedIn (le lien GitHub est à vérifier).
-- `assets/photo.jpg` et `assets/cv.pdf`.
-- Retirez la classe `todo` d'un élément une fois son texte écrit, pour qu'il reprenne le style normal.
+## Publier
+
+```
+git add .
+git commit -m "Mise à jour du portfolio"
+git push
+```
 
 ## Structure
 
 ```
-index.html  cv.html  projets.html  parcours.html  contact.html   (français)
-en/index.html  cv.html  projects.html  background.html  contact.html   (anglais)
-css/style.css     styles et thèmes clair/sombre
-js/theme.js       bouton clair/sombre (choix mémorisé)
-assets/           photo.jpg, cv.pdf, cv-en.pdf
-
-Le sélecteur FR / EN du menu renvoie vers la page équivalente dans l'autre langue.
+index.html  experiences.html  engagements.html  parcours.html  cv.html  contact.html   (français)
+en/index.html  experience.html  commitments.html  background.html  cv.html  contact.html   (anglais)
+projets.html, en/projects.html   redirections depuis les anciennes adresses
+css/style.css        styles, thèmes clair/sombre, mise en page mobile
+js/theme.js          bouton clair/sombre, menu mobile, affichage protégé de l'e-mail
+assets/logos/        logos des structures citées
+assets/              photo.jpg, cv.pdf, cv-en.pdf
+_src/build.py        générateur des pages
 ```
+
+L'adresse e-mail n'apparaît jamais en clair dans le HTML : elle est stockée à l'envers et
+reconstituée au clic sur « Afficher l'adresse ».

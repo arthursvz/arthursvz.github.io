@@ -30,6 +30,16 @@
       });
     }
 
+    // E-mail (stocké à l'envers, révélé au clic)
+    Array.prototype.forEach.call(document.querySelectorAll('.js-mail'), function (b) {
+      b.addEventListener('click', function () {
+        var m = b.getAttribute('data-m').split('').reverse().join('');
+        var a = document.createElement('a');
+        a.className = 'ext'; a.href = 'mailto:' + m; a.textContent = m;
+        b.replaceWith(a); a.focus();
+      });
+    });
+
     // Mobile menu
     var menu = document.querySelector('.menu-toggle');
     var nav = document.getElementById('site-nav');
