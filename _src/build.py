@@ -26,8 +26,8 @@ ENT = {
     'eedf':   ('Éclaireuses Éclaireurs de France', 'https://www.eedf.fr', 'eedf.svg', ''),
     'ffme':   ('FFME', 'https://www.ffme.fr', 'ffme.svg', ''),
     'cam':    ('Cambridge University Press & Assessment', 'https://www.cambridgeenglish.org', 'cambridge.png', ''),
-    'bellevue': ('Lycée Bellevue', None, None, 'LB'),
-    'limosin':  ('Lycée Léonard Limosin', None, None, 'LL'),
+    'bellevue': ('Lycée Bellevue', None, 'bellevue.png', ''),
+    'limosin':  ('Lycée Léonard Limosin', None, 'limosin.png', ''),
 }
 
 
@@ -507,7 +507,7 @@ CV_UPDATED = {'fr': 'novembre 2026', 'en': 'November 2026'}
 def cv(lang):
     p = '../' if lang == 'en' else ''
     fr = lang == 'fr'
-    pdf = f'{p}assets/{"cv.pdf" if fr else "cv-en.pdf"}'
+    pdf = f'{p}assets/CV_Arthur_SAUVEZIE.pdf'
     sub = (f'Mon CV complet, en français et en anglais dans un seul PDF. Mis à jour en {CV_UPDATED[lang]}.' if fr
            else f'My complete CV, in French and English in a single PDF. Updated {CV_UPDATED[lang]}.')
     body = head('CV', sub)
