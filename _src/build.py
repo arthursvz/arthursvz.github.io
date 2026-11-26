@@ -315,6 +315,10 @@ def page(lang, key, title, body):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(full)}</title>
 <meta name="description" content="{e(t['desc'][key])}">
+<link rel="icon" href="{p}favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{p}assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="{p}assets/apple-touch-icon.png">
+<meta name="theme-color" content="#1F5F5B">
 <link rel="alternate" hreflang="fr" href="{url('fr', key)}">
 <link rel="alternate" hreflang="en" href="{url('en', key)}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
