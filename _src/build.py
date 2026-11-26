@@ -22,7 +22,7 @@ ENT = {
     'pc':     ('Protection Civile', 'https://www.protection-civile.org', 'protection-civile.png', ''),
     'grinp':  ("Gr'INP", 'https://grinp.inpt.fr', 'grinp.png', ''),
     'net7':   ('net7', 'https://net7.dev', 'net7.svg', ''),
-    'w7':     ('Women7', None, None, 'W7'),
+    'w7':     ('Women7', None, 'women7.png', ''),
     'eedf':   ('Éclaireuses Éclaireurs de France', 'https://www.eedf.fr', 'eedf.svg', ''),
     'ffme':   ('FFME', 'https://www.ffme.fr', 'ffme.svg', ''),
     'cam':    ('Cambridge University Press & Assessment', 'https://www.cambridgeenglish.org', 'cambridge.png', ''),
@@ -56,15 +56,17 @@ def org(k, label=None):
 
 # ---------------------------------------------------------------- Données
 EXP = [
-    dict(id='airbus', ent='airbus',
+    dict(id='airbus', banner=('airbus',), ent='airbus',
          when={'fr': 'Févr. – juil. 2027 · 6 mois', 'en': 'Feb – Jul 2027 · 6 months'},
          role={'fr': "Projet de fin d'études", 'en': 'Final-year project'},
          badge={'fr': 'À venir', 'en': 'Upcoming'},
-         text={'fr': "Évaluation d'outils de virtualisation pour l'infrastructure système : étude comparative, tests de performance et recommandations.",
-               'en': 'Evaluating virtualisation tools for system infrastructure: comparative study, performance testing and recommendations.'},
-         rows={'fr': [('Domaine', 'Virtualisation, administration système')],
-               'en': [('Field', 'Virtualisation, system administration')]}),
-    dict(id='prefecture', ent='pref',
+         text={'fr': "Stage de 6 mois (projet de fin d'études).",
+               'en': '6-month internship (final-year project).'},
+         stats={'fr': [('6 mois', 'de stage'), ('Févr. 2027', 'début'), ('Juil. 2027', 'fin')],
+                'en': [('6 months', 'internship'), ('Feb 2027', 'start'), ('Jul 2027', 'end')]},
+         rows={'fr': [('Cadre', "Projet de fin d'études, diplôme d'ingénieur ENSEEIHT")],
+               'en': [('Context', 'Final-year project, ENSEEIHT engineering degree')]}),
+    dict(id='prefecture', banner=('prefecture',), ent='pref',
          when={'fr': 'Juin – août 2026 · 11 semaines', 'en': 'Jun – Aug 2026 · 11 weeks'},
          role={'fr': 'Stage · SGCD, service SIC', 'en': 'Internship · SGCD, IT department (SIC)'},
          text={'fr': "Développement d'un site centralisant les annuaires des agents : six sources de données fusionnées en un annuaire unique et à jour. L'outil est en production, à usage interne.",
@@ -73,77 +75,124 @@ EXP = [
                 'en': [('~1,000', 'staff'), ('6', 'data sources'), ('In production', 'internal use')]},
          rows={'fr': [('Technologies', 'Serveur LAMP (Linux, Apache, MySQL, PHP)')],
                'en': [('Stack', 'LAMP server (Linux, Apache, MySQL, PHP)')]}),
-    dict(id='irt', ent='irt',
+    dict(id='irt', banner=('irt',), ent='irt',
          when={'fr': 'Juin – juil. 2025 · 6 semaines', 'en': 'Jun – Jul 2025 · 6 weeks'},
          role={'fr': 'Stage de recherche', 'en': 'Research internship'},
          text={'fr': 'Travaux de recherche sur les LLM spécialisés en cybersécurité et sur les IDS/IPS fondés sur des réseaux de neurones.',
                'en': 'Research on cybersecurity-specialised LLMs and neural-network-based IDS/IPS.'},
+         stats={'fr': [('6 semaines', 'de stage'), ('LLM', 'spécialisés en cybersécurité'), ('IDS/IPS', 'à base de réseaux de neurones')],
+                'en': [('6 weeks', 'internship'), ('LLMs', 'specialised in cybersecurity'), ('IDS/IPS', 'based on neural networks')]},
          rows={'fr': [('Domaine', 'IA, cybersécurité')], 'en': [('Field', 'AI, cybersecurity')]}),
 ]
 
 PROJ = [
-    dict(id='grinp-web', ent='grinp',
+    dict(id='net7-infra', banner=('net7-infra',), ent='net7',
+         when={'fr': "2025 – aujourd'hui", 'en': '2025 – present'},
+         role={'fr': 'Infrastructure de virtualisation net7', 'en': 'net7 virtualisation infrastructure'},
+         text={'fr': "Administration du cluster Proxmox de l'association : six hyperviseurs, stockage distribué Ceph sur trois nœuds et migration à chaud des machines virtuelles. Une vingtaine de VM hébergent les services des étudiants.",
+               'en': "Administering the association's Proxmox cluster: six hypervisors, Ceph distributed storage on three nodes and live migration of virtual machines. Around twenty VMs host the students' services."},
+         stats={'fr': [('6', 'hyperviseurs en cluster'), ('3', 'nœuds Ceph'), ('~20', 'machines virtuelles')],
+                'en': [('6', 'clustered hypervisors'), ('3', 'Ceph nodes'), ('~20', 'virtual machines')]},
+         rows={'fr': [('Services', 'Git, mail, site web, pare-feu…')],
+               'en': [('Services', 'Git, mail, website, firewall…')]}),
+    dict(id='interconnexion', banner=('interco',), ent='n7',
+         when={'fr': '2025 – 2026 · 2e année', 'en': '2025 – 2026 · 2nd year'},
+         role={'fr': 'Projet Interconnexion', 'en': 'Network interconnection project'},
+         text={'fr': "Conception et configuration du réseau complet d'une entreprise dans un environnement virtualisé : routage, VPN, serveurs web et services d'infrastructure.",
+               'en': "Designed and configured a complete company network in a virtualised environment: routing, VPN, web servers and infrastructure services."},
+         stats={'fr': [('6', "étudiants dans l'équipe"), ('VPN', 'et serveurs web'), ('100 %', 'virtualisé')],
+                'en': [('6', 'students in the team'), ('VPN', 'and web servers'), ('100 %', 'virtualised')]},
+         rows={'fr': [('Domaine', 'Réseaux, administration système')],
+               'en': [('Field', 'Networking, system administration')]}),
+    dict(id='reseaux-mobiles', banner=('mobile',), ent='n7',
+         when={'fr': '2025 – 2026 · 2e année', 'en': '2025 – 2026 · 2nd year'},
+         role={'fr': 'Projet Réseaux mobiles', 'en': 'Mobile networks project'},
+         text={'fr': "Simulation d'un handover entre deux antennes 4G : reconfiguration d'une carte SIM et observation du basculement d'une cellule à l'autre.",
+               'en': 'Simulated a handover between two 4G cells: reconfigured a SIM card and observed the switch from one cell to the other.'},
+         stats={'fr': [('4G', 'LTE'), ('2', 'antennes'), ('SIM', 'reconfigurée')],
+                'en': [('4G', 'LTE'), ('2', 'cells'), ('SIM', 'reconfigured')]},
+         rows={'fr': [('Domaine', 'Réseaux mobiles, télécommunications')],
+               'en': [('Field', 'Mobile networks, telecommunications')]}),
+    dict(id='grinp-web', banner=('grinp-web',), ent='grinp',
          when={'fr': '2025 – aujourd\'hui', 'en': '2025 – present'},
          role={'fr': "Plateforme web du club d'escalade", 'en': 'Climbing club web platform'},
          text={'fr': "Reprise et maintenance de la plateforme du club Gr'INP, conçue en 2024 par un autre membre : comptes adhérents, calendrier et inscriptions aux séances, pour les quelque 200 adhérents.",
                'en': "Took over and maintain the Gr'INP club platform, first built in 2024 by another member: member accounts, calendar and session sign-ups for around 200 members."},
-         links=[('grinp.inpt.fr', 'https://grinp.inpt.fr')]),
+         links=[('grinp.inpt.fr', 'https://grinp.inpt.fr')],
+         stats={'fr': [('~200', 'adhérents'), ('Depuis 2025', 'maintenance'), ('En production', 'grinp.inpt.fr')],
+                'en': [('~200', 'members'), ('Since 2025', 'maintenance'), ('In production', 'grinp.inpt.fr')]},
+         rows={'fr': [('Fonctionnalités', 'Comptes adhérents, calendrier, inscriptions aux séances')],
+               'en': [('Features', 'Member accounts, calendar, session sign-ups')]}),
 ]
 
 ENG = [
-    dict(id='protection-civile', ent='pc', orgname={'fr': 'Protection Civile de la Haute-Garonne', 'en': 'Civil Protection, Haute-Garonne'},
+    dict(id='protection-civile', banner=('pc',), ent='pc', orgname={'fr': 'Protection Civile de la Haute-Garonne', 'en': 'Civil Protection, Haute-Garonne'},
          when={'fr': 'Sept. 2024 – aujourd\'hui', 'en': 'Sep 2024 – present'},
          role={'fr': "Équipier-secouriste, chef d'équipe, chef de poste", 'en': 'First-aid team member, team leader, post leader'},
          text={'fr': "Secours à personnes sur dispositifs prévisionnels de secours, déclenchements fédéraux et gardes SAMU. Aujourd'hui chef d'équipe et chef de poste : j'encadre les secouristes et coordonne les postes de secours.",
                'en': 'First aid at planned event cover, federal call-outs and SAMU (emergency medical service) shifts. Now a team leader and post leader: I lead first-aiders and coordinate first-aid posts.'},
-         stats={'fr': [('600 h+', 'de bénévolat par an'), ('Des centaines', "d'activités"), ('PSE1 · PSE2 · APS1', 'certifications')],
-                'en': [('600 h+', 'volunteering per year'), ('Hundreds', 'of activities'), ('PSE1 · PSE2 · APS1', 'certifications')]},
-         tags={'fr': ['Incendies de Bordeaux (déclenchement fédéral)', 'Marathon de Toulouse', 'Gardes SAMU'],
-               'en': ['Bordeaux wildfires (federal call-out)', 'Toulouse Marathon', 'SAMU shifts']},
+         stats={'fr': [('600 h+', 'de bénévolat par an'), ('Des centaines', "d'activités"), ('PSE1 · PSE2 · AEP1', 'certifications')],
+                'en': [('600 h+', 'volunteering per year'), ('Hundreds', 'of activities'), ('PSE1 · PSE2 · AEP1', 'certifications')]},
+         rows={'fr': [('Missions marquantes', 'Incendies de Bordeaux (déclenchement fédéral), Marathon de Toulouse, gardes SAMU')],
+               'en': [('Notable missions', 'Bordeaux wildfires (federal call-out), Toulouse Marathon, SAMU shifts')]},
          card={'fr': ('600 h+', 'de secours par an'), 'en': ('600 h+', 'of first aid per year')}),
-    dict(id='grinp', ent='grinp', orgname={'fr': "Club Gr'INP · AS Toulouse INP", 'en': "Gr'INP club · AS Toulouse INP"},
+    dict(id='grinp', banner=('grinp',), ent='grinp', orgname={'fr': "Club Gr'INP · AS Toulouse INP", 'en': "Gr'INP club · AS Toulouse INP"},
          when={'fr': '2024 – aujourd\'hui', 'en': '2024 – present'},
          role={'fr': "Président du club d'escalade", 'en': 'President of the climbing club'},
          text={'fr': "Direction de la section : organisation des séances et des événements, gestion du budget et des adhésions, coordination de l'équipe de bénévoles et lien avec le bureau de l'AS. Initiateur escalade breveté FFME.",
                'en': 'Running the section: organising sessions and events, managing the budget and memberships, coordinating the volunteer team and liaising with the sports association board. FFME-certified climbing instructor.'},
          stats={'fr': [('200', 'adhérents'), ('14', 'bénévoles'), ('3 k€', 'de budget annuel')],
                 'en': [('200', 'members'), ('14', 'volunteers'), ('€3k', 'annual budget')]},
-         tags={'fr': ['Compétitions', "Soirées « Nuits de l'escalade »", 'Plateforme web du club'],
-               'en': ['Competitions', "“Nuits de l'escalade” evenings", 'Club web platform']},
+         rows={'fr': [('Événements', "Compétitions, soirées « Nuits de l'escalade »")],
+               'en': [('Events', "Competitions, “Nuits de l'escalade” evenings")]},
          card={'fr': ('200', 'adhérents, 14 bénévoles'), 'en': ('200', 'members, 14 volunteers')}),
-    dict(id='net7', ent='net7', orgname={'fr': "net7, association informatique de l'ENSEEIHT", 'en': "net7, ENSEEIHT's IT association"},
+    dict(id='net7', banner=('net7',), ent='net7', orgname={'fr': "net7, association informatique de l'ENSEEIHT", 'en': "net7, ENSEEIHT's IT association"},
          when={'fr': '2025 – aujourd\'hui', 'en': '2025 – present'},
          role={'fr': 'Administrateur systèmes et réseaux', 'en': 'Systems and network administrator'},
          text={'fr': "Administration système de l'ensemble de l'infrastructure de l'association : machines virtuelles sur les hyperviseurs Proxmox, infrastructure réseau, services hébergés pour les étudiants, supervision et sécurisation.",
                'en': "System administration across the association's whole infrastructure: virtual machines on Proxmox hypervisors, network infrastructure, services hosted for students, monitoring and security."},
-         tags={'fr': ['Proxmox', 'Machines virtuelles', 'Réseau', 'Services étudiants'],
-               'en': ['Proxmox', 'Virtual machines', 'Networking', 'Student services']},
+         stats={'fr': [('6', 'hyperviseurs en cluster'), ('3', 'nœuds Ceph'), ('~20', 'machines virtuelles')],
+                'en': [('6', 'clustered hypervisors'), ('3', 'Ceph nodes'), ('~20', 'virtual machines')]},
+         rows={'fr': [('Détails', '<a class="ext" href="experiences.html#net7-infra">Projet Infrastructure de virtualisation</a>')],
+               'en': [('Details', '<a class="ext" href="experience.html#net7-infra">Virtualisation infrastructure project</a>')]},
          card={'fr': ('Proxmox', 'VM, réseau, services'), 'en': ('Proxmox', 'VMs, network, services')}),
-    dict(id='women7', ent='w7', orgname={'fr': 'Women7 · ENSEEIHT', 'en': 'Women7 · ENSEEIHT'},
+    dict(id='women7', banner=('ceve',), ent='w7', orgname={'fr': 'Women7 · ENSEEIHT', 'en': 'Women7 · ENSEEIHT'},
          when={'fr': 'Juin 2025 – juin 2026', 'en': 'Jun 2025 – Jun 2026'},
          role={'fr': 'Membre du bureau', 'en': 'Board member'},
          text={'fr': "Au sein d'un bureau de trois personnes, organisation de la journée annuelle d'accueil des collégiennes d'Occitanie à l'ENSEEIHT : découverte des métiers de l'ingénierie, pour les encourager à s'orienter vers les filières scientifiques.",
                'en': 'As one of a three-person board, organised the annual day welcoming middle-school girls from Occitanie to ENSEEIHT, introducing engineering careers to encourage them towards science.'},
-         stats={'fr': [('200', 'collégiennes accueillies'), ('3', 'membres du bureau')],
-                'en': [('200', 'girls welcomed'), ('3', 'board members')]},
+         stats={'fr': [('200', 'collégiennes accueillies'), ('3', 'membres du bureau'), ('1', 'journée par an')],
+                'en': [('200', 'girls welcomed'), ('3', 'board members'), ('1', 'day each year')]},
+         rows={'fr': [('Public', "Collégiennes d'Occitanie")],
+               'en': [('Audience', 'Middle-school girls from Occitanie')]},
          card={'fr': ('200', 'collégiennes accueillies'), 'en': ('200', 'girls welcomed')}),
-    dict(id='ceve', ent='n7', orgname={'fr': "Conseil des études et de la vie étudiante · ENSEEIHT", 'en': 'Studies and Student Life Council · ENSEEIHT'},
+    dict(id='ceve', banner=('women7',), ent='n7', orgname={'fr': "Conseil des études et de la vie étudiante · ENSEEIHT", 'en': 'Studies and Student Life Council · ENSEEIHT'},
          when={'fr': '2024 – aujourd\'hui', 'en': '2024 – present'},
          role={'fr': 'Représentant étudiant', 'en': 'Student representative'},
          text={'fr': "Porte-parole des étudiants auprès de l'équipe pédagogique et de l'administration. Je participe aux décisions sur les formations et la vie étudiante, dont le vote des modalités de contrôle des connaissances (MCC).",
                'en': 'Student spokesperson to the teaching staff and administration. I take part in decisions on programmes and student life, including voting on assessment rules (MCC).'},
-         tags={'fr': ['Vote des MCC', 'Formations', 'Vie étudiante'], 'en': ['Assessment rules', 'Programmes', 'Student life']},
+         stats={'fr': [('Élu', 'représentant étudiant'), ('MCC', 'votées en conseil'), ('Depuis 2024', 'mandat')],
+                'en': [('Elected', 'student representative'), ('MCC', 'voted in council'), ('Since 2024', 'term')]},
+         rows={'fr': [('Sujets', 'Formations, vie étudiante, modalités de contrôle des connaissances')],
+               'en': [('Topics', 'Programmes, student life, assessment rules')]},
          card={'fr': ('Élu', 'vote des MCC'), 'en': ('Elected', 'votes on assessment rules')}),
-    dict(id='eedf', ent='eedf', orgname={'fr': 'Éclaireuses Éclaireurs de France · Limoges', 'en': 'Éclaireuses Éclaireurs de France (scouts) · Limoges'},
+    dict(id='eedf', banner=('eedf',), ent='eedf', orgname={'fr': 'Éclaireuses Éclaireurs de France · Limoges', 'en': 'Éclaireuses Éclaireurs de France (scouts) · Limoges'},
          when={'fr': '2021 – 2022', 'en': '2021 – 2022'},
          role={'fr': "Responsable d'animation et assistant sanitaire", 'en': 'Activity leader and health officer'},
          text={'fr': "Pendant un an, encadrement et animation d'activités pour les jeunes du groupe, et suivi sanitaire en tant qu'assistant sanitaire.",
                'en': 'For a year, led activities for the young members of the group and handled health matters as health officer.'},
+         stats={'fr': [('1 an', "d'engagement"), ('Animation', 'des jeunes du groupe'), ('Sanitaire', 'suivi des jeunes')],
+                'en': [('1 year', 'of commitment'), ('Activities', 'for young members'), ('Health', 'health officer')]},
+         rows={'fr': [('Lieu', 'Limoges')], 'en': [('Location', 'Limoges')]},
          card={'fr': ('1 an', "d'animation"), 'en': ('1 year', 'leading activities')}),
 ]
 
 EDU = [
-    dict(ent='laval', when={'fr': 'Automne 2026', 'en': 'Fall 2026'}, where='Québec',
+    dict(ent='airbus', future=True, when={'fr': 'Févr. – juil. 2027', 'en': 'Feb – Jul 2027'}, where='',
+         role={'fr': "Projet de fin d'études, puis diplôme d'ingénieur", 'en': 'Final-year project, then engineering degree'},
+         text={'fr': "Stage de 6 mois chez Airbus Defence and Space, qui conclut le cursus ENSEEIHT. Diplôme d'ingénieur en octobre 2027.",
+               'en': '6-month internship at Airbus Defence and Space, completing the ENSEEIHT programme. Engineering degree awarded in October 2027.'}),
+    dict(ent='laval', now=True, when={'fr': 'Automne 2026', 'en': 'Fall 2026'}, where='Québec',
          role={'fr': "Semestre d'échange", 'en': 'Exchange semester'},
          text={'fr': 'Gestion de projet, gouvernance de la sécurité, réseaux mobiles, cloud et DevOps.',
                'en': 'Project management, security governance, mobile networks, cloud and DevOps.'}),
@@ -161,7 +210,7 @@ EDU = [
 CERTS = [
     ('pc', {'fr': "Équipier-secouriste PSE2", 'en': 'First-aid team member (PSE2)'}, {'fr': 'Mars 2026', 'en': 'Mar 2026'}),
     ('cam', {'fr': 'Linguaskill Business · 178 points', 'en': 'Linguaskill Business · 178 points'}, {'fr': 'Juin 2026', 'en': 'Jun 2026'}),
-    ('pc', {'fr': 'Aide et écoute psychologique (APS1)', 'en': 'Psychological first aid and listening (APS1)'}, {'fr': 'Févr. 2025', 'en': 'Feb 2025'}),
+    ('pc', {'fr': 'Aide et écoute psychologique (AEP1)', 'en': 'Psychological first aid and listening (AEP1)'}, {'fr': 'Févr. 2025', 'en': 'Feb 2025'}),
     ('pc', {'fr': 'Secouriste PSE1', 'en': 'First aider (PSE1)'}, {'fr': 'Déc. 2024', 'en': 'Dec 2024'}),
     ('ffme', {'fr': "Brevet fédéral d'initiateur SAE (escalade)", 'en': 'Federal climbing instructor certificate (indoor walls)'}, {'fr': 'Oct. 2024', 'en': 'Oct 2024'}),
 ]
@@ -169,19 +218,47 @@ CERT_ORG = {'pc': {'fr': 'Fédération Nationale de Protection Civile', 'en': 'F
             'cam': {'fr': 'Cambridge University Press & Assessment', 'en': 'Cambridge University Press & Assessment'},
             'ffme': {'fr': 'Fédération Française de la Montagne et de l\'Escalade', 'en': 'French Mountaineering and Climbing Federation'}}
 
+# Compétences : (libellé, (page, ancre) ou None). Une ancre = là où la compétence a été mise en œuvre.
 SKILLS = {
-    'fr': [('Systèmes et virtualisation', 'Linux, Windows, hyperviseurs Proxmox.'),
-           ('Réseaux', 'TCP/IP, routage, commutation.'),
-           ('DevOps et web', 'Git, CI/CD, Bash, serveur LAMP.'),
-           ('Langages', 'Python, Java, C, PHP.'),
-           ('Langues', 'Français natif, anglais B2/C1 (Linguaskill 178).'),
-           ('Transversales', "Gestion du stress et de l'urgence, encadrement d'équipes, communication en situation critique.")],
-    'en': [('Systems and virtualisation', 'Linux, Windows, Proxmox hypervisors.'),
-           ('Networking', 'TCP/IP, routing, switching.'),
-           ('DevOps and web', 'Git, CI/CD, Bash, LAMP stack.'),
-           ('Languages', 'Python, Java, C, PHP.'),
-           ('Spoken languages', 'French (native), English B2/C1 (Linguaskill 178).'),
-           ('Soft skills', 'Stress and emergency management, team leadership, clear communication in critical situations.')],
+    'fr': [
+        ('Systèmes et virtualisation', [('Linux', None), ('Windows', None), ('Proxmox VE', ('exp', 'net7-infra')), ('Ceph', ('exp', 'net7-infra')), ('Migration à chaud', ('exp', 'net7-infra'))]),
+        ('Réseaux', [('TCP/IP', None), ('Routage, commutation', ('exp', 'interconnexion')), ('VPN', ('exp', 'interconnexion')), ('4G / LTE', ('exp', 'reseaux-mobiles'))]),
+        ('DevOps et web', [('Git', None), ('CI/CD', None), ('Bash', None), ('Serveur LAMP', ('exp', 'prefecture')), ('Plateforme web', ('exp', 'grinp-web'))]),
+        ('Cybersécurité et IA', [('LLM spécialisés', ('exp', 'irt')), ('IDS / IPS', ('exp', 'irt')), ('Pare-feu', ('exp', 'net7-infra'))]),
+        ('Langages', [('Python', None), ('Java', None), ('C', None), ('PHP', ('exp', 'prefecture'))]),
+        ('Langues', [('Français · natif', None), ('Anglais · B2/C1', ('bg', 'certifications'))]),
+        ('Transversales', [("Gestion de l'urgence", ('eng', 'protection-civile')), ("Encadrement d'équipes", ('eng', 'protection-civile')), ('Communication en situation critique', ('eng', 'protection-civile')), ('Gestion associative et budget', ('eng', 'grinp'))]),
+    ],
+    'en': [
+        ('Systems and virtualisation', [('Linux', None), ('Windows', None), ('Proxmox VE', ('exp', 'net7-infra')), ('Ceph', ('exp', 'net7-infra')), ('Live migration', ('exp', 'net7-infra'))]),
+        ('Networking', [('TCP/IP', None), ('Routing, switching', ('exp', 'interconnexion')), ('VPN', ('exp', 'interconnexion')), ('4G / LTE', ('exp', 'reseaux-mobiles'))]),
+        ('DevOps and web', [('Git', None), ('CI/CD', None), ('Bash', None), ('LAMP stack', ('exp', 'prefecture')), ('Web platform', ('exp', 'grinp-web'))]),
+        ('Cybersecurity and AI', [('Specialised LLMs', ('exp', 'irt')), ('IDS / IPS', ('exp', 'irt')), ('Firewall', ('exp', 'net7-infra'))]),
+        ('Programming', [('Python', None), ('Java', None), ('C', None), ('PHP', ('exp', 'prefecture'))]),
+        ('Languages', [('French · native', None), ('English · B2/C1', ('bg', 'certifications'))]),
+        ('Soft skills', [('Emergency management', ('eng', 'protection-civile')), ('Team leadership', ('eng', 'protection-civile')), ('Communication under pressure', ('eng', 'protection-civile')), ('Running an association and budget', ('eng', 'grinp'))]),
+    ],
+}
+CERT_GROUPS = [({'fr': 'Secourisme', 'en': 'First aid'}, ['pc']),
+               ({'fr': 'Langues', 'en': 'Languages'}, ['cam']),
+               ({'fr': 'Encadrement sportif', 'en': 'Sports instruction'}, ['ffme'])]
+
+# Bannières (assets/banners/) : clé -> (fichier, crédit). Images libres de droits (Wikimedia Commons).
+C = 'https://commons.wikimedia.org/wiki/File:'
+BANNERS = {
+    'airbus':     ('airbus.jpg', 'ESA', 'CC BY-SA 3.0 IGO', C + 'ESA_and_Airbus_engineers_test_Smile_spacecraft_boom_ESA506838.png'),
+    'prefecture': ('prefecture.jpg', 'Chatsam', 'CC BY-SA 3.0', C + 'Pr%C3%A9fecture_de_Haute-Garonne_(Toulouse)_106.jpg'),
+    'irt':        ('irt.jpg', 'Frédéric Neupont', 'CC BY-SA 4.0', C + 'Toulouse_-_Immeuble_B612.jpg'),
+    'net7-infra': ('net7.jpg', 'NOIRLab/NSF/AURA/T. Slovinský', 'CC BY 4.0', C + 'NOIRLab_HQ_Server_Racks_(6V6A0402-CC).jpg'),
+    'interco':    ('interconnexion.jpg', 'Inisheer', 'CC BY-SA 3.0', C + 'CERN-20060225-01.jpg'),
+    'pc':         ('protection-civile.jpg', 'Auriane T-D, APC21', 'CC BY 4.0', C + 'VPSP_Protection_Civile_21.jpg'),
+    'grinp':      ('grinp.jpg', 'Ka23 13', 'CC BY-SA 4.0', C + 'ClimbingHolds_20211103_145113.jpg'),
+    'net7':       ('net7-asso.jpg', 'NOIRLab/NSF/AURA/T. Slovinský', 'CC BY 4.0', C + 'NOIRLab_HQ_Server_Racks_(6V6A0395-CC).jpg'),
+    'women7':     ('women7.jpg', 'Romainbehar', 'CC0', C + 'Lyon_7e_-_Universit%C3%A9_Lyon_2_-_Palais_Hirsch_-_Grand_amphith%C3%A9%C3%A2tre_01.jpg'),
+    'ceve':       ('ceve.jpg', 'Breather', 'CC0', C + 'Minimalist_meeting_room_(Unsplash).jpg'),
+    'eedf':       ('eedf.jpg', 'US Forest Service', {'fr': 'domaine public', 'en': 'public domain'}, C + 'Meadow_Creek_Campfire_(9194201298).jpg'),
+    'mobile':     ('reseaux-mobiles.jpg', 'Wikideas1', 'CC0', C + 'Lattice_cell_tower-2.jpg'),
+    'grinp-web':  ('grinp-web.jpg', 'Vatealyo', 'CC0', C + 'Gorliz_sports_center_climbing_gym.jpg'),
 }
 
 # ---------------------------------------------------------------- Textes UI
@@ -247,6 +324,7 @@ def page(lang, key, title, body):
 <script src="{p}js/theme.js"></script>
 </head>
 <body>
+<div class="ambient" aria-hidden="true"><div class="layer"><i class="b b1"></i><i class="b b2"></i><i class="b b3"></i></div><i class="cursor"></i></div>
 <header class="site-header">
 <div class="wrap">
 <a class="brand" href="index.html">Arthur Sauvezie</a>
@@ -295,7 +373,13 @@ def entry(lang, p, d, orglabel=None):
     links = ''.join(f' · <a class="ext" href="{u}" target="_blank" rel="noopener">{e(l)}</a>' for l, u in d.get('links', []))
     where = f' · {d["where"]}' if 'where' in d else ''
     idattr = f' id="{d["id"]}"' if 'id' in d else ''
-    return (f'<article class="eng"{idattr}><div class="side">{logo(d["ent"], p)}<div class="when">{d["when"][lang]}{where}</div></div>'
+    ban = ''
+    if 'banner' in d and d['banner'][0] in BANNERS:
+        f, who, lic, src = BANNERS[d['banner'][0]]
+        lic = lic[lang] if isinstance(lic, dict) else lic
+        ban = (f'<figure class="banner"><img src="{p}assets/banners/{f}" alt="" loading="lazy">'
+               f'<figcaption><a href="{src}" target="_blank" rel="noopener">{"Photo :" if lang == "fr" else "Photo:"} {e(who)} · {lic}</a></figcaption></figure>')
+    return (f'<article class="eng{" has-banner" if ban else ""}"{idattr}>{ban}<div class="side">{logo(d["ent"], p)}<div class="when">{d["when"][lang]}{where}</div></div>'
             f'<div class="body"><h3>{e(d["role"][lang])}{badge}</h3><div class="org">{org(d["ent"], orglabel)}{links}</div>'
             f'<p>{e(d["text"][lang])}</p>{stats(d.get("stats", {}).get(lang))}{tags(d.get("tags", {}).get(lang))}{rows(d.get("rows", {}).get(lang))}</div></article>')
 
@@ -304,23 +388,23 @@ def entry(lang, p, d, orglabel=None):
 def home(lang):
     p = '../' if lang == 'en' else ''
     fr = lang == 'fr'
-    lead = ("Élève ingénieur en dernière année à l'" + org('n7', 'ENSEEIHT') + ", en informatique et télécommunications, actuellement en échange à l'" + org('laval') + ". Passionné par l'aéronautique, le spatial et la cybersécurité, je m'investis aussi comme secouriste et responsable associatif."
+    lead = ("Élève ingénieur en dernière année à l'ENSEEIHT, en informatique et télécommunications, actuellement en échange à l'Université Laval. Passionné par l'aéronautique, le spatial et la cybersécurité, je m'investis aussi comme secouriste et responsable associatif."
             if fr else
-            "Final-year engineering student at " + org('n7', 'ENSEEIHT') + " in computer science and telecommunications, currently on exchange at " + org('laval') + ". Passionate about aeronautics, space and cybersecurity, and committed as a first-aider and student association leader.")
+            "Final-year engineering student at ENSEEIHT in computer science and telecommunications, currently on exchange at Université Laval. Passionate about aeronautics, space and cybersecurity, and committed as a first-aider and student association leader.")
     strip = [
         ('Formation' if fr else 'Education', logo('n7', p, 'sm'), 'ENSEEIHT, Informatique et Télécom.' if fr else 'ENSEEIHT, CS and Telecom'),
         ('En ce moment' if fr else 'Currently', logo('laval', p, 'sm'), 'Échange, Université Laval' if fr else 'Exchange, Université Laval'),
-        ('Recherche' if fr else 'Looking for', '', 'Premier emploi, après mon PFE (juil. 2027)' if fr else 'First job, after my final-year project (Jul 2027)'),
+        ('Recherche' if fr else 'Looking for', '', 'Premier emploi, dès septembre 2027' if fr else 'First job, from September 2027'),
     ]
-    strip_html = ''.join(f'<div><span class="k">{k}</span><span class="v">{l}{v}</span></div>' for k, l, v in strip)
+    strip_html = ''.join(f'<div><span class="k">{k}</span><span class="v">{v}</span></div>' for k, _, v in strip)
     eng_file = FILE[lang]['eng']
     cards = ''.join(
         f'<a class="card" href="{eng_file}#{d["id"]}"><div class="card-top">{logo(d["ent"], p).replace("<a ", "<span ").replace("</a>", "</span>") if ENT[d["ent"]][1] else logo(d["ent"], p)}'
         f'<div><h3>{e(d["role"][lang])}</h3><div class="sub">{e(d["orgname"][lang])}</div></div></div>'
         f'<div class="fig"><b>{e(d["card"][lang][0])}</b>{e(d["card"][lang][1])}</div></a>'
-        for d in ENG)
+        for d in ENG[:3])
     exp_file = FILE[lang]['exp']
-    items = EXP + PROJ
+    items = EXP + PROJ[:2]
     lst = ''.join(
         f'<a class="withlogo" href="{exp_file}#{d["id"]}">{logo(d["ent"], p, "sm").replace("<a ", "<span ").replace("</a>", "</span>") if ENT[d["ent"]][1] else logo(d["ent"], p, "sm")}'
         f'<span class="t">{e(d["role"][lang])}</span><span class="m">{e(ENT[d["ent"]][0])} · {d["when"][lang].split(" · ")[0]}</span><span class="go" aria-hidden="true">→</span></a>'
@@ -336,13 +420,12 @@ def home(lang):
 </section>
 <div class="wrap"><section class="strip">{strip_html}</section></div>
 <section class="wrap section">
-<div class="shead"><h2>{'Engagements' if fr else 'Commitments'}</h2><a href="{eng_file}">{'Tout voir →' if fr else 'See all →'}</a></div>
-<p class="kicker">{"Secouriste, président de club, administrateur système bénévole : en parallèle de mes études, je prends des responsabilités sur le terrain." if fr else "First-aider, club president, volunteer sysadmin: alongside my studies, I take on hands-on responsibilities."}</p>
-<div class="cards">{cards}</div>
-</section>
-<section class="wrap section tight">
 <div class="shead"><h2>{'Expériences et projets' if fr else 'Experience and projects'}</h2><a href="{exp_file}">{'Détails →' if fr else 'Details →'}</a></div>
 <div class="list">{lst}</div>
+</section>
+<section class="wrap section tight">
+<div class="shead"><h2>{'Engagements' if fr else 'Commitments'}</h2><a href="{eng_file}">{'Tout voir →' if fr else 'See all →'}</a></div>
+<div class="cards">{cards}</div>
 </section>'''
     return page(lang, 'home', NAV[lang]['home'], body)
 
@@ -367,39 +450,136 @@ def engagements(lang):
     return page(lang, 'eng', NAV[lang]['eng'], body)
 
 
+def timeline(lang, p):
+    fr = lang == 'fr'
+    out = []
+    for d in EDU:
+        cls = ' class="future"' if d.get('future') else (' class="now"' if d.get('now') else '')
+        flag = ''
+        if d.get('now'):
+            flag = f'<span class="flag">{"En cours" if fr else "Now"}</span>'
+        elif d.get('future'):
+            flag = f'<span class="flag">{"À venir" if fr else "Upcoming"}</span>'
+        badge = f'<span class="badge">{d["badge"][lang]}</span>' if 'badge' in d else ''
+        where = f' · {d["where"]}' if d.get('where') else ''
+        out.append(f'<li{cls}><span class="dot" aria-hidden="true"></span><div class="when">{d["when"][lang]}{flag}</div>'
+                   f'<div class="what"><div class="head">{logo(d["ent"], p, "sm")}<div><h3>{e(d["role"][lang])}{badge}</h3>'
+                   f'<div class="org">{org(d["ent"])}{where}</div></div></div><p>{e(d["text"][lang])}</p></div></li>')
+    return '<ol class="tl">' + ''.join(out) + '</ol>'
+
+
+def skills(lang):
+    fr = lang == 'fr'
+    cols = []
+    for cat, items in SKILLS[lang]:
+        chips = []
+        for label, ref in items:
+            if ref:
+                pg, anchor = ref
+                tip = ('Voir où : ' if fr else 'See where: ') + NAV[lang][pg]
+                chips.append(f'<a class="chip proof" href="{FILE[lang][pg]}#{anchor}" title="{e(tip)}">{e(label)}</a>')
+            else:
+                chips.append(f'<span class="chip">{e(label)}</span>')
+        cols.append(f'<div><h3>{e(cat)}</h3><div class="chips">{"".join(chips)}</div></div>')
+    note = ("Les compétences marquées d'un point renvoient à l'expérience ou à l'engagement où je les ai mises en œuvre." if fr
+            else 'Skills marked with a dot link to the experience or commitment where I put them into practice.')
+    return f'<p class="legend"><span class="dotmark" aria-hidden="true"></span>{e(note)}</p><div class="cols skills">{"".join(cols)}</div>'
+
+
 def parcours(lang):
     p = '../' if lang == 'en' else ''
     fr = lang == 'fr'
     body = head('Parcours' if fr else 'Background', T[lang]['desc']['bg'])
-    body += f'<section class="wrap block-sm"><h2>{"Formation" if fr else "Education"}</h2>' + ''.join(entry(lang, p, d) for d in EDU) + '</section>'
-    certs = ''.join(f'<li>{logo(k, p)}<div class="t">{e(name[lang])}<span>{org(k, CERT_ORG[k][lang])}</span></div><div class="d">{d[lang]}</div></li>' for k, name, d in CERTS)
-    body += f'<section class="wrap block-sm"><h2>{"Certifications" if fr else "Certifications"}</h2><ul class="certs">{certs}</ul></section>'
-    cols = ''.join(f'<div><h3>{e(a)}</h3><p>{e(b)}</p></div>' for a, b in SKILLS[lang])
-    body += f'<section class="wrap block"><h2>{"Compétences" if fr else "Skills"}</h2><div class="cols">{cols}</div></section>'
+    body += f'<section class="wrap block-sm"><h2>{"Formation" if fr else "Education"}</h2>{timeline(lang, p)}</section>'
+    groups = ''
+    for gname, keys in CERT_GROUPS:
+        lis = ''.join(f'<li>{logo(k, p)}<div class="t">{e(name[lang])}<span>{org(k, CERT_ORG[k][lang])}</span></div><div class="d">{d[lang]}</div></li>'
+                      for k, name, d in CERTS if k in keys)
+        groups += f'<div class="cgroup"><h3>{gname[lang]}</h3><ul class="certs">{lis}</ul></div>'
+    body += f'<section class="wrap block-sm" id="certifications"><h2>Certifications</h2>{groups}</section>'
+    body += f'<section class="wrap block"><h2>{"Compétences" if fr else "Skills"}</h2>{skills(lang)}</section>'
     return page(lang, 'bg', NAV[lang]['bg'], body)
+
+
+CV_UPDATED = {'fr': 'novembre 2026', 'en': 'November 2026'}
 
 
 def cv(lang):
     p = '../' if lang == 'en' else ''
     fr = lang == 'fr'
-    body = head('CV', T[lang]['desc']['cv'] + (' Le fichier contient la version française et la version anglaise.' if fr else ' The file includes both the French and English versions.'))
-    body = body.replace('</p></section>', f'</p><div class="actions"><a class="btn primary" href="{p}assets/{"cv.pdf" if fr else "cv-en.pdf"}" download>{"Télécharger le CV (PDF)" if fr else "Download CV (PDF)"}</a><a class="btn" href="{FILE[lang]["bg"]}">{"Voir le parcours" if fr else "See background"}</a></div></section>')
-    cols = [('Formation' if fr else 'Education', 'ENSEEIHT, Informatique et Télécommunications. Échange à l\'Université Laval.' if fr else 'ENSEEIHT, Computer Science and Telecommunications. Exchange at Université Laval.'),
-            ('Expériences' if fr else 'Experience', 'Airbus Defence and Space (PFE), Préfecture de la Haute-Garonne, IRT Saint Exupéry.'),
-            ('Engagements' if fr else 'Commitments', "Protection Civile, Gr'INP, net7, Women7, CEVE." if fr else "Civil Protection, Gr'INP, net7, Women7, student council.")]
-    body += '<section class="wrap section tight"><div class="cols">' + ''.join(f'<div><h3>{a}</h3><p>{e(b)}</p></div>' for a, b in cols) + '</div></section>'
+    pdf = f'{p}assets/{"cv.pdf" if fr else "cv-en.pdf"}'
+    sub = (f'Mon CV complet, en français et en anglais dans un seul PDF. Mis à jour en {CV_UPDATED[lang]}.' if fr
+           else f'My complete CV, in French and English in a single PDF. Updated {CV_UPDATED[lang]}.')
+    body = head('CV', sub)
+    actions = (f'<div class="actions"><a class="btn primary" href="{pdf}" download>{"Télécharger le CV (PDF)" if fr else "Download CV (PDF)"}</a>'
+               f'<a class="btn" href="{FILE[lang]["bg"]}">{"Voir le parcours" if fr else "See background"}</a></div>')
+    body = body.replace('</p></section>', f'</p>{actions}</section>')
+    kpis = [(str(len(EXP)), 'stages, dont le PFE' if fr else 'internships, incl. final-year project'),
+            (str(len(PROJ)), 'projets' if fr else 'projects'),
+            ('600 h+', 'de secours par an' if fr else 'of first aid per year'),
+            ('2', 'langues · FR, EN' if fr else 'languages · FR, EN')]
+    body += '<section class="wrap block-sm"><ul class="kpis">' + ''.join(f'<li><b>{e(a)}</b><span>{e(b)}</span></li>' for a, b in kpis) + '</ul></section>'
+    pages = [('fr', 1, 'Version française', 'French version'), ('en', 2, 'Version anglaise', 'English version')]
+    if not fr:
+        pages.reverse()
+    open_lbl = 'Ouvrir' if fr else 'Open'
+    prev = ''.join(
+        f'<a class="cvprev" href="{pdf}#page={n}" target="_blank" rel="noopener">'
+        f'<span class="sheet"><img src="{p}assets/cv-preview-{code}.jpg" alt="{e(lf if fr else le)} du CV" loading="lazy" width="760" height="1075"><span class="open">{open_lbl} ↗</span></span>'
+        f'<span class="cap">{lf if fr else le}<span>Page {n}</span></span></a>'
+        for code, n, lf, le in pages)
+    body += f'<section class="wrap block"><h2>{"Aperçu" if fr else "Preview"}</h2><div class="cvgrid">{prev}</div></section>'
     return page(lang, 'cv', 'CV', body)
 
 
+# Où je suis en ce moment (fuseau IANA pour l'heure locale affichée sur la page Contact)
+NOW_PLACE = {'fr': 'Québec', 'en': 'Quebec City', 'tz': 'America/Toronto',
+             'note': {'fr': "en échange jusqu'en décembre 2026, puis Toulouse", 'en': 'on exchange until December 2026, then Toulouse'}}
+
+SEEK = {
+    'fr': [('Postes', 'Ingénieur systèmes, réseaux et télécoms', ''),
+           ('Secteurs', 'Défense, aéronautique, spatial', ''),
+           ('Lieu', 'Toulouse ou Paris', ''),
+           ('À terme', 'Évoluer vers la cybersécurité', 'Pas forcément dès le premier poste')],
+    'en': [('Roles', 'Systems, network and telecoms engineer', ''),
+           ('Sectors', 'Defence, aeronautics, space', ''),
+           ('Location', 'Toulouse or Paris', ''),
+           ('Longer term', 'Move into cybersecurity', 'Not necessarily in my first role')],
+}
+PRACTICAL = {
+    'fr': [('Langues', 'Français, anglais'), ('Permis', 'Permis B'), ('Nationalité', 'Française uniquement')],
+    'en': [('Languages', 'French, English'), ('Driving licence', 'Full licence (B)'), ('Nationality', 'French only')],
+}
+
+IC_MAIL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>'
+IC_IN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V16M8 7.6v.1M12 16v-5.5M12 13c0-1.6 1-2.6 2.3-2.6S16.5 11.2 16.5 13v3"/></svg>'
+IC_GH = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13.5 6l-3 12"/></svg>'
+
+
 def contact(lang):
+    p = '../' if lang == 'en' else ''
     fr = lang == 'fr'
-    body = head('Contact', T[lang]['desc']['contact'])
-    mail = (f'<button type="button" class="mail-btn js-mail" data-m="{MAIL_REV}">{"Afficher l’adresse" if fr else "Show address"}</button>')
-    li = [('E-mail' if fr else 'Email', mail),
-          ('LinkedIn', f'<a class="ext" href="{LINKEDIN}" target="_blank" rel="noopener">Arthur Sauvezie</a>'),
-          ('GitHub', f'<a class="ext" href="{GITHUB}" target="_blank" rel="noopener">arthursvz</a>'),
-          ('Localisation' if fr else 'Location', 'Toulouse · Québec (automne 2026)' if fr else 'Toulouse · Quebec City (fall 2026)')]
-    body += '<section class="wrap block"><ul class="rows flush">' + ''.join(f'<li><span>{a}</span><span>{b}</span></li>' for a, b in li) + '</ul></section>'
+    sub = ("Je cherche un premier emploi à partir de septembre 2027, après mon projet de fin d'études (diplôme d'ingénieur en octobre 2027). Une offre, une question, un échange : écrivez-moi."
+           if fr else
+           "I'm looking for my first job from September 2027, after my final-year project (engineering degree awarded in October 2027). An offer, a question, a chat: get in touch.")
+    body = (f'<section class="wrap page-head contact-head"><div class="bar"></div><h1 class="page">{"Discutons" if fr else "Let’s talk"}</h1>'
+            f'<p>{sub}</p><div class="avail"><span class="live" aria-hidden="true"></span>{"Disponible à partir de septembre 2027 · diplômé en octobre 2027" if fr else "Available from September 2027 · graduating October 2027"}</div></section>')
+    mail = (f'<div class="ccard"><span class="ic">{IC_MAIL}</span><span class="cc-t"><span class="k">E-mail</span>'
+            f'<span class="v"><button type="button" class="mail-btn js-mail" data-m="{MAIL_REV}" data-copy="{"Copier" if fr else "Copy"}" data-copied="{"Copié" if fr else "Copied"}">{"Afficher l’adresse" if fr else "Show address"}</button></span></span></div>')
+    li = (f'<a class="ccard" href="{LINKEDIN}" target="_blank" rel="noopener"><span class="ic">{IC_IN}</span><span class="cc-t"><span class="k">LinkedIn</span><span class="v">Arthur Sauvezie</span></span><span class="go" aria-hidden="true">↗</span></a>')
+    gh = (f'<a class="ccard" href="{GITHUB}" target="_blank" rel="noopener"><span class="ic">{IC_GH}</span><span class="cc-t"><span class="k">GitHub</span><span class="v">arthursvz</span></span><span class="go" aria-hidden="true">↗</span></a>')
+    body += f'<section class="wrap block-sm"><div class="ccards">{mail}{li}{gh}</div></section>'
+    seek = SEEK[lang]
+    body += (f'<section class="wrap block-sm"><h2>{"Ce que je recherche" if fr else "What I’m looking for"}</h2><ul class="seek">'
+             + ''.join(f'<li><span class="k">{e(k)}</span><span class="v">{e(v)}</span>{f"<span class=n>{e(n)}</span>" if n else ""}</li>' for k, v, n in seek)
+             + '</ul></section>')
+    place = NOW_PLACE[lang]
+    body += (f'<section class="wrap block"><div class="cfoot">'
+             f'<div><span class="k">{"En ce moment" if fr else "Right now"}</span><span class="v">{place} · {NOW_PLACE["note"][lang]}'
+             f'<span class="clock js-clock" data-tz="{NOW_PLACE["tz"]}" data-lang="{lang}" hidden></span></span></div>'
+             + ''.join(f'<div><span class="k">{e(k)}</span><span class="v">{e(v)}</span></div>' for k, v in PRACTICAL[lang]) +
+             f'<div><span class="k">CV</span><span class="v"><a class="ext-int" href="{FILE[lang]["cv"]}">{"Voir et télécharger mon CV" if fr else "View and download my CV"} →</a></span></div>'
+             f'</div></section>')
     return page(lang, 'contact', 'Contact', body)
 
 
