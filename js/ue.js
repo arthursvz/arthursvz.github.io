@@ -1,17 +1,20 @@
-// Page Parcours : fiche d'une unité d'enseignement en fenêtre (popup).
-// Les liens [data-ue] ouvrent la fiche ; clic/tap en dehors, bouton ou Échap la ferment.
+// Page Parcours : fiches en fenêtre (unités d'enseignement, certifications).
+// Les liens [data-pop="<clé>"] affichent <template id="tpl-<clé>"> ;
+// clic/tap en dehors, bouton ou Échap ferment la fenêtre.
 (function () {
   var dlg = document.querySelector('.ue-dialog');
   if (!dlg || typeof dlg.showModal !== 'function') return;
   var body = dlg.querySelector('.ue-body');
   var opener = null;
 
-  function open(id, from) {
-    var tpl = document.getElementById('tpl-ue-' + id);
+  function open(key, from) {
+    var tpl = document.getElementById('tpl-' + key);
     if (!tpl) return false;
     body.replaceChildren(tpl.content.cloneNode(true));
-    opener = from || null;
-    dlg.showModal();
+    if (!dlg.open) {           // une fiche peut en ouvrir une autre dans la même fenêtre
+      opener = from || null;
+      dlg.showModal();
+    }
     document.documentElement.classList.add('ue-open');
     return true;
   }
@@ -19,8 +22,8 @@
   function close() { if (dlg.open) dlg.close(); }
 
   document.addEventListener('click', function (ev) {
-    var a = ev.target.closest('[data-ue]');
-    if (a && open(a.getAttribute('data-ue'), a)) ev.preventDefault();
+    var a = ev.target.closest('[data-pop]');
+    if (a && open(a.getAttribute('data-pop'), a)) ev.preventDefault();
   });
 
   // Clic/tap en dehors de la carte : la cible est la <dialog> elle-même (zone du fond).
@@ -31,7 +34,6 @@
     if (opener) opener.focus({ preventScroll: true });
   });
 
-  // Lien direct : parcours.html#ue-<id>
-  var m = location.hash.match(/^#ue-(.+)$/);
-  if (m) open(decodeURIComponent(m[1]));
+  // Lien direct : parcours.html#ue-<id> ou #cert-<id>
+  if (location.hash.length > 1) open(decodeURIComponent(location.hash.slice(1)));
 })();

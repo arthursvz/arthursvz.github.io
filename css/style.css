@@ -463,3 +463,36 @@ a.ccard:hover .go{color:var(--ac);transform:translate(2px,-2px)}
   .list a:active{background:var(--hv)}
 }
 .ue-card:focus{outline:none}
+/* Certifications avec fiche détaillée */
+.certs li.has-pop{position:relative;cursor:pointer;transition:background-color .2s}
+.certs li.has-pop:hover{background:var(--hv)}
+.certs .cert-link{color:inherit}
+.certs .cert-link::after{content:"";position:absolute;inset:0}
+.certs .cert-link:focus-visible{outline:none}
+.certs li.has-pop:has(.cert-link:focus-visible){outline:2px solid var(--ac);outline-offset:-2px}
+.certs li.has-pop .t > a::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-right:8px;border:1px solid var(--ln);border-radius:50%;font-size:11px;line-height:1;color:var(--mu);vertical-align:1px;transition:border-color .2s,color .2s}
+.certs li.has-pop:hover .t > a::before{border-color:var(--ac);color:var(--ac)}
+.certs li.has-pop .t span a{position:relative;z-index:1}
+.pop-list{margin:0;padding:0 0 0 18px;display:grid;gap:6px;font-size:14px;font-weight:400;color:var(--tx)}
+.pop-list li::marker{color:var(--ac)}
+/* Jauges de niveau (certification de langue) */
+.meter{margin-top:18px;display:grid;gap:12px}
+.meter-row{display:grid;grid-template-columns:185px 1fr;align-items:center;gap:14px}
+.meter-name{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-size:13px;color:var(--mu)}
+.meter-name b{font-weight:500;color:var(--tx)}
+.meter .meter-bar{position:relative;display:flex;height:22px;border-radius:6px;background:var(--hv)}
+.meter .seg{display:flex;flex:none;align-items:center;justify-content:center;font-size:10px;font-weight:500;letter-spacing:.04em;color:var(--mu);border-right:1px solid var(--sf)}
+.meter .seg:last-of-type{border-right:0}
+.meter .seg:first-child{border-radius:6px 0 0 6px}
+.meter .seg:nth-child(3){border-radius:0 6px 6px 0;background:repeating-linear-gradient(135deg,transparent 0 6px,color-mix(in srgb,var(--ac) 8%,transparent) 6px 12px)}
+.meter .seg.on{background:color-mix(in srgb,var(--ac) 24%,transparent);color:var(--ac)}
+.meter .mark{position:absolute;top:-4px;bottom:-4px;width:2px;margin-left:-1px;background:var(--ac);border-radius:2px}
+.meter-label{margin:2px 0 0!important;font-size:13px!important;color:var(--tx)!important}
+@media (max-width:520px){.meter-row{grid-template-columns:1fr;gap:6px}}
+.pop-note{margin:14px 0 0!important;font-size:13px!important}
+/* Fiche d'une organisation : lien vers le site officiel */
+.pop-list li > span{color:var(--mu)}
+.site-link{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:20px;padding:10px 14px;border:1px solid var(--ln);border-radius:8px;font-size:14px;color:var(--tx);transition:border-color .2s,color .2s,background-color .2s}
+.site-link:hover,.site-link:focus-visible{border-color:var(--ac);color:var(--ac);background:color-mix(in srgb,var(--ac) 8%,transparent)}
+.site-link span{transition:transform .2s}
+.site-link:hover span{transform:translate(2px,-2px)}

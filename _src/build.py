@@ -32,7 +32,7 @@ ENT = {
 }
 
 
-def logo(k, p, size=''):
+def logo(k, p, size='', link=True):
     name, url, img, style = ENT[k]
     cls = 'logo' + (' sm' if size == 'sm' else '')
     if img:
@@ -42,8 +42,8 @@ def logo(k, p, size=''):
     else:
         cls += ' mono'
         inner = f'<span aria-hidden="true">{style}</span><span class="sr">{e(name)}</span>'
-    if url:
-        return f'<a class="{cls}" href="{url}" target="_blank" rel="noopener" title="{e(name)}">{inner}</a>'
+    if url and link:
+        return f'<a class="{cls}" href="{url}" target="_blank" rel="noopener" title="{e(name)}"{pop_attr(k)}>{inner}</a>'
     return f'<span class="{cls}" title="{e(name)}">{inner}</span>'
 
 
@@ -51,8 +51,59 @@ def org(k, label=None):
     name, url, _, _ = ENT[k]
     label = e(label or name)
     if url:
-        return f'<a class="ext" href="{url}" target="_blank" rel="noopener">{label}</a>'
+        return f'<a class="ext" href="{url}" target="_blank" rel="noopener"{pop_attr(k)}>{label}</a>'
     return label
+
+
+def pop_attr(k):
+    return f' data-pop="ent-{k}"' if k in ENT_INFO else ''
+
+
+# Présentation des organisations (fiche ouverte depuis leurs liens, sur toutes les pages).
+ENT_INFO = {
+    'n7': {'fr': "École nationale supérieure d'électrotechnique, d'électronique, d'informatique, d'hydraulique et des télécommunications : une grande école d'ingénieurs publique de Toulouse, membre de Toulouse INP, dont les origines remontent à 1907. J'y suis le cursus du département Sciences du Numérique.",
+           'en': "ENSEEIHT, a public engineering grande école in Toulouse, part of Toulouse INP, with roots going back to 1907. It covers electrical engineering, electronics, computer science, hydraulics and telecommunications. I study in its Digital Sciences department."},
+    'laval': {'fr': "Université francophone de Québec, la plus ancienne université de langue française en Amérique du Nord, héritière du Séminaire de Québec fondé en 1663. J'y passe mon semestre d'échange.",
+              'en': 'French-language university in Quebec City, the oldest French-speaking university in North America, descended from the Séminaire de Québec founded in 1663. I am spending my exchange semester there.'},
+    'airbus': {'fr': "Division d'Airbus consacrée à la défense et au spatial : satellites, systèmes spatiaux, avions militaires et solutions de sécurité. C'est là que je réalise mon projet de fin d'études.",
+               'en': "Airbus's defence and space division: satellites, space systems, military aircraft and security solutions. This is where I am doing my final-year project."},
+    'pref': {'fr': "Représentation de l'État en Haute-Garonne, également préfecture de la région Occitanie. Son secrétariat général commun départemental (SGCD) gère les moyens mutualisés des services de l'État, dont le numérique.",
+             'en': "The State's representation in Haute-Garonne, which is also the prefecture of the Occitanie region. Its joint departmental general secretariat (SGCD) manages the shared resources of State services, including IT."},
+    'irt': {'fr': "Institut de recherche technologique installé à Toulouse, qui réunit industriels et laboratoires publics autour de l'aéronautique, du spatial et des systèmes embarqués.",
+            'en': 'Technological research institute based in Toulouse, bringing together industry and public laboratories around aeronautics, space and embedded systems.'},
+    'pc': {'fr': "Fédération d'associations de bénévoles, agréée de sécurité civile et reconnue d'utilité publique. Elle assure des missions de secours, de formation aux premiers secours et de soutien aux populations.",
+           'en': 'Federation of volunteer associations, approved for civil security and recognised as being of public interest. It provides first-aid cover, first-aid training and support to the population.'},
+    'grinp': {'fr': "Club d'escalade de l'association sportive de Toulouse INP, ouvert aux étudiants des écoles de l'institut. J'en suis le président.",
+              'en': "Climbing club of the Toulouse INP sports association, open to students of the institute's schools. I am its president."},
+    'net7': {'fr': "Association informatique de l'ENSEEIHT : elle héberge et administre des services pour les étudiants (Git, messagerie, sites web) sur sa propre infrastructure.",
+             'en': "ENSEEIHT's IT association: it hosts and runs services for students (Git, email, websites) on its own infrastructure."},
+    'eedf': {'fr': "Mouvement de scoutisme laïque fondé en 1911 et reconnu d'utilité publique, qui propose des activités éducatives et de plein air aux enfants et aux jeunes.",
+             'en': 'Secular scouting movement founded in 1911 and recognised as being of public interest, offering educational and outdoor activities to children and young people.'},
+    'ffme': {'fr': "Fédération française de la montagne et de l'escalade : elle organise la pratique de l'escalade et des sports de montagne en France, et forme les encadrants bénévoles.",
+             'en': 'French mountaineering and climbing federation: it organises climbing and mountain sports in France, and trains volunteer instructors.'},
+    'cam': {'fr': "Département de l'Université de Cambridge qui conçoit les examens d'anglais Cambridge English, dont le test Linguaskill.",
+            'en': 'Department of the University of Cambridge that designs the Cambridge English exams, including the Linguaskill test.'},
+}
+
+
+def ent_templates(lang, p):
+    """Fiches de présentation des organisations, avec ce que j'y ai fait et le lien vers leur site."""
+    fr = lang == 'fr'
+    out = ''
+    for k, desc in ENT_INFO.items():
+        name, url, _, _ = ENT[k]
+        mine = [(d['role'][lang], d['when'][lang]) for d in EDU + EXP + PROJ + ENG if d.get('ent') == k]
+        mine += [(n[lang], dt[lang]) for kk, n, dt, *_ in CERTS if kk == k]
+        lst = ''.join(f'<li>{e(r)} <span>· {w}</span></li>' for r, w in mine)
+        did = "Ce que j'y ai fait" if fr else 'What I did there'
+        lst = (f'<div class="ue-skills"><span>{did}</span>'
+               f'<ul class="pop-list">{lst}</ul></div>') if mine else ''
+        host = url.split('//', 1)[-1].rstrip('/')
+        out += (f'<template id="tpl-ent-{k}"><div class="ue-ctx">{logo(k, p, "sm", link=False)}<div>'
+                f'<div class="ue-when">{e(host.removeprefix("www."))}</div></div></div><h3 id="ue-dialog-title">{e(name)}</h3><p>{e(desc[lang])}</p>{lst}'
+                f'<a class="site-link" href="{url}" target="_blank" rel="noopener">{"Visiter le site" if fr else "Visit the website"} · {e(host)} '
+                f'<span aria-hidden="true">↗</span></a></template>')
+    return out
 
 
 # ---------------------------------------------------------------- Données
@@ -218,6 +269,8 @@ def by_sem(items):
 
 
 def sem_label(lang, n):
+    if isinstance(n, str):
+        return n
     return ('Semestre ' if lang == 'fr' else 'Semester ') + str(n)
 
 
@@ -392,8 +445,74 @@ EDU = [
          ]),
     dict(ent='bellevue', when={'fr': '2022 – 2024', 'en': '2022 – 2024'}, where='Toulouse',
          role={'fr': 'Classes préparatoires PCSI / PSI', 'en': 'Preparatory classes (CPGE) PCSI / PSI'},
-         text={'fr': "Physique, chimie et sciences de l'ingénieur : PCSI en première année, PSI en seconde, puis concours.",
-               'en': 'Physics, chemistry and engineering sciences: PCSI in the first year, PSI in the second, then the competitive entrance exams.'}),
+         text={'fr': "Deux années intensives de mathématiques, physique-chimie et sciences de l'ingénieur, rythmées par les colles et les devoirs surveillés, pour préparer les concours des grandes écoles d'ingénieurs : PCSI puis PSI.",
+               'en': 'Two intensive years of mathematics, physics, chemistry and engineering sciences, paced by weekly oral examinations (colles) and timed written exams, preparing for the competitive entrance exams to the French engineering grandes écoles: PCSI, then PSI.'},
+         # Matières d'après les programmes officiels (BO spécial n° 1 du 11 février 2021 ; thèmes de français-philosophie et de TIPE au BO).
+         ue=[
+             U('maths-pcsi', 'Mathématiques', 'Mathematics',
+               "Construction rigoureuse de l'analyse et de l'algèbre, fondée sur la démonstration : nombres réels et complexes, suites, continuité, dérivabilité et développements limités, intégration, séries numériques, équations différentielles, polynômes, espaces vectoriels, applications linéaires, matrices et déterminants, probabilités.",
+               'A rigorous, proof-based construction of analysis and algebra: real and complex numbers, sequences, continuity, differentiability and Taylor expansions, integration, numerical series, differential equations, polynomials, vector spaces, linear maps, matrices and determinants, probability.',
+               ['Analyse', 'Algèbre linéaire', 'Probabilités'],
+               ['Analysis', 'Linear algebra', 'Probability'], sem='PCSI · 2022 – 2023'),
+             U('physique-chimie-pcsi', 'Physique-chimie', 'Physics and chemistry',
+               "Modélisation des phénomènes physiques et résolution de problèmes, en cours comme en travaux pratiques : mécanique du point et du solide, électrocinétique et filtrage, signaux et ondes, optique, thermodynamique, induction. En chimie : architecture de la matière, cinétique, équilibres en solution (acide-base, précipitation, oxydoréduction).",
+               'Modelling physical phenomena and solving problems, in lectures and in lab work: mechanics of particles and rigid bodies, circuits and filtering, signals and waves, optics, thermodynamics, induction. Chemistry: structure of matter, kinetics, equilibria in solution (acid-base, precipitation, redox).',
+               ['Mécanique', 'Électrocinétique', 'Thermodynamique', 'Chimie'],
+               ['Mechanics', 'Electric circuits', 'Thermodynamics', 'Chemistry'], sem='PCSI · 2022 – 2023'),
+             U('sii-pcsi', "Sciences industrielles de l'ingénieur", 'Engineering sciences',
+               "Démarche d'ingénieur appliquée à des systèmes industriels réels : analyse et modélisation en SysML, modélisation et analyse des systèmes asservis, cinématique et statique des mécanismes, systèmes logiques. Option SI au second semestre, vers la PSI.",
+               'Engineering approach applied to real industrial systems: analysis and SysML modelling, modelling and analysis of control systems, kinematics and statics of mechanisms, logic systems. Engineering option in the second semester, leading to PSI.',
+               ['SysML', 'Asservissement', 'Cinématique', 'Modélisation des systèmes'],
+               ['SysML', 'Control systems', 'Kinematics', 'Systems modelling'], sem='PCSI · 2022 – 2023'),
+             U('info-pcsi', 'Informatique', 'Computer science',
+               "Algorithmique et programmation en Python, avec preuves de correction et analyse de complexité : récursivité, algorithmes de tri, représentation des nombres, graphes, parcours et plus courts chemins.",
+               'Algorithms and programming in Python, with correctness proofs and complexity analysis: recursion, sorting algorithms, number representation, graphs, traversals and shortest paths.',
+               ['Python', 'Algorithmique', 'Graphes'],
+               ['Python', 'Algorithms', 'Graphs'], sem='PCSI · 2022 – 2023'),
+             U('francais-pcsi', 'Français-philosophie', 'French and philosophy',
+               "Étude approfondie de trois œuvres, littéraires et philosophiques, autour du thème « Le travail », et entraînement aux épreuves des concours : dissertation et résumé de texte en temps limité.",
+               'In-depth study of three literary and philosophical works on the theme “Work”, and training for the entrance exam papers: timed essay writing and text summary.',
+               ['Dissertation', 'Résumé de texte', 'Argumentation'],
+               ['Essay writing', 'Text summary', 'Argumentation'], sem='PCSI · 2022 – 2023'),
+             U('anglais-pcsi', 'Anglais', 'English',
+               "Anglais de niveau concours sur l'actualité du monde anglophone : synthèse de documents, essai argumenté, traduction et colles orales.",
+               'Exam-level English based on current affairs in the English-speaking world: document synthesis, argumentative essays, translation and oral examinations.',
+               ['Anglais'], ['English'], sem='PCSI · 2022 – 2023'),
+             U('maths-psi', 'Mathématiques', 'Mathematics',
+               "Approfondissement théorique en vue des concours : réduction des endomorphismes, espaces préhilbertiens et euclidiens, suites et séries de fonctions, séries entières, intégration sur un intervalle quelconque et intégrales à paramètre, systèmes différentiels, calcul différentiel à plusieurs variables, variables aléatoires discrètes.",
+               'Advanced theory for the entrance exams: reduction of endomorphisms, inner product and Euclidean spaces, sequences and series of functions, power series, integration over arbitrary intervals and parameter-dependent integrals, systems of differential equations, multivariable calculus, discrete random variables.',
+               ['Algèbre linéaire', 'Analyse', 'Probabilités'],
+               ['Linear algebra', 'Analysis', 'Probability'], sem='PSI · 2023 – 2024'),
+             U('physique-chimie-psi', 'Physique-chimie', 'Physics and chemistry',
+               "Physique des milieux continus, avec un fort usage de l'analyse vectorielle : électromagnétisme et équations de Maxwell, ondes et propagation, électronique, mécanique des fluides, thermodynamique et machines thermiques, conversion électromécanique de puissance. En chimie : thermochimie et électrochimie.",
+               'Continuum physics, making heavy use of vector calculus: electromagnetism and Maxwell’s equations, waves and propagation, electronics, fluid mechanics, thermodynamics and heat engines, electromechanical power conversion. Chemistry: thermochemistry and electrochemistry.',
+               ['Électromagnétisme', 'Électronique', 'Mécanique des fluides', 'Thermodynamique'],
+               ['Electromagnetism', 'Electronics', 'Fluid mechanics', 'Thermodynamics'], sem='PSI · 2023 – 2024'),
+             U('sii-psi', "Sciences industrielles de l'ingénieur", 'Engineering sciences',
+               "Analyse et synthèse des systèmes asservis (stabilité, précision, rapidité) et dimensionnement de correcteurs, dynamique des systèmes de solides, chaînes de puissance et d'énergie, confrontation des modèles aux mesures en TP.",
+               'Analysis and design of control systems (stability, accuracy, speed) and controller tuning, dynamics of multi-body systems, power and energy chains, comparing models with lab measurements.',
+               ['Asservissement', 'Correcteurs', 'Dynamique des solides'],
+               ['Control systems', 'Controllers', 'Dynamics of solids'], sem='PSI · 2023 – 2024'),
+             U('info-psi', 'Informatique', 'Computer science',
+               "Dictionnaires et tables de hachage, programmation dynamique, bases de données relationnelles et SQL, apprentissage supervisé et non supervisé (k plus proches voisins, k-moyennes), jeux sur graphes et algorithme minimax, recherche heuristique (A*).",
+               'Dictionaries and hash tables, dynamic programming, relational databases and SQL, supervised and unsupervised learning (k-nearest neighbours, k-means), graph games and the minimax algorithm, heuristic search (A*).',
+               ['Python', 'SQL', 'Programmation dynamique'],
+               ['Python', 'SQL', 'Dynamic programming'], sem='PSI · 2023 – 2024'),
+             U('francais-psi', 'Français-philosophie', 'French and philosophy',
+               "Étude approfondie de trois œuvres, littéraires et philosophiques, autour du thème « Faire croire », et épreuves des concours : dissertation et résumé de texte en temps limité.",
+               'In-depth study of three literary and philosophical works on the theme “Making believe”, and the entrance exam papers: timed essay writing and text summary.',
+               ['Dissertation', 'Résumé de texte', 'Argumentation'],
+               ['Essay writing', 'Text summary', 'Argumentation'], sem='PSI · 2023 – 2024'),
+             U('anglais-psi', 'Anglais', 'English',
+               "Préparation des épreuves d'anglais des concours, à l'écrit et à l'oral : synthèse de documents, essai argumenté, traduction, commentaire d'articles de presse en colle.",
+               'Preparation for the English papers of the entrance exams, written and oral: document synthesis, argumentative essays, translation, press article commentary in oral examinations.',
+               ['Anglais'], ['English'], sem='PSI · 2023 – 2024'),
+             U('tipe', 'TIPE', 'TIPE (supervised personal research project)',
+               "Travail d'initiative personnelle encadré, sur le thème « Jeux, sports ». Mon sujet : l'étude de la transmission d'information à travers le faisceau d'un laser game. Mesures en conditions réelles dans une salle, puis réalisation d'un prototype à base de diode et de photodiode, avec lequel nous avons comparé différentes modulations. Présenté à l'oral des concours.",
+               'Supervised personal research project on the theme “Games, sports”. My topic: studying how information is transmitted through a laser tag beam. Measurements in a real laser tag arena, then a prototype built with a diode and a photodiode, used to compare different modulation schemes. Presented at the oral entrance exams.',
+               ["Transmission de l'information", 'Modulation du signal', 'Prototypage électronique', 'Démarche expérimentale'],
+               ['Information transmission', 'Signal modulation', 'Electronic prototyping', 'Experimental method'], sem='PSI · 2023 – 2024'),
+         ]),
     dict(ent='limosin', when={'fr': '2021 – 2022', 'en': '2021 – 2022'}, where='Limoges',
          role={'fr': 'Baccalauréat général, section européenne (anglais)', 'en': 'French baccalauréat, European section (English)'},
          text={'fr': 'Spécialités mathématiques et physique-chimie, option mathématiques expertes. Lycée de 2019 à 2022.',
@@ -401,13 +520,100 @@ EDU = [
 ]
 
 CERTS = [
-    ('pc', {'fr': "Équipier-secouriste PSE2", 'en': 'First-aid team member (PSE2)'}, {'fr': 'Mars 2026', 'en': 'Mar 2026'}),
-    ('cam', {'fr': 'Linguaskill Business · 178 points', 'en': 'Linguaskill Business · 178 points'}, {'fr': 'Juin 2026', 'en': 'Jun 2026'}),
-    ('gdp', {'fr': 'MOOC Gestion de projet', 'en': 'Project Management MOOC'}, {'fr': 'Avr. 2025', 'en': 'Apr 2025'}),
-    ('pc', {'fr': 'Aide et écoute psychologique (AEP1)', 'en': 'Psychological first aid and listening (AEP1)'}, {'fr': 'Févr. 2025', 'en': 'Feb 2025'}),
-    ('pc', {'fr': 'Secouriste PSE1', 'en': 'First aider (PSE1)'}, {'fr': 'Déc. 2024', 'en': 'Dec 2024'}),
-    ('ffme', {'fr': "Brevet fédéral d'initiateur SAE (escalade)", 'en': 'Federal climbing instructor certificate (indoor walls)'}, {'fr': 'Oct. 2024', 'en': 'Oct 2024'}),
+    ('pc', {'fr': "Équipier-secouriste PSE2", 'en': 'First-aid team member (PSE2)'}, {'fr': 'Mars 2026', 'en': 'Mar 2026'}, 'pse2'),
+    ('cam', {'fr': 'Linguaskill Business · 178 points', 'en': 'Linguaskill Business · 178 points'}, {'fr': 'Juin 2026', 'en': 'Jun 2026'}, 'linguaskill'),
+    ('gdp', {'fr': 'MOOC Gestion de projet', 'en': 'Project Management MOOC'}, {'fr': 'Avr. 2025', 'en': 'Apr 2025'}, 'gdp'),
+    ('pc', {'fr': 'Aide et écoute psychologique (AEP1)', 'en': 'Psychological first aid and listening (AEP1)'}, {'fr': 'Févr. 2025', 'en': 'Feb 2025'}, 'aep1'),
+    ('pc', {'fr': 'Secouriste PSE1', 'en': 'First aider (PSE1)'}, {'fr': 'Déc. 2024', 'en': 'Dec 2024'}, 'pse1'),
+    ('ffme', {'fr': "Brevet fédéral d'initiateur SAE (escalade)", 'en': 'Federal climbing instructor certificate (indoor walls)'}, {'fr': 'Oct. 2024', 'en': 'Oct 2024'}, 'isae'),
 ]
+# Fiches détaillées des certifications (fenêtre sur la page Parcours).
+# about : le diplôme ; can : ce que je sais faire ; field : (page, ancre) de la mise en pratique.
+CERT_INFO = {
+    'pse1': dict(
+        about={'fr': "Certificat de compétences de secouriste, défini par un référentiel national de sécurité civile (formation d'au moins 35 heures). Il permet d'intervenir comme secouriste au sein d'une association agréée de sécurité civile, et s'entretient par une formation continue annuelle.",
+               'en': 'Certificate of first-aid competence, defined by a national civil-security framework (at least 35 hours of training). It qualifies me to act as a first-aider within an approved civil-security association, and is kept up to date through annual refresher training.'},
+        can={'fr': ["Assurer la protection de la victime, des témoins et de l'équipe",
+                    "Réaliser un bilan et le transmettre au médecin régulateur du SAMU",
+                    "Prendre en charge une urgence vitale : hémorragie, obstruction des voies aériennes, perte de connaissance, arrêt cardiaque (réanimation, défibrillateur)",
+                    "Prendre en charge les malaises, traumatismes, plaies et brûlures",
+                    "Administrer de l'oxygène et appliquer les règles d'hygiène et d'asepsie"],
+             'en': ['Protect the casualty, bystanders and the team',
+                    'Assess the casualty and report to the SAMU (emergency medical service) doctor',
+                    'Manage life-threatening emergencies: bleeding, choking, unconsciousness, cardiac arrest (CPR, defibrillator)',
+                    'Manage illnesses, injuries, wounds and burns',
+                    'Administer oxygen and apply hygiene and infection-control rules']},
+        field=('eng', 'protection-civile')),
+    'pse2': dict(
+        about={'fr': "Complète le PSE1 et permet d'exercer comme équipier secouriste : prendre en charge une victime en équipe, avec le matériel d'un poste de secours ou d'un véhicule de premiers secours à personnes (VPSP). Formation continue annuelle obligatoire.",
+               'en': 'Builds on the PSE1 and qualifies me as a first-aid team member: caring for a casualty as a team, with the equipment of a first-aid post or an ambulance (VPSP). Annual refresher training is mandatory.'},
+        can={'fr': ["Immobiliser une victime de traumatisme : attelles, collier cervical, matelas immobilisateur à dépression",
+                    "Relever et brancarder une victime en vue de son transport",
+                    "Conduire un bilan complet en équipe et le transmettre",
+                    "Faire face à des situations particulières : souffrance psychique, victimes multiples"],
+             'en': ['Immobilise an injured casualty: splints, cervical collar, vacuum mattress',
+                    'Lift and carry a casualty on a stretcher for transport',
+                    'Lead a full assessment as a team and report it',
+                    'Handle specific situations: psychological distress, multiple casualties']},
+        field=('eng', 'protection-civile')),
+    'linguaskill': dict(
+        about={'fr': "Test d'anglais professionnel de Cambridge University Press & Assessment, en contexte business, passé sur les modules de compréhension écrite et de compréhension orale. Les résultats sont donnés sur l'échelle Cambridge English, alignée sur le CECRL : de 160 à 179 points pour le B2, à partir de 180 pour le C1.",
+               'en': 'Cambridge University Press & Assessment workplace English test, in a business context, taken on the reading and listening modules. Results are given on the Cambridge English Scale, aligned with the CEFR: 160 to 179 points for B2, 180 and above for C1.'},
+        meter=dict(lo=140, hi=200, bands=[('B1', 140, 160), ('B2', 160, 180), ('C1', 180, 200)],
+                   rows=[({'fr': 'Compréhension orale', 'en': 'Listening'}, 189),
+                         ({'fr': 'Compréhension écrite', 'en': 'Reading'}, 167),
+                         ({'fr': 'Score global', 'en': 'Overall'}, 178)],
+                   label={'fr': "Niveau C1 en compréhension orale, B2 avancé au global.",
+                          'en': 'C1 level in listening, upper B2 overall.'}),
+        can={'fr': ["Suivre sans difficulté une réunion, une présentation ou une conférence en anglais",
+                    "Saisir les nuances, l'implicite et les points de vue dans un échange",
+                    "Comprendre des documents professionnels détaillés : rapports, articles, documentation technique",
+                    "Travailler au quotidien avec des sources et de la documentation en anglais"],
+             'en': ['Follow meetings, presentations and talks in English with ease',
+                    'Grasp nuance, implicit meaning and points of view in a discussion',
+                    'Understand detailed professional documents: reports, articles, technical documentation',
+                    'Work daily with sources and documentation in English']},
+        note={'fr': "Une pratique de longue date : baccalauréat en section européenne anglais.",
+              'en': 'A long-standing practice: French baccalauréat in the European section (English).'}),
+    'gdp': dict(
+        about={'fr': "MOOC de gestion de projet créé par Rémi Bachelet à Centrale Lille, l'un des premiers MOOC certifiants en France. Il couvre les fondamentaux de la gestion de projet, avec des exercices pratiques évalués et un examen final, validés par une attestation de réussite.",
+               'en': 'Project management MOOC created by Rémi Bachelet at Centrale Lille, one of the first certifying MOOCs in France. It covers the fundamentals of project management, with graded practical exercises and a final exam, leading to a certificate of achievement.'},
+        can={'fr': ["Cadrer un projet : objectifs, périmètre, livrables et parties prenantes",
+                    "Découper le travail et planifier : organigramme des tâches, diagramme de Gantt",
+                    "Estimer et suivre un budget",
+                    "Identifier et maîtriser les risques d'un projet",
+                    "Animer une équipe projet et organiser son pilotage"],
+             'en': ['Scope a project: objectives, boundaries, deliverables and stakeholders',
+                    'Break down the work and plan it: work breakdown structure, Gantt chart',
+                    'Estimate and track a budget',
+                    'Identify and control project risks',
+                    'Lead a project team and organise its steering']},
+        note={'fr': "Suivi en parallèle de l'option Leadership du S6, consacrée à la gestion de projet.",
+              'en': 'Taken alongside the S6 Leadership option, focused on project management.'},
+        field=('ue', 'gestion-projet')),
+    'isae': dict(
+        about={'fr': "Brevet fédéral de la FFME qui permet d'encadrer bénévolement et en autonomie l'escalade sur structure artificielle (blocs et voies), dans un club ou une structure affiliée. Formation d'au moins 20 heures, évaluations et stage pratique, puis recyclage tous les 4 ans.",
+               'en': 'FFME federal certificate qualifying me to supervise climbing on artificial walls (bouldering and roped routes) as a volunteer and on my own, in a club or affiliated facility. At least 20 hours of training, assessments and a practical placement, then a refresher every 4 years.'},
+        can={'fr': ["Encadrer en autonomie un groupe de grimpeurs sur mur d'escalade",
+                    "Faire respecter la sécurité : vérification des équipements, encordement, assurage",
+                    "Préparer et animer des séances d'initiation et de progression",
+                    "Transmettre les bases techniques : assurage, placement, lecture de voie"],
+             'en': ['Supervise a group of climbers on a climbing wall, on my own',
+                    'Enforce safety: equipment checks, tying in, belaying',
+                    'Plan and lead beginner and progression sessions',
+                    'Teach the technical basics: belaying, body positioning, route reading']},
+        field=('eng', 'grinp')),
+    'aep1': dict(  # TODO : contenu à valider avec Arthur (pas de source officielle en ligne)
+        about={'fr': "Formation de la Protection Civile à l'aide et à l'écoute psychologique : accueillir et soutenir les personnes touchées par un événement difficile, qu'elles soient victimes, témoins ou proches.",
+               'en': 'Civil Protection training in psychological support and listening: welcoming and supporting people affected by a distressing event, whether casualties, witnesses or relatives.'},
+        can={'fr': ["Pratiquer l'écoute active auprès d'une personne en détresse",
+                    "Repérer les réactions de stress et adapter mon attitude",
+                    "Accompagner les victimes, les témoins et les proches"],
+             'en': ['Practise active listening with a person in distress',
+                    'Recognise stress reactions and adapt my approach',
+                    'Support casualties, witnesses and relatives']},
+        field=('eng', 'protection-civile')),
+}
 CERT_ORG = {'pc': {'fr': 'Fédération Nationale de Protection Civile', 'en': 'French Civil Protection Federation'},
             'cam': {'fr': 'Cambridge University Press & Assessment', 'en': 'Cambridge University Press & Assessment'},
             'ffme': {'fr': 'Fédération Française de la Montagne et de l\'Escalade', 'en': 'French Mountaineering and Climbing Federation'},
@@ -518,8 +724,22 @@ def page(lang, key, title, body):
 <link rel="icon" href="{p}assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="{p}assets/apple-touch-icon.png">
 <meta name="theme-color" content="#1F5F5B">
+<link rel="canonical" href="{url(lang, key)}">
 <link rel="alternate" hreflang="fr" href="{url('fr', key)}">
 <link rel="alternate" hreflang="en" href="{url('en', key)}">
+<link rel="alternate" hreflang="x-default" href="{url('fr', key)}">
+<meta property="og:type" content="{'profile' if key == 'home' else 'website'}">
+<meta property="og:site_name" content="Arthur Sauvezie">
+<meta property="og:title" content="{e(full)}">
+<meta property="og:description" content="{e(t['desc'][key])}">
+<meta property="og:url" content="{url(lang, key)}">
+<meta property="og:image" content="{SITE}/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{'Arthur Sauvezie, élève ingénieur à l’ENSEEIHT' if lang == 'fr' else 'Arthur Sauvezie, engineering student at ENSEEIHT'}">
+<meta property="og:locale" content="{'fr_FR' if lang == 'fr' else 'en_US'}">
+<meta property="og:locale:alternate" content="{'en_US' if lang == 'fr' else 'fr_FR'}">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500&amp;display=swap">
@@ -537,6 +757,8 @@ def page(lang, key, title, body):
 <main>
 {body}
 </main>
+{ent_templates(lang, p)}<dialog class="ue-dialog" aria-labelledby="ue-dialog-title"><div class="ue-card" tabindex="-1" autofocus><button class="ue-close icon-btn" type="button" aria-label="{'Fermer' if lang == 'fr' else 'Close'}">{MENU_CLOSE}</button><div class="ue-body"></div></div></dialog>
+<script src="{p}js/ue.js" defer></script>
 <footer class="site-footer">
 <div class="wrap">
 <span>© {YEAR} Arthur Sauvezie</span>
@@ -573,7 +795,9 @@ def rows(items):
 def entry(lang, p, d, orglabel=None):
     """Bloc détaillé : logo + dates à gauche, contenu à droite."""
     badge = f'<span class="badge">{d["badge"][lang]}</span>' if 'badge' in d else ''
-    links = ''.join(f' · <a class="ext" href="{u}" target="_blank" rel="noopener">{e(l)}</a>' for l, u in d.get('links', []))
+    by_url = {ENT[k][1]: k for k in ENT_INFO}
+    links = ''.join(f' · <a class="ext" href="{u}" target="_blank" rel="noopener"{pop_attr(by_url[u]) if u in by_url else ""}>{e(l)}</a>'
+                    for l, u in d.get('links', []))
     where = f' · {d["where"]}' if 'where' in d else ''
     idattr = f' id="{d["id"]}"' if 'id' in d else ''
     ban = ''
@@ -602,14 +826,14 @@ def home(lang):
     strip_html = ''.join(f'<div><span class="k">{k}</span><span class="v">{v}</span></div>' for k, _, v in strip)
     eng_file = FILE[lang]['eng']
     cards = ''.join(
-        f'<a class="card" href="{eng_file}#{d["id"]}"><div class="card-top">{logo(d["ent"], p).replace("<a ", "<span ").replace("</a>", "</span>") if ENT[d["ent"]][1] else logo(d["ent"], p)}'
+        f'<a class="card" href="{eng_file}#{d["id"]}"><div class="card-top">{logo(d["ent"], p, link=False)}'
         f'<div><h3>{e(d["role"][lang])}</h3><div class="sub">{e(d["orgname"][lang])}</div></div></div>'
         f'<div class="fig"><b>{e(d["card"][lang][0])}</b>{e(d["card"][lang][1])}</div></a>'
         for d in ENG[:3])
     exp_file = FILE[lang]['exp']
     items = EXP + PROJ[:2]
     lst = ''.join(
-        f'<a class="withlogo" href="{exp_file}#{d["id"]}">{logo(d["ent"], p, "sm").replace("<a ", "<span ").replace("</a>", "</span>") if ENT[d["ent"]][1] else logo(d["ent"], p, "sm")}'
+        f'<a class="withlogo" href="{exp_file}#{d["id"]}">{logo(d["ent"], p, "sm", link=False)}'
         f'<span class="t">{e(d["role"][lang])}</span><span class="m">{e(ENT[d["ent"]][0])} · {d["when"][lang].split(" · ")[0]}</span><span class="go" aria-hidden="true">→</span></a>'
         for d in items)
     body = f'''<section class="wrap hero">
@@ -673,7 +897,7 @@ def timeline(lang, p):
         label = "Unités d'enseignement" if fr else 'Courses taken'
         inner = ''
         for sem, group in by_sem(items):
-            chips = ''.join(f'<li><a href="#ue-{u["id"]}" data-ue="{u["id"]}">{e(u["name"][lang])}</a></li>' for u in group)
+            chips = ''.join(f'<li><a href="#ue-{u["id"]}" data-pop="ue-{u["id"]}">{e(u["name"][lang])}</a></li>' for u in group)
             inner += (f'<div class="ue-sem">{sem_label(lang, sem)}</div>' if sem else '') + f'<ul>{chips}</ul>'
         return f'<details class="ue"><summary>{label} <span>{len(items)}</span></summary>{inner}</details>'
 
@@ -721,7 +945,7 @@ def skills(lang):
             elif label in taught:
                 uid, uname = taught[label]
                 tip = ('Vu en cours : ' if fr else 'Studied in: ') + uname
-                chips.append(f'<a class="chip proof" href="#ue-{uid}" data-ue="{uid}" title="{e(tip)}">{e(label)}</a>')
+                chips.append(f'<a class="chip proof" href="#ue-{uid}" data-pop="ue-{uid}" title="{e(tip)}">{e(label)}</a>')
             else:
                 chips.append(f'<span class="chip">{e(label)}</span>')
         cols.append(f'<div><h3>{e(cat)}</h3><div class="chips">{"".join(chips)}</div></div>')
@@ -738,8 +962,14 @@ def parcours(lang):
     body += ue_dialogs(lang, p)
     groups = ''
     for gname, keys in CERT_GROUPS:
-        lis = ''.join(f'<li>{logo(k, p)}<div class="t">{e(name[lang])}<span>{org(k, CERT_ORG[k][lang])}</span></div><div class="d">{d[lang]}</div></li>'
-                      for k, name, d in CERTS if k in keys)
+        lis = ''
+        for k, name, d, *cid in CERTS:
+            if k not in keys:
+                continue
+            cid = cid[0] if cid and cid[0] in CERT_INFO else None
+            title = (f'<a class="cert-link" href="#cert-{cid}" data-pop="cert-{cid}">{e(name[lang])}</a>' if cid else e(name[lang]))
+            lis += (f'<li{" class=" + chr(34) + "has-pop" + chr(34) if cid else ""}>{logo(k, p)}<div class="t">{title}'
+                    f'<span>{org(k, CERT_ORG[k][lang])}</span></div><div class="d">{d[lang]}</div></li>')
         groups += f'<div class="cgroup"><h3>{gname[lang]}</h3><ul class="certs">{lis}</ul></div>'
     body += f'<section class="wrap block-sm" id="certifications"><h2>Certifications</h2>{groups}</section>'
     body += f'<section class="wrap block"><h2>{"Compétences" if fr else "Skills"}</h2>{skills(lang)}</section>'
@@ -767,15 +997,50 @@ def ue_dialogs(lang, p):
                 pg, anchor = u['proj']
                 proj = (f'<a class="ue-proj" href="{FILE[lang][pg]}#{anchor}">'
                         f'{"Projet lié :" if fr else "Related project:"} {e(roles.get(anchor, NAV[lang][pg]))} <span aria-hidden="true">→</span></a>')
-            ctx = ' · '.join(x for x in (sem_label(lang, u['sem']) if u.get('sem') else '', d['when'][lang]) if x)
+            if isinstance(u.get('sem'), str):
+                ctx = u['sem']
+            else:
+                ctx = ' · '.join(x for x in (sem_label(lang, u['sem']) if u.get('sem') else '', d['when'][lang]) if x)
             tpls += (f'<template id="tpl-ue-{u["id"]}"><div class="ue-ctx">{logo(d["ent"], p, "sm")}<div>'
                      f'<div class="ue-when">{ctx}</div><div class="org">{e(d["role"][lang])}</div></div></div>'
                      f'<h3 id="ue-dialog-title">{e(u["name"][lang])}</h3><p>{e(u["desc"][lang])}</p>'
                      f'<div class="ue-skills"><span>{"Compétences" if fr else "Skills"}</span><div class="chips">{chips}</div></div>{proj}</template>')
-    close = 'Fermer' if fr else 'Close'
-    return (tpls + f'<dialog class="ue-dialog" aria-labelledby="ue-dialog-title"><div class="ue-card" tabindex="-1" autofocus>'
-            f'<button class="ue-close icon-btn" type="button" aria-label="{close}">{MENU_CLOSE}</button><div class="ue-body"></div></div></dialog>'
-            f'<script src="{p}js/ue.js" defer></script>')
+    # Certifications détaillées
+    places = {d['id']: d['orgname'][lang] for d in ENG if 'orgname' in d}
+    for k, name, d, *cid in CERTS:
+        if not cid or cid[0] not in CERT_INFO:
+            continue
+        info = CERT_INFO[cid[0]]
+        items = ''.join(f'<li>{e(x)}</li>' for x in info['can'][lang])
+        meter = ''
+        if info.get('meter'):
+            m = info['meter']
+            span = m['hi'] - m['lo']
+            bars = ''
+            for lab, score in m['rows']:
+                segs = ''.join(f'<span class="seg{" on" if a <= score < b else ""}" style="width:{(b - a) / span * 100:.4g}%">{lv}</span>'
+                               for lv, a, b in m['bands'])
+                pos = (min(score, m['hi']) - m['lo']) / span * 100
+                bars += (f'<div class="meter-row"><div class="meter-name">{e(lab[lang])}<b>{score}</b></div>'
+                         f'<div class="meter-bar" role="img" aria-label="{e(lab[lang])} : {score}">{segs}'
+                         f'<span class="mark" style="left:{pos:.4g}%"></span></div></div>')
+            meter = f'<div class="meter">{bars}<p class="meter-label">{e(m["label"][lang])}</p></div>'
+        note = f'<p class="pop-note">{e(info["note"][lang])}</p>' if info.get('note') else ''
+        field = ''
+        if info.get('field') and info['field'][0] == 'ue':
+            uid = info['field'][1]
+            uname = next(u['name'][lang] for d2 in EDU for u in d2.get('ue') or [] if u['id'] == uid)
+            field = (f'<a class="ue-proj" href="#ue-{uid}" data-pop="ue-{uid}">{"Mis en pratique :" if fr else "Put into practice:"} '
+                     f'{e(uname)} <span aria-hidden="true">→</span></a>')
+        elif info.get('field'):
+            pg, anchor = info['field']
+            field = (f'<a class="ue-proj" href="{FILE[lang][pg]}#{anchor}">{"Sur le terrain :" if fr else "In the field:"} '
+                     f'{e(places.get(anchor, NAV[lang][pg]))} <span aria-hidden="true">→</span></a>')
+        tpls += (f'<template id="tpl-cert-{cid[0]}"><div class="ue-ctx">{logo(k, p, "sm")}<div>'
+                 f'<div class="ue-when">{d[lang]}</div><div class="org">{e(CERT_ORG[k][lang])}</div></div></div>'
+                 f'<h3 id="ue-dialog-title">{e(name[lang])}</h3><p>{e(info["about"][lang])}</p>{meter}'
+                 f'<div class="ue-skills"><span>{"Ce que je sais faire" if fr else "What I can do"}</span><ul class="pop-list">{items}</ul></div>{note}{field}</template>')
+    return tpls
 
 
 CV_UPDATED = {'fr': 'novembre 2026', 'en': 'November 2026'}
@@ -864,6 +1129,33 @@ def redirect(target):
     return f'<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url={target}"><link rel="canonical" href="{target}"><title>→</title></head><body><a href="{target}">{target}</a></body></html>\n'
 
 
+def not_found():
+    """Page 404 bilingue. Servie par GitHub Pages à n'importe quelle profondeur :
+    <base href="/"> rend tous les liens relatifs valables depuis la racine."""
+    body = ('<section class="wrap hero nf"><div class="hero-text"><div class="bar"></div>'
+            '<h1>404</h1>'
+            '<p class="lead">Cette page n’existe pas, ou plus. Elle a peut-être changé d’adresse.</p>'
+            '<p class="lead" lang="en">This page does not exist, or no longer does. It may have moved.</p>'
+            '<div class="actions"><a class="btn primary" href="index.html">Retour à l’accueil</a>'
+            '<a class="btn" href="en/index.html" lang="en">Back to home (EN)</a></div>'
+            '</div></section>')
+    s = page('fr', 'home', 'Page introuvable', body)
+    s = s.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<base href="/">\n<meta name="robots" content="noindex">', 1)
+    s = s.replace('<title>Arthur Sauvezie · E-portfolio</title>', '<title>Page introuvable · Arthur Sauvezie</title>', 1)
+    # ni canonical ni alternates : ce n'est pas l'accueil
+    s = '\n'.join(l for l in s.split('\n') if not l.startswith(('<link rel="canonical"', '<link rel="alternate"', '<meta property="og:url"')))
+    return s.replace(' aria-current="page"', '', 1)
+
+
+def sitemap():
+    out = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+    for k in PAGES:
+        alts = ''.join(f'<xhtml:link rel="alternate" hreflang="{l}" href="{url(l, k)}"/>' for l in ('fr', 'en'))
+        for lang in ('fr', 'en'):
+            out += f'<url><loc>{url(lang, k)}</loc>{alts}</url>\n'
+    return out + '</urlset>\n'
+
+
 def write(rel, s):
     path = os.path.join(ROOT, rel)
     os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -880,3 +1172,6 @@ if __name__ == '__main__':
     # anciennes URL
     write('projets.html', redirect('experiences.html'))
     write('en/projects.html', redirect('experience.html'))
+    write('404.html', not_found())
+    write('sitemap.xml', sitemap())
+    write('robots.txt', f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')
